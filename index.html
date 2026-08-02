@@ -3,294 +3,255 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mona &amp; Noah — 7 May 2027</title>
-<meta name="description" content="Mona &amp; Noah are getting married — 7 May 2027 at Rocca di Lonato, Italy. Travel details and RSVP inside." />
-<!-- Share preview. NOTE: update the absolute URLs below if you later add a
-     custom domain (e.g. https://mona-and-noah.com/...). Currently set for
-     GitHub Pages at https://nbohren.github.io/wedding-website/ -->
+<title>Mona Seyfeddine &amp; Noah Bohren — 7 May 2027</title>
+<meta name="description" content="Mona Seyfeddine &amp; Noah Bohren are getting married — 7 May 2027 at Rocca di Lonato, Italy. Travel details and RSVP inside." />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Mona &amp; Noah — 7 May 2027" />
+<meta property="og:title" content="Mona Seyfeddine &amp; Noah Bohren — 7 May 2027" />
 <meta property="og:description" content="We're getting married at Rocca di Lonato, Italy. Travel details &amp; RSVP inside." />
 <meta property="og:url" content="https://nbohren.github.io/wedding-website/" />
 <meta property="og:image" content="https://nbohren.github.io/wedding-website/photos/og-share.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Mona &amp; Noah — 7 May 2027" />
-<meta name="twitter:description" content="We're getting married at Rocca di Lonato, Italy. Travel details &amp; RSVP inside." />
-<meta name="twitter:image" content="https://nbohren.github.io/wedding-website/photos/og-share.jpg" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&family=Noto+Naskh+Arabic:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#f4f1ec; --ink:#1c1b19; --muted:#7a756c; --line:#d8d2c7; --accent:#6f7a4c;
-    --olive:#6f7a4c; --olive-soft:#8a936a; --olive-deep:#2b3122; --paper:#faf7ef;
-    --serif:"Cormorant Garamond", Georgia, serif;
-    --sans:"Inter", system-ui, sans-serif;
-    --ar:"Noto Naskh Arabic", "Inter", serif;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased}
-  html[dir="rtl"] body{font-family:var(--ar)}
-  html[dir="rtl"] .serif{font-family:var(--ar)}
-  img{display:block;max-width:100%}
-  .serif{font-family:var(--serif);font-weight:300}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
-  .hidden{display:none !important}
+@font-face{font-family:'Cormorant';font-weight:400;font-display:swap;src:url('fonts/cormorant-400.woff2') format('woff2')}
+@font-face{font-family:'Cormorant';font-weight:500;font-display:swap;src:url('fonts/cormorant-500.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-weight:400;font-display:swap;src:url('fonts/cormorantgaramond-400.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-weight:500;font-display:swap;src:url('fonts/cormorantgaramond-500.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-weight:400;font-style:italic;font-display:swap;src:url('fonts/cormorantgaramond-italic-400.woff2') format('woff2')}
 
-  /* floating liquid-glass nav */
-  header.bar{
-    position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:50;
-    width:calc(100% - 28px);max-width:1080px;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:11px 18px;color:#fff;border-radius:16px;
-    direction:ltr;   /* keep monogram left / languages right, even in Arabic */
-    background:rgba(28,27,25,.28);
-    -webkit-backdrop-filter:blur(18px) saturate(160%);
-    backdrop-filter:blur(18px) saturate(160%);
-    border:1px solid rgba(255,255,255,.16);
-    box-shadow:0 8px 30px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.22);
-  }
-  /* graceful fallback where backdrop-filter is unsupported */
-  @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
-    header.bar{background:rgba(28,27,25,.72)}
-  }
-  .monogram{font-family:var(--serif);font-size:19px;letter-spacing:.18em}
-  .langs{display:flex;gap:2px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
-  .langs button{background:none;border:none;color:inherit;cursor:pointer;padding:6px 10px;font:inherit;opacity:.6;transition:opacity .3s,background .3s;letter-spacing:.14em;border-radius:9px}
-  .langs button.active{opacity:1;background:rgba(255,255,255,.16)}
-  .langs button:hover{opacity:1}
-  .bar-right{display:flex;align-items:center;gap:12px}
-  .nav-rsvp{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#fff;text-decoration:none;
-    border:1px solid rgba(255,255,255,.5);border-radius:9px;padding:8px 15px;transition:background .3s,border-color .3s}
-  .nav-rsvp:hover{background:#efe9df;color:#1c1b19;border-color:#efe9df}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --paper:#f0e9db; --ink:#37332a; --soft:#6f6a5a; --muted:#9a9483; --line:#d9d2c2;
+  --olive:#6d774a; --olive-deep:#515a34; --olive-dark:#3a4229; --gold:#b3924f;
+  --hero:"Cormorant",Georgia,serif; --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Cormorant Garamond",Georgia,serif; --ar:"Noto Naskh Arabic","Cormorant Garamond",serif;
+}
+body{color:var(--ink);font-family:var(--serif);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;
+  background:radial-gradient(160% 120% at 50% -10%, #f7f2e9 0%, rgba(247,242,233,0) 55%),linear-gradient(180deg,#f3eee4 0%, #ebe4d5 100%);}
+html[dir="rtl"] body{font-family:var(--ar)}
+html[dir="rtl"] .serif,html[dir="rtl"] .hero-font{font-family:var(--ar)}
+img{display:block;max-width:100%}
+.serif{font-family:var(--hero);font-weight:400}
+.wrap{max-width:1080px;margin:0 auto;padding:0 30px}
+.hidden{display:none !important}
+/* paper texture layers */
+.tex{position:fixed;inset:0;pointer-events:none;z-index:-1}
+.tex.m{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='3' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E");background-size:900px;opacity:.12;mix-blend-mode:multiply}
+.tex.s{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%271200%27%20height%3D%271600%27%20viewBox%3D%270%200%201200%201600%27%3E%3Ccircle%20cx%3D%22388.6%22%20cy%3D%22241.4%22%20r%3D%221.18%22%20fill%3D%22%236b6450%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%22438.8%22%20cy%3D%2292.8%22%20r%3D%221.01%22%20fill%3D%22%237d7358%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%22501.8%22%20cy%3D%22385.1%22%20r%3D%221.06%22%20fill%3D%22%236b6450%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%221136.9%22%20cy%3D%221009.0%22%20r%3D%221.1%22%20fill%3D%22%237d7358%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%2259.5%22%20cy%3D%22353.7%22%20r%3D%221.07%22%20fill%3D%22%237d7358%22%20opacity%3D%220.07%22/%3E%3Ccircle%20cx%3D%22173.1%22%20cy%3D%22188.5%22%20r%3D%220.77%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.19%22/%3E%3Ccircle%20cx%3D%22123.7%22%20cy%3D%22913.9%22%20r%3D%220.63%22%20fill%3D%22%236b6450%22%20opacity%3D%220.07%22/%3E%3Ccircle%20cx%3D%22677.2%22%20cy%3D%22990.4%22%20r%3D%221.0%22%20fill%3D%22%234d4838%22%20opacity%3D%220.14%22/%3E%3Ccircle%20cx%3D%22558.7%22%20cy%3D%221477.5%22%20r%3D%220.83%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.09%22/%3E%3Ccircle%20cx%3D%22838.8%22%20cy%3D%22390.6%22%20r%3D%221.09%22%20fill%3D%22%234d4838%22%20opacity%3D%220.14%22/%3E%3Ccircle%20cx%3D%22875.3%22%20cy%3D%22460.7%22%20r%3D%221.58%22%20fill%3D%22%237d7358%22%20opacity%3D%220.07%22/%3E%3Ccircle%20cx%3D%22198.0%22%20cy%3D%22547.3%22%20r%3D%221.52%22%20fill%3D%22%236b6450%22%20opacity%3D%220.12%22/%3E%3Ccircle%20cx%3D%22917.5%22%20cy%3D%22916.8%22%20r%3D%221.45%22%20fill%3D%22%234d4838%22%20opacity%3D%220.1%22/%3E%3Ccircle%20cx%3D%22713.2%22%20cy%3D%22927.8%22%20r%3D%220.95%22%20fill%3D%22%234d4838%22%20opacity%3D%220.19%22/%3E%3Ccircle%20cx%3D%22568.9%22%20cy%3D%221062.6%22%20r%3D%220.47%22%20fill%3D%22%237d7358%22%20opacity%3D%220.17%22/%3E%3Ccircle%20cx%3D%22341.5%22%20cy%3D%22617.3%22%20r%3D%221.2%22%20fill%3D%22%237d7358%22%20opacity%3D%220.05%22/%3E%3Ccircle%20cx%3D%22426.6%22%20cy%3D%22977.5%22%20r%3D%220.99%22%20fill%3D%22%234d4838%22%20opacity%3D%220.09%22/%3E%3Ccircle%20cx%3D%22155.2%22%20cy%3D%22396.2%22%20r%3D%220.87%22%20fill%3D%22%236b6450%22%20opacity%3D%220.2%22/%3E%3Ccircle%20cx%3D%22199.6%22%20cy%3D%22642.6%22%20r%3D%220.73%22%20fill%3D%22%237d7358%22%20opacity%3D%220.07%22/%3E%3Ccircle%20cx%3D%221036.8%22%20cy%3D%22445.5%22%20r%3D%220.9%22%20fill%3D%22%237d7358%22%20opacity%3D%220.11%22/%3E%3Ccircle%20cx%3D%221149.3%22%20cy%3D%22241.5%22%20r%3D%220.61%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.09%22/%3E%3Ccircle%20cx%3D%2214.5%22%20cy%3D%221329.7%22%20r%3D%220.62%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.1%22/%3E%3Ccircle%20cx%3D%22502.7%22%20cy%3D%22590.8%22%20r%3D%221.08%22%20fill%3D%22%236b6450%22%20opacity%3D%220.21%22/%3E%3Ccircle%20cx%3D%22548.0%22%20cy%3D%221393.6%22%20r%3D%221.54%22%20fill%3D%22%237d7358%22%20opacity%3D%220.17%22/%3E%3Ccircle%20cx%3D%22477.7%22%20cy%3D%22630.6%22%20r%3D%220.98%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.12%22/%3E%3Ccircle%20cx%3D%2280.8%22%20cy%3D%22334.0%22%20r%3D%220.59%22%20fill%3D%22%236b6450%22%20opacity%3D%220.11%22/%3E%3Ccircle%20cx%3D%22122.9%22%20cy%3D%22906.9%22%20r%3D%221.04%22%20fill%3D%22%236b6450%22%20opacity%3D%220.21%22/%3E%3Ccircle%20cx%3D%2284.4%22%20cy%3D%22332.7%22%20r%3D%220.85%22%20fill%3D%22%234d4838%22%20opacity%3D%220.16%22/%3E%3Ccircle%20cx%3D%22722.7%22%20cy%3D%22758.6%22%20r%3D%220.54%22%20fill%3D%22%237d7358%22%20opacity%3D%220.13%22/%3E%3Ccircle%20cx%3D%22576.5%22%20cy%3D%22499.0%22%20r%3D%220.57%22%20fill%3D%22%234d4838%22%20opacity%3D%220.18%22/%3E%3Ccircle%20cx%3D%22574.3%22%20cy%3D%221107.3%22%20r%3D%221.02%22%20fill%3D%22%234d4838%22%20opacity%3D%220.08%22/%3E%3Ccircle%20cx%3D%22175.9%22%20cy%3D%22869.1%22%20r%3D%220.43%22%20fill%3D%22%236b6450%22%20opacity%3D%220.14%22/%3E%3Ccircle%20cx%3D%22835.4%22%20cy%3D%22417.8%22%20r%3D%220.84%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.08%22/%3E%3Ccircle%20cx%3D%22639.1%22%20cy%3D%221246.5%22%20r%3D%220.8%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.09%22/%3E%3Ccircle%20cx%3D%22967.3%22%20cy%3D%221309.3%22%20r%3D%221.29%22%20fill%3D%22%237d7358%22%20opacity%3D%220.09%22/%3E%3Ccircle%20cx%3D%22426.7%22%20cy%3D%2246.4%22%20r%3D%220.43%22%20fill%3D%22%234d4838%22%20opacity%3D%220.1%22/%3E%3Ccircle%20cx%3D%22232.4%22%20cy%3D%22968.2%22%20r%3D%220.81%22%20fill%3D%22%234d4838%22%20opacity%3D%220.19%22/%3E%3Ccircle%20cx%3D%221146.0%22%20cy%3D%22583.4%22%20r%3D%220.66%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.09%22/%3E%3Ccircle%20cx%3D%22405.3%22%20cy%3D%22772.2%22%20r%3D%221.58%22%20fill%3D%22%236b6450%22%20opacity%3D%220.15%22/%3E%3Ccircle%20cx%3D%22575.4%22%20cy%3D%221044.8%22%20r%3D%221.36%22%20fill%3D%22%236b6450%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%221091.7%22%20cy%3D%221251.7%22%20r%3D%221.3%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.13%22/%3E%3Ccircle%20cx%3D%22520.7%22%20cy%3D%221017.3%22%20r%3D%220.5%22%20fill%3D%22%237d7358%22%20opacity%3D%220.21%22/%3E%3Ccircle%20cx%3D%22555.8%22%20cy%3D%221189.4%22%20r%3D%220.5%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.08%22/%3E%3Ccircle%20cx%3D%2233.1%22%20cy%3D%22945.3%22%20r%3D%220.96%22%20fill%3D%22%237d7358%22%20opacity%3D%220.16%22/%3E%3Ccircle%20cx%3D%22788.7%22%20cy%3D%22560.7%22%20r%3D%221.06%22%20fill%3D%22%236b6450%22%20opacity%3D%220.07%22/%3E%3Ccircle%20cx%3D%22959.2%22%20cy%3D%221162.2%22%20r%3D%220.52%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.18%22/%3E%3Ccircle%20cx%3D%22520.6%22%20cy%3D%221394.8%22%20r%3D%221.39%22%20fill%3D%22%234d4838%22%20opacity%3D%220.09%22/%3E%3Ccircle%20cx%3D%22255.3%22%20cy%3D%22801.9%22%20r%3D%221.32%22%20fill%3D%22%237d7358%22%20opacity%3D%220.11%22/%3E%3Ccircle%20cx%3D%221001.0%22%20cy%3D%2297.4%22%20r%3D%221.29%22%20fill%3D%22%237d7358%22%20opacity%3D%220.2%22/%3E%3Ccircle%20cx%3D%22992.6%22%20cy%3D%221405.1%22%20r%3D%220.56%22%20fill%3D%22%236b6450%22%20opacity%3D%220.08%22/%3E%3Ccircle%20cx%3D%221047.4%22%20cy%3D%221242.4%22%20r%3D%221.13%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.18%22/%3E%3Ccircle%20cx%3D%22206.8%22%20cy%3D%22757.6%22%20r%3D%221.27%22%20fill%3D%22%234d4838%22%20opacity%3D%220.14%22/%3E%3Ccircle%20cx%3D%22818.8%22%20cy%3D%22849.2%22%20r%3D%220.98%22%20fill%3D%22%236b6450%22%20opacity%3D%220.18%22/%3E%3Ccircle%20cx%3D%22298.2%22%20cy%3D%22443.1%22%20r%3D%221.33%22%20fill%3D%22%236b6450%22%20opacity%3D%220.14%22/%3E%3Ccircle%20cx%3D%22912.0%22%20cy%3D%221460.0%22%20r%3D%220.93%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.15%22/%3E%3Ccircle%20cx%3D%22831.3%22%20cy%3D%22723.8%22%20r%3D%221.04%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.13%22/%3E%3Ccircle%20cx%3D%22839.1%22%20cy%3D%221402.5%22%20r%3D%221.53%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.09%22/%3E%3Ccircle%20cx%3D%221008.0%22%20cy%3D%22219.4%22%20r%3D%220.55%22%20fill%3D%22%236b6450%22%20opacity%3D%220.13%22/%3E%3Ccircle%20cx%3D%22805.4%22%20cy%3D%22685.3%22%20r%3D%220.66%22%20fill%3D%22%236b6450%22%20opacity%3D%220.1%22/%3E%3Ccircle%20cx%3D%221076.4%22%20cy%3D%22247.1%22%20r%3D%221.26%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.16%22/%3E%3Ccircle%20cx%3D%22303.7%22%20cy%3D%22219.6%22%20r%3D%220.96%22%20fill%3D%22%236b6450%22%20opacity%3D%220.18%22/%3E%3Ccircle%20cx%3D%22477.9%22%20cy%3D%22779.6%22%20r%3D%221.59%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.19%22/%3E%3Ccircle%20cx%3D%22847.6%22%20cy%3D%221590.5%22%20r%3D%220.88%22%20fill%3D%22%234d4838%22%20opacity%3D%220.12%22/%3E%3Ccircle%20cx%3D%22382.2%22%20cy%3D%221155.4%22%20r%3D%220.42%22%20fill%3D%22%237d7358%22%20opacity%3D%220.14%22/%3E%3Ccircle%20cx%3D%22843.8%22%20cy%3D%22615.0%22%20r%3D%221.02%22%20fill%3D%22%236b6450%22%20opacity%3D%220.1%22/%3E%3Ccircle%20cx%3D%22135.4%22%20cy%3D%221469.7%22%20r%3D%220.67%22%20fill%3D%22%236b6450%22%20opacity%3D%220.2%22/%3E%3Ccircle%20cx%3D%22318.7%22%20cy%3D%2263.3%22%20r%3D%221.33%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.1%22/%3E%3Ccircle%20cx%3D%22983.7%22%20cy%3D%221359.3%22%20r%3D%221.21%22%20fill%3D%22%237d7358%22%20opacity%3D%220.21%22/%3E%3Ccircle%20cx%3D%22179.2%22%20cy%3D%221470.7%22%20r%3D%221.08%22%20fill%3D%22%236b6450%22%20opacity%3D%220.17%22/%3E%3Ccircle%20cx%3D%22334.9%22%20cy%3D%221279.3%22%20r%3D%220.62%22%20fill%3D%22%234d4838%22%20opacity%3D%220.2%22/%3E%3Ccircle%20cx%3D%221126.0%22%20cy%3D%221015.1%22%20r%3D%221.36%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%2279.9%22%20cy%3D%221380.4%22%20r%3D%220.94%22%20fill%3D%22%237d7358%22%20opacity%3D%220.11%22/%3E%3Ccircle%20cx%3D%221112.0%22%20cy%3D%22428.6%22%20r%3D%220.56%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.14%22/%3E%3Ccircle%20cx%3D%221125.8%22%20cy%3D%221550.7%22%20r%3D%220.71%22%20fill%3D%22%234d4838%22%20opacity%3D%220.08%22/%3E%3Ccircle%20cx%3D%22754.4%22%20cy%3D%22849.7%22%20r%3D%220.65%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.13%22/%3E%3Ccircle%20cx%3D%22324.6%22%20cy%3D%221285.9%22%20r%3D%221.59%22%20fill%3D%22%236b6450%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%22879.7%22%20cy%3D%22881.7%22%20r%3D%220.63%22%20fill%3D%22%237d7358%22%20opacity%3D%220.13%22/%3E%3Ccircle%20cx%3D%22127.5%22%20cy%3D%221310.3%22%20r%3D%220.92%22%20fill%3D%22%237d7358%22%20opacity%3D%220.13%22/%3E%3Ccircle%20cx%3D%221164.4%22%20cy%3D%22492.5%22%20r%3D%220.66%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.09%22/%3E%3Ccircle%20cx%3D%22998.7%22%20cy%3D%221130.8%22%20r%3D%221.16%22%20fill%3D%22%234d4838%22%20opacity%3D%220.12%22/%3E%3Ccircle%20cx%3D%221178.3%22%20cy%3D%221339.2%22%20r%3D%220.42%22%20fill%3D%22%234d4838%22%20opacity%3D%220.16%22/%3E%3Ccircle%20cx%3D%22516.9%22%20cy%3D%2288.6%22%20r%3D%221.2%22%20fill%3D%22%234d4838%22%20opacity%3D%220.11%22/%3E%3Ccircle%20cx%3D%22718.5%22%20cy%3D%221108.3%22%20r%3D%220.45%22%20fill%3D%22%234d4838%22%20opacity%3D%220.08%22/%3E%3Ccircle%20cx%3D%22535.0%22%20cy%3D%22421.2%22%20r%3D%221.55%22%20fill%3D%22%234d4838%22%20opacity%3D%220.22%22/%3E%3Ccircle%20cx%3D%22293.3%22%20cy%3D%221545.1%22%20r%3D%220.77%22%20fill%3D%22%236b6450%22%20opacity%3D%220.11%22/%3E%3Ccircle%20cx%3D%22402.4%22%20cy%3D%22134.2%22%20r%3D%220.73%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.16%22/%3E%3Ccircle%20cx%3D%22605.7%22%20cy%3D%227.9%22%20r%3D%220.72%22%20fill%3D%22%237d7358%22%20opacity%3D%220.07%22/%3E%3Ccircle%20cx%3D%22704.2%22%20cy%3D%22630.4%22%20r%3D%220.76%22%20fill%3D%22%236b6450%22%20opacity%3D%220.16%22/%3E%3Ccircle%20cx%3D%22702.7%22%20cy%3D%22846.7%22%20r%3D%221.3%22%20fill%3D%22%237d7358%22%20opacity%3D%220.16%22/%3E%3Ccircle%20cx%3D%22917.2%22%20cy%3D%221153.1%22%20r%3D%220.99%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.1%22/%3E%3Ccircle%20cx%3D%2252.5%22%20cy%3D%221336.5%22%20r%3D%221.47%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.16%22/%3E%3Ccircle%20cx%3D%221091.9%22%20cy%3D%221204.6%22%20r%3D%221.08%22%20fill%3D%22%236b6450%22%20opacity%3D%220.19%22/%3E%3Ccircle%20cx%3D%22991.7%22%20cy%3D%22934.5%22%20r%3D%221.47%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.17%22/%3E%3Ccircle%20cx%3D%22102.1%22%20cy%3D%2267.0%22%20r%3D%221.16%22%20fill%3D%22%237d7358%22%20opacity%3D%220.21%22/%3E%3Ccircle%20cx%3D%221003.0%22%20cy%3D%22893.6%22%20r%3D%221.15%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.16%22/%3E%3Ccircle%20cx%3D%22587.2%22%20cy%3D%225.3%22%20r%3D%221.36%22%20fill%3D%22%236b6450%22%20opacity%3D%220.18%22/%3E%3Ccircle%20cx%3D%22791.2%22%20cy%3D%22105.7%22%20r%3D%221.28%22%20fill%3D%22%236b6450%22%20opacity%3D%220.09%22/%3E%3Ccircle%20cx%3D%221015.4%22%20cy%3D%22375.7%22%20r%3D%221.31%22%20fill%3D%22%237d7358%22%20opacity%3D%220.09%22/%3E%3Ccircle%20cx%3D%22592.7%22%20cy%3D%22612.1%22%20r%3D%220.97%22%20fill%3D%22%236b6450%22%20opacity%3D%220.17%22/%3E%3Ccircle%20cx%3D%22740.4%22%20cy%3D%221028.4%22%20r%3D%220.49%22%20fill%3D%22%234d4838%22%20opacity%3D%220.08%22/%3E%3Ccircle%20cx%3D%22781.8%22%20cy%3D%221108.6%22%20r%3D%221.15%22%20fill%3D%22%237d7358%22%20opacity%3D%220.07%22/%3E%3Ccircle%20cx%3D%2272.8%22%20cy%3D%22430.0%22%20r%3D%221.21%22%20fill%3D%22%237d7358%22%20opacity%3D%220.17%22/%3E%3Ccircle%20cx%3D%22349.0%22%20cy%3D%22826.5%22%20r%3D%220.96%22%20fill%3D%22%236b6450%22%20opacity%3D%220.13%22/%3E%3Ccircle%20cx%3D%221192.0%22%20cy%3D%22878.5%22%20r%3D%220.77%22%20fill%3D%22%237d7358%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%2221.0%22%20cy%3D%22734.4%22%20r%3D%221.38%22%20fill%3D%22%237d7358%22%20opacity%3D%220.21%22/%3E%3Ccircle%20cx%3D%221192.8%22%20cy%3D%22619.0%22%20r%3D%221.5%22%20fill%3D%22%236b6450%22%20opacity%3D%220.21%22/%3E%3Ccircle%20cx%3D%22697.8%22%20cy%3D%22226.8%22%20r%3D%221.03%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.21%22/%3E%3Ccircle%20cx%3D%22724.0%22%20cy%3D%221010.7%22%20r%3D%220.74%22%20fill%3D%22%234d4838%22%20opacity%3D%220.07%22/%3E%3Ccircle%20cx%3D%22277.7%22%20cy%3D%221436.3%22%20r%3D%220.98%22%20fill%3D%22%236b6450%22%20opacity%3D%220.05%22/%3E%3Ccircle%20cx%3D%221140.0%22%20cy%3D%221090.5%22%20r%3D%220.89%22%20fill%3D%22%237d7358%22%20opacity%3D%220.17%22/%3E%3Ccircle%20cx%3D%22412.8%22%20cy%3D%22505.7%22%20r%3D%221.41%22%20fill%3D%22%234d4838%22%20opacity%3D%220.05%22/%3E%3Ccircle%20cx%3D%221006.9%22%20cy%3D%22192.1%22%20r%3D%221.51%22%20fill%3D%22%234d4838%22%20opacity%3D%220.17%22/%3E%3Ccircle%20cx%3D%22303.9%22%20cy%3D%22104.0%22%20r%3D%220.87%22%20fill%3D%22%236b6450%22%20opacity%3D%220.2%22/%3E%3Ccircle%20cx%3D%22432.9%22%20cy%3D%22684.9%22%20r%3D%220.73%22%20fill%3D%22%236b6450%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%2261.9%22%20cy%3D%221059.2%22%20r%3D%221.16%22%20fill%3D%22%234d4838%22%20opacity%3D%220.08%22/%3E%3Ccircle%20cx%3D%22523.5%22%20cy%3D%22505.0%22%20r%3D%221.33%22%20fill%3D%22%237d7358%22%20opacity%3D%220.18%22/%3E%3Ccircle%20cx%3D%221061.1%22%20cy%3D%221299.1%22%20r%3D%221.16%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.21%22/%3E%3Ccircle%20cx%3D%22863.5%22%20cy%3D%2279.2%22%20r%3D%221.28%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.13%22/%3E%3Ccircle%20cx%3D%22773.4%22%20cy%3D%22457.9%22%20r%3D%220.46%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.21%22/%3E%3Ccircle%20cx%3D%22204.9%22%20cy%3D%22663.8%22%20r%3D%220.74%22%20fill%3D%22%234d4838%22%20opacity%3D%220.09%22/%3E%3Ccircle%20cx%3D%22487.5%22%20cy%3D%22381.9%22%20r%3D%220.98%22%20fill%3D%22%236b6450%22%20opacity%3D%220.16%22/%3E%3Ccircle%20cx%3D%22200.8%22%20cy%3D%22258.7%22%20r%3D%220.65%22%20fill%3D%22%237d7358%22%20opacity%3D%220.2%22/%3E%3Ccircle%20cx%3D%22660.5%22%20cy%3D%22724.8%22%20r%3D%220.8%22%20fill%3D%22%237d7358%22%20opacity%3D%220.18%22/%3E%3Ccircle%20cx%3D%22167.5%22%20cy%3D%22307.9%22%20r%3D%220.51%22%20fill%3D%22%236b6450%22%20opacity%3D%220.11%22/%3E%3Ccircle%20cx%3D%22383.1%22%20cy%3D%22589.3%22%20r%3D%221.37%22%20fill%3D%22%236b6450%22%20opacity%3D%220.08%22/%3E%3Ccircle%20cx%3D%22899.6%22%20cy%3D%22660.5%22%20r%3D%220.9%22%20fill%3D%22%237d7358%22%20opacity%3D%220.14%22/%3E%3Ccircle%20cx%3D%22324.3%22%20cy%3D%221203.4%22%20r%3D%221.0%22%20fill%3D%22%234d4838%22%20opacity%3D%220.15%22/%3E%3Ccircle%20cx%3D%22151.0%22%20cy%3D%22805.4%22%20r%3D%221.16%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.2%22/%3E%3Ccircle%20cx%3D%22111.1%22%20cy%3D%221434.9%22%20r%3D%220.86%22%20fill%3D%22%237d7358%22%20opacity%3D%220.16%22/%3E%3Ccircle%20cx%3D%221144.7%22%20cy%3D%221357.9%22%20r%3D%221.45%22%20fill%3D%22%236b6450%22%20opacity%3D%220.05%22/%3E%3Ccircle%20cx%3D%22510.2%22%20cy%3D%221221.9%22%20r%3D%221.37%22%20fill%3D%22%237d7358%22%20opacity%3D%220.21%22/%3E%3Ccircle%20cx%3D%220.2%22%20cy%3D%22626.4%22%20r%3D%221.51%22%20fill%3D%22%237d7358%22%20opacity%3D%220.19%22/%3E%3Ccircle%20cx%3D%221166.7%22%20cy%3D%22397.5%22%20r%3D%220.53%22%20fill%3D%22%236b6450%22%20opacity%3D%220.08%22/%3E%3Ccircle%20cx%3D%221129.8%22%20cy%3D%221154.8%22%20r%3D%221.18%22%20fill%3D%22%237d7358%22%20opacity%3D%220.18%22/%3E%3Ccircle%20cx%3D%22102.0%22%20cy%3D%221243.0%22%20r%3D%220.4%22%20fill%3D%22%236b6450%22%20opacity%3D%220.07%22/%3E%3Ccircle%20cx%3D%22774.6%22%20cy%3D%22486.1%22%20r%3D%220.55%22%20fill%3D%22%237d7358%22%20opacity%3D%220.09%22/%3E%3Ccircle%20cx%3D%22838.3%22%20cy%3D%22179.4%22%20r%3D%220.48%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.14%22/%3E%3Ccircle%20cx%3D%22465.7%22%20cy%3D%22357.7%22%20r%3D%221.12%22%20fill%3D%22%234d4838%22%20opacity%3D%220.05%22/%3E%3Ccircle%20cx%3D%221195.6%22%20cy%3D%22445.8%22%20r%3D%220.78%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.19%22/%3E%3Ccircle%20cx%3D%22570.4%22%20cy%3D%22375.6%22%20r%3D%220.7%22%20fill%3D%22%234d4838%22%20opacity%3D%220.21%22/%3E%3Ccircle%20cx%3D%2266.4%22%20cy%3D%22310.6%22%20r%3D%221.46%22%20fill%3D%22%236b6450%22%20opacity%3D%220.16%22/%3E%3Ccircle%20cx%3D%22308.7%22%20cy%3D%221067.8%22%20r%3D%221.51%22%20fill%3D%22%236b6450%22%20opacity%3D%220.09%22/%3E%3Ccircle%20cx%3D%22835.0%22%20cy%3D%221149.3%22%20r%3D%220.83%22%20fill%3D%22%236b6450%22%20opacity%3D%220.12%22/%3E%3Ccircle%20cx%3D%22956.5%22%20cy%3D%221182.6%22%20r%3D%221.01%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.08%22/%3E%3Ccircle%20cx%3D%22374.1%22%20cy%3D%221312.0%22%20r%3D%220.68%22%20fill%3D%22%234d4838%22%20opacity%3D%220.09%22/%3E%3Ccircle%20cx%3D%22130.8%22%20cy%3D%22997.8%22%20r%3D%221.13%22%20fill%3D%22%237d7358%22%20opacity%3D%220.2%22/%3E%3Ccircle%20cx%3D%22500.4%22%20cy%3D%221064.5%22%20r%3D%221.54%22%20fill%3D%22%237d7358%22%20opacity%3D%220.07%22/%3E%3Ccircle%20cx%3D%2265.2%22%20cy%3D%2237.8%22%20r%3D%221.12%22%20fill%3D%22%236b6450%22%20opacity%3D%220.12%22/%3E%3Ccircle%20cx%3D%22220.9%22%20cy%3D%22719.4%22%20r%3D%221.25%22%20fill%3D%22%236b6450%22%20opacity%3D%220.1%22/%3E%3Ccircle%20cx%3D%221197.0%22%20cy%3D%221490.6%22%20r%3D%220.8%22%20fill%3D%22%237d7358%22%20opacity%3D%220.08%22/%3E%3Ccircle%20cx%3D%2238.3%22%20cy%3D%221063.1%22%20r%3D%220.85%22%20fill%3D%22%234d4838%22%20opacity%3D%220.11%22/%3E%3Ccircle%20cx%3D%22530.9%22%20cy%3D%22174.3%22%20r%3D%220.49%22%20fill%3D%22%237d7358%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%221146.6%22%20cy%3D%22197.9%22%20r%3D%221.56%22%20fill%3D%22%234d4838%22%20opacity%3D%220.09%22/%3E%3Ccircle%20cx%3D%22922.5%22%20cy%3D%22493.9%22%20r%3D%221.36%22%20fill%3D%22%237d7358%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%22234.9%22%20cy%3D%22866.4%22%20r%3D%220.94%22%20fill%3D%22%237d7358%22%20opacity%3D%220.1%22/%3E%3Ccircle%20cx%3D%2236.3%22%20cy%3D%22657.3%22%20r%3D%221.37%22%20fill%3D%22%236b6450%22%20opacity%3D%220.18%22/%3E%3Ccircle%20cx%3D%22450.7%22%20cy%3D%22742.5%22%20r%3D%221.36%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%22896.7%22%20cy%3D%221437.7%22%20r%3D%220.81%22%20fill%3D%22%236b6450%22%20opacity%3D%220.1%22/%3E%3Ccircle%20cx%3D%22314.6%22%20cy%3D%221146.6%22%20r%3D%220.78%22%20fill%3D%22%236b6450%22%20opacity%3D%220.1%22/%3E%3Ccircle%20cx%3D%22865.9%22%20cy%3D%22952.9%22%20r%3D%221.37%22%20fill%3D%22%236b6450%22%20opacity%3D%220.21%22/%3E%3Ccircle%20cx%3D%2229.1%22%20cy%3D%22374.2%22%20r%3D%220.97%22%20fill%3D%22%237d7358%22%20opacity%3D%220.21%22/%3E%3Ccircle%20cx%3D%22947.8%22%20cy%3D%221461.7%22%20r%3D%221.38%22%20fill%3D%22%237d7358%22%20opacity%3D%220.07%22/%3E%3Ccircle%20cx%3D%22219.5%22%20cy%3D%221284.1%22%20r%3D%221.29%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.19%22/%3E%3Ccircle%20cx%3D%22728.7%22%20cy%3D%22524.5%22%20r%3D%220.78%22%20fill%3D%22%236b6450%22%20opacity%3D%220.11%22/%3E%3Ccircle%20cx%3D%22614.3%22%20cy%3D%22626.7%22%20r%3D%220.59%22%20fill%3D%22%236b6450%22%20opacity%3D%220.12%22/%3E%3Ccircle%20cx%3D%22578.0%22%20cy%3D%22871.4%22%20r%3D%220.59%22%20fill%3D%22%236b6450%22%20opacity%3D%220.12%22/%3E%3Ccircle%20cx%3D%221185.4%22%20cy%3D%22423.8%22%20r%3D%220.5%22%20fill%3D%22%237d7358%22%20opacity%3D%220.07%22/%3E%3Ccircle%20cx%3D%221186.1%22%20cy%3D%221555.4%22%20r%3D%220.61%22%20fill%3D%22%237d7358%22%20opacity%3D%220.07%22/%3E%3Ccircle%20cx%3D%22744.4%22%20cy%3D%221078.6%22%20r%3D%221.3%22%20fill%3D%22%236b6450%22%20opacity%3D%220.19%22/%3E%3Ccircle%20cx%3D%22935.7%22%20cy%3D%22470.3%22%20r%3D%220.74%22%20fill%3D%22%234d4838%22%20opacity%3D%220.1%22/%3E%3Ccircle%20cx%3D%22885.7%22%20cy%3D%22318.7%22%20r%3D%220.7%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.09%22/%3E%3Ccircle%20cx%3D%22337.6%22%20cy%3D%221452.1%22%20r%3D%220.63%22%20fill%3D%22%234d4838%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%221190.9%22%20cy%3D%22811.7%22%20r%3D%220.68%22%20fill%3D%22%237d7358%22%20opacity%3D%220.19%22/%3E%3Ccircle%20cx%3D%221189.1%22%20cy%3D%22163.7%22%20r%3D%220.97%22%20fill%3D%22%237d7358%22%20opacity%3D%220.19%22/%3E%3Ccircle%20cx%3D%221097.3%22%20cy%3D%2264.6%22%20r%3D%220.75%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.07%22/%3E%3Ccircle%20cx%3D%22720.6%22%20cy%3D%221324.7%22%20r%3D%220.63%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%22538.9%22%20cy%3D%22415.9%22%20r%3D%221.33%22%20fill%3D%22%236b6450%22%20opacity%3D%220.21%22/%3E%3Ccircle%20cx%3D%22764.9%22%20cy%3D%221135.5%22%20r%3D%220.82%22%20fill%3D%22%234d4838%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%22169.6%22%20cy%3D%22326.4%22%20r%3D%220.71%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.15%22/%3E%3Ccircle%20cx%3D%22977.7%22%20cy%3D%221310.1%22%20r%3D%220.89%22%20fill%3D%22%234d4838%22%20opacity%3D%220.11%22/%3E%3Ccircle%20cx%3D%2293.5%22%20cy%3D%2250.3%22%20r%3D%220.99%22%20fill%3D%22%237d7358%22%20opacity%3D%220.13%22/%3E%3Ccircle%20cx%3D%22121.7%22%20cy%3D%22632.5%22%20r%3D%221.06%22%20fill%3D%22%236b6450%22%20opacity%3D%220.16%22/%3E%3Ccircle%20cx%3D%22783.7%22%20cy%3D%22636.4%22%20r%3D%220.73%22%20fill%3D%22%234d4838%22%20opacity%3D%220.22%22/%3E%3Ccircle%20cx%3D%22501.4%22%20cy%3D%2282.2%22%20r%3D%221.29%22%20fill%3D%22%237d7358%22%20opacity%3D%220.2%22/%3E%3Ccircle%20cx%3D%22499.7%22%20cy%3D%221382.8%22%20r%3D%221.6%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.11%22/%3E%3Ccircle%20cx%3D%22468.9%22%20cy%3D%22648.0%22%20r%3D%221.53%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.12%22/%3E%3Ccircle%20cx%3D%22508.5%22%20cy%3D%221312.6%22%20r%3D%220.89%22%20fill%3D%22%237d7358%22%20opacity%3D%220.2%22/%3E%3Ccircle%20cx%3D%22927.7%22%20cy%3D%22208.0%22%20r%3D%220.46%22%20fill%3D%22%237d7358%22%20opacity%3D%220.07%22/%3E%3Ccircle%20cx%3D%22106.8%22%20cy%3D%22995.5%22%20r%3D%220.85%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.14%22/%3E%3Ccircle%20cx%3D%22417.5%22%20cy%3D%22258.9%22%20r%3D%220.61%22%20fill%3D%22%237d7358%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%22588.6%22%20cy%3D%221287.7%22%20r%3D%221.56%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.08%22/%3E%3Ccircle%20cx%3D%221004.8%22%20cy%3D%2269.6%22%20r%3D%221.5%22%20fill%3D%22%237d7358%22%20opacity%3D%220.1%22/%3E%3Ccircle%20cx%3D%22103.6%22%20cy%3D%221139.7%22%20r%3D%221.23%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.2%22/%3E%3Ccircle%20cx%3D%22745.3%22%20cy%3D%22983.6%22%20r%3D%220.64%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.13%22/%3E%3Ccircle%20cx%3D%2250.1%22%20cy%3D%221501.7%22%20r%3D%220.59%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.11%22/%3E%3Ccircle%20cx%3D%22296.5%22%20cy%3D%221159.8%22%20r%3D%221.48%22%20fill%3D%22%236b6450%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%22801.5%22%20cy%3D%22518.7%22%20r%3D%220.87%22%20fill%3D%22%234d4838%22%20opacity%3D%220.13%22/%3E%3Ccircle%20cx%3D%22778.8%22%20cy%3D%22493.1%22%20r%3D%220.7%22%20fill%3D%22%234d4838%22%20opacity%3D%220.12%22/%3E%3Ccircle%20cx%3D%22536.1%22%20cy%3D%22701.4%22%20r%3D%220.43%22%20fill%3D%22%237d7358%22%20opacity%3D%220.16%22/%3E%3Ccircle%20cx%3D%22558.3%22%20cy%3D%22714.9%22%20r%3D%221.14%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.19%22/%3E%3Ccircle%20cx%3D%22972.6%22%20cy%3D%22640.5%22%20r%3D%220.48%22%20fill%3D%22%234d4838%22%20opacity%3D%220.11%22/%3E%3Ccircle%20cx%3D%22110.1%22%20cy%3D%22707.1%22%20r%3D%221.01%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.06%22/%3E%3Ccircle%20cx%3D%2298.7%22%20cy%3D%221173.6%22%20r%3D%221.33%22%20fill%3D%22%236b6450%22%20opacity%3D%220.14%22/%3E%3Ccircle%20cx%3D%22902.5%22%20cy%3D%221431.8%22%20r%3D%221.18%22%20fill%3D%22%236b6450%22%20opacity%3D%220.18%22/%3E%3Ccircle%20cx%3D%221028.5%22%20cy%3D%221593.8%22%20r%3D%221.28%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.19%22/%3E%3Ccircle%20cx%3D%22157.9%22%20cy%3D%221417.1%22%20r%3D%220.75%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.19%22/%3E%3Ccircle%20cx%3D%22823.4%22%20cy%3D%221153.7%22%20r%3D%220.67%22%20fill%3D%22%234d4838%22%20opacity%3D%220.19%22/%3E%3Ccircle%20cx%3D%22190.5%22%20cy%3D%221434.5%22%20r%3D%220.73%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.19%22/%3E%3Ccircle%20cx%3D%22305.0%22%20cy%3D%221542.9%22%20r%3D%220.98%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.15%22/%3E%3Ccircle%20cx%3D%22382.9%22%20cy%3D%2258.9%22%20r%3D%220.62%22%20fill%3D%22%234d4838%22%20opacity%3D%220.08%22/%3E%3Ccircle%20cx%3D%22815.6%22%20cy%3D%221432.7%22%20r%3D%220.6%22%20fill%3D%22%236b6450%22%20opacity%3D%220.18%22/%3E%3Ccircle%20cx%3D%22921.9%22%20cy%3D%2277.7%22%20r%3D%221.43%22%20fill%3D%22%237d7358%22%20opacity%3D%220.21%22/%3E%3Ccircle%20cx%3D%22666.2%22%20cy%3D%22928.1%22%20r%3D%221.46%22%20fill%3D%22%237d7358%22%20opacity%3D%220.07%22/%3E%3Ccircle%20cx%3D%22885.5%22%20cy%3D%22594.3%22%20r%3D%220.85%22%20fill%3D%22%238a7f63%22%20opacity%3D%220.11%22/%3E%3Ccircle%20cx%3D%22432.3%22%20cy%3D%221223.4%22%20r%3D%220.93%22%20fill%3D%22%236b6450%22%20opacity%3D%220.08%22/%3E%3Ccircle%20cx%3D%22355.7%22%20cy%3D%22825.8%22%20r%3D%220.77%22%20fill%3D%22%234d4838%22%20opacity%3D%220.21%22/%3E%3Ccircle%20cx%3D%22879.6%22%20cy%3D%221195.4%22%20r%3D%220.67%22%20fill%3D%22%237d7358%22%20opacity%3D%220.1%22/%3E%3Ccircle%20cx%3D%22501.2%22%20cy%3D%22582.6%22%20r%3D%220.46%22%20fill%3D%22%236b6450%22%20opacity%3D%220.13%22/%3E%3Ccircle%20cx%3D%2226.7%22%20cy%3D%224.2%22%20r%3D%220.83%22%20fill%3D%22%234d4838%22%20opacity%3D%220.07%22/%3E%3Ccircle%20cx%3D%22640.9%22%20cy%3D%22661.2%22%20r%3D%220.76%22%20fill%3D%22%234d4838%22%20opacity%3D%220.07%22/%3E%3C/svg%3E");background-size:cover;opacity:.4;mix-blend-mode:multiply}
+.tex.g{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");background-size:230px;opacity:.04;mix-blend-mode:multiply}
+section,footer{position:relative;z-index:1}
 
-  /* hero CTA + countdown */
-  .countdown{margin-top:18px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;opacity:.85}
-  .hero-cta{display:inline-block;margin-top:26px;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.65);
-    padding:13px 34px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;border-radius:10px;transition:background .3s,color .3s,border-color .3s}
-  .hero-cta:hover{background:#efe9df;color:#1c1b19;border-color:#efe9df}
+/* ---------- nav ---------- */
+header.bar{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:20px clamp(20px,4vw,44px);direction:ltr;transition:background .4s,box-shadow .4s,padding .4s;
+  background:linear-gradient(180deg, rgba(243,238,228,.85), rgba(243,238,228,0));}
+header.bar.solid{background:rgba(243,238,228,.94);box-shadow:0 1px 0 rgba(120,110,80,.12);padding:12px clamp(20px,4vw,44px);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.monogram{font-family:var(--hero);font-weight:500;font-size:22px;letter-spacing:.22em;color:var(--olive-deep)}
+.bar-right{display:flex;align-items:center;gap:clamp(10px,2vw,20px)}
+.langs{display:flex;gap:2px;font-family:var(--serif);font-size:12.5px;letter-spacing:.18em;text-transform:uppercase}
+.langs button{background:none;border:none;color:var(--soft);cursor:pointer;padding:6px 9px;font:inherit;letter-spacing:.18em;opacity:.75;transition:opacity .3s,color .3s;border-bottom:1px solid transparent}
+.langs button:hover{opacity:1}
+.langs button.active{opacity:1;color:var(--olive-deep);border-bottom-color:var(--gold)}
+.nav-rsvp{font-family:var(--serif);font-weight:500;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--olive-deep);
+  text-decoration:none;border:1px solid var(--olive);border-radius:3px;padding:8px 18px;transition:background .3s,color .3s}
+.nav-rsvp:hover{background:var(--olive);color:#f4efe4}
 
-  .hero{height:100vh;min-height:620px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;
-    background:linear-gradient(rgba(20,19,17,.42),rgba(20,19,17,.52)),url("photos/venue-hero.jpg") center/cover;color:#fff;padding:0 24px}
-  .hero .eyebrow{font-size:12px;letter-spacing:.4em;text-transform:uppercase;opacity:.9;margin-bottom:26px}
-  .hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(48px,11vw,116px);line-height:.98;letter-spacing:.01em}
-  html[dir="rtl"] .hero h1{font-family:var(--ar);font-size:clamp(40px,9vw,96px)}
-  .hero .amp{display:block;font-size:.5em;opacity:.85;margin:.15em 0;font-style:italic}
-  .hero .date{margin-top:30px;font-size:14px;letter-spacing:.3em;text-transform:uppercase}
-  .scrollcue{position:absolute;bottom:34px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:.85}
+/* ---------- invitation hero ---------- */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 26px;overflow:hidden}
+.branch{position:absolute;pointer-events:none;z-index:0}
+.branch img{width:100%;height:auto;display:block}
+.branch.tl{top:-40px;left:-50px;width:clamp(210px,29vw,470px)}
+.branch.tr{top:-50px;right:-50px;width:clamp(210px,29vw,470px);transform:scaleX(-1)}
+.branch.bl{bottom:-40px;left:-46px;width:clamp(150px,19vw,300px);opacity:.96}
+.branch.br{bottom:-44px;right:-48px;width:clamp(150px,19vw,300px);opacity:.96;transform:scale(-1,-1)}
+.invite{position:relative;z-index:2;width:100%;max-width:600px}
+.invite .eyebrow{font-family:var(--serif);font-weight:500;font-size:13px;letter-spacing:.46em;text-transform:uppercase;color:var(--muted);margin-bottom:clamp(22px,3.2vw,34px)}
+.invite .names{font-family:var(--hero);font-weight:400;color:var(--ink);line-height:1.04;font-size:clamp(44px,7vw,86px);letter-spacing:.01em}
+html[dir="rtl"] .invite .names{font-family:var(--ar);font-size:clamp(36px,6vw,72px)}
+.invite .names .n{display:block}
+.invite .names .amp{display:block;font-weight:400;color:var(--gold);font-size:.5em;line-height:1;margin:.16em 0 .06em}
+.invite .rule{width:54px;height:1px;background:var(--gold);opacity:.7;margin:clamp(20px,3vw,30px) auto}
+.invite .lede{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(19px,2.4vw,25px);color:var(--soft)}
+.invite .meta{margin-top:clamp(24px,3.4vw,36px);display:flex;flex-direction:column;gap:11px}
+.invite .date{font-family:var(--serif);font-weight:500;font-size:14.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink)}
+.invite .where{font-family:var(--serif);font-weight:400;font-size:13.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.invite .cd{font-family:var(--serif);font-weight:500;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.invite .cta{display:inline-block;margin-top:clamp(30px,4.2vw,44px);background:var(--olive-deep);color:#f4efe4;text-decoration:none;
+  padding:16px 54px;border-radius:4px;font-family:var(--serif);font-weight:500;font-size:13px;letter-spacing:.3em;text-transform:uppercase;
+  box-shadow:0 10px 24px rgba(63,71,38,.22);transition:transform .25s,background .25s}
+.invite .cta:hover{background:#5c6640;transform:translateY(-1px)}
+.scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;font-family:var(--serif);font-weight:500;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
 
-  section{padding:clamp(72px,12vw,140px) 0}
-  .kicker{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
-  h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,5vw,52px);line-height:1.1;margin-bottom:26px}
-  html[dir="rtl"] h2{font-family:var(--ar)}
-  p.lead{font-size:clamp(17px,2.2vw,20px);color:#3b382f;max-width:62ch}
-  .center{text-align:center}
-  .center p.lead{margin-inline:auto}
-  .rule{height:1px;background:var(--line);border:0;margin:0}
-  .textlink{display:inline-block;margin-top:22px;color:var(--accent);font-size:14px;letter-spacing:.06em;text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:3px;transition:opacity .3s}
-  .textlink:hover{opacity:.7}
+/* ---------- generic sections ---------- */
+section{padding:clamp(76px,11vw,140px) 0}
+.kicker{font-family:var(--serif);font-weight:500;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--olive);margin-bottom:20px}
+h2{font-family:var(--hero);font-weight:400;font-size:clamp(32px,5vw,54px);line-height:1.12;margin-bottom:24px;color:var(--ink)}
+html[dir="rtl"] h2{font-family:var(--ar)}
+p.lead{font-family:var(--serif);font-weight:400;font-size:clamp(18px,2.2vw,21px);color:var(--soft);max-width:62ch;line-height:1.75}
+.center{text-align:center}
+.center p.lead{margin-inline:auto}
+hr.rule{height:1px;background:var(--line);border:0;margin:0;max-width:1080px;margin-inline:auto}
+.textlink{display:inline-block;margin-top:22px;color:var(--olive-deep);font-family:var(--serif);font-weight:500;font-size:15px;letter-spacing:.04em;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:3px;transition:opacity .3s}
+.textlink:hover{opacity:.7}
 
-  /* gallery */
-  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:44px}
-  .gallery img{width:100%;height:100%;object-fit:cover;object-position:center 30%;aspect-ratio:3/4;filter:grayscale(.08)}
-  .gallery .wide{grid-column:span 2;aspect-ratio:3/2}
-  @media(max-width:760px){.gallery{grid-template-columns:repeat(2,1fr)}.gallery .wide{grid-column:span 2}}
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:44px}
+.gallery img{width:100%;height:100%;object-fit:cover;object-position:center 30%;aspect-ratio:3/4;border-radius:6px}
+.gallery .wide{grid-column:span 2;aspect-ratio:3/2}
+@media(max-width:760px){.gallery{grid-template-columns:repeat(2,1fr)}.gallery .wide{grid-column:span 2}}
 
-  /* split */
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,72px);align-items:center}
-  .split img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;filter:grayscale(.1)}
-  @media(max-width:760px){.split{grid-template-columns:1fr}}
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,72px);align-items:center}
+.split img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;border-radius:8px}
+@media(max-width:760px){.split{grid-template-columns:1fr}}
 
-  /* homelands */
-  .homes{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:44px}
-  @media(max-width:760px){.homes{grid-template-columns:1fr}}
-  .home{position:relative;overflow:hidden}
-  .home .pics{display:grid;grid-template-columns:1fr 1fr;gap:2px}
-  .home .slot{position:relative;aspect-ratio:3/4;overflow:hidden;cursor:pointer}
-  .home .slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(.06);transition:opacity 1.2s ease}
-  .home .slot::after{content:"";position:absolute;inset:0;background:rgba(28,27,25,0);transition:background .4s ease;pointer-events:none}
-  .home .slot:hover::after{background:rgba(28,27,25,.06)}
-  .home .cap{padding:26px 4px 0}
-  .home .flag{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
-  .home h3{font-family:var(--serif);font-size:28px;font-weight:400;margin-bottom:8px}
-  html[dir="rtl"] .home h3{font-family:var(--ar)}
-  .home p{color:#48453c;font-size:15.5px}
+/* homelands with ARCH-topped photos */
+.homes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,60px);margin-top:48px}
+@media(max-width:760px){.homes{grid-template-columns:1fr;gap:44px}}
+.home .pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.home .slot{position:relative;aspect-ratio:3/4;overflow:hidden;cursor:pointer;
+  border-radius:1000px 1000px 8px 8px / 340px 340px 8px 8px;
+  box-shadow:0 14px 30px rgba(60,54,32,.14);border:1px solid rgba(120,110,80,.14)}
+.home .slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:opacity 1.2s ease}
+.home .slot::after{content:"";position:absolute;inset:0;background:rgba(43,49,34,0);transition:background .4s ease;pointer-events:none}
+.home .slot:hover::after{background:rgba(43,49,34,.05)}
+.home .cap{padding:26px 4px 0;text-align:center}
+.home .flag{font-family:var(--serif);font-weight:500;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--olive);margin-bottom:8px}
+.home h3{font-family:var(--hero);font-size:30px;font-weight:400;margin-bottom:8px;color:var(--ink)}
+html[dir="rtl"] .home h3{font-family:var(--ar)}
+.home p{font-family:var(--serif);color:var(--soft);font-size:16px}
 
-  /* travel cards */
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);margin-top:44px}
-  .grid3 .cell{background:var(--bg);padding:clamp(26px,3.5vw,40px)}
-  .cell .t{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-  .cell h3{font-family:var(--serif);font-size:25px;font-weight:400;margin-bottom:10px}
-  .cell p{color:#48453c;font-size:15.5px;line-height:1.65}
-  @media(max-width:760px){.grid3{grid-template-columns:1fr}}
+/* travel cards */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.grid3 .cell{background:rgba(250,245,233,.6);border:1px solid var(--line);border-radius:8px;padding:clamp(26px,3.4vw,38px)}
+.cell .t{font-family:var(--serif);font-weight:500;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.cell h3{font-family:var(--hero);font-size:26px;font-weight:400;margin-bottom:10px;color:var(--ink)}
+.cell p{font-family:var(--serif);color:var(--soft);font-size:16px;line-height:1.7}
+@media(max-width:760px){.grid3{grid-template-columns:1fr}}
 
-  /* gift */
-  .gift{background:var(--olive-deep);color:#efe9df;text-align:center}
-  .gift .kicker{color:#b7a888}
-  .gift h2{color:#fff}
-  .gift p.lead{color:#cfc6b5;margin-inline:auto}
-  .btn{display:inline-block;margin-top:30px;background:#efe9df;color:#1c1b19;padding:15px 42px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;transition:opacity .3s}
-  .btn:hover{opacity:.82}
+/* schedule timeline */
+.timeline{max-width:420px;margin:48px auto 0;position:relative;text-align:left}
+html[dir="rtl"] .timeline{text-align:right}
+.timeline::before{content:"";position:absolute;top:8px;bottom:8px;left:4px;width:1px;background:var(--line)}
+html[dir="rtl"] .timeline::before{left:auto;right:4px}
+.tl{position:relative;padding:0 0 34px 34px}
+html[dir="rtl"] .tl{padding:0 34px 34px 0}
+.tl:last-child{padding-bottom:0}
+.tl::before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px #efe8da}
+html[dir="rtl"] .tl::before{left:auto;right:0}
+.tl .time{font-family:var(--serif);font-weight:500;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);margin-bottom:4px}
+.tl h3{font-family:var(--hero);font-weight:400;font-size:25px;color:var(--ink)}
+html[dir="rtl"] .tl h3{font-family:var(--ar)}
+.sch-note{margin-top:38px;font-family:var(--serif);font-style:italic;font-size:15px;color:var(--muted)}
 
-  /* ---- RSVP ---- */
-  .rsvp{background:var(--olive-deep);color:#efe9df}
-  .rsvp .kicker{color:#b7a888}
-  .rsvp h2{color:#fff}
-  .rsvp p.lead{color:#cfc6b5;margin-inline:auto}
-  .rsvpbox{max-width:640px;margin:38px auto 0}
-  .step{display:grid;gap:18px}
-  label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#c8bfae;display:block;margin-bottom:8px}
-  input,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid #4a463d;color:#fff;padding:12px 2px;font:inherit;font-size:16px;font-family:var(--sans)}
-  html[dir="rtl"] input,html[dir="rtl"] textarea{font-family:var(--ar)}
-  input:focus,textarea:focus{outline:none;border-color:#b7a888}
-  input::placeholder,textarea::placeholder{color:#736c5f}
+/* gift + rsvp deep-olive sections */
+.gift{background:var(--olive-dark);color:#eee6d5;text-align:center;border-radius:0}
+.gift .kicker{color:var(--gold)}
+.gift h2{color:#fff}
+.gift p.lead{color:#d7cfba;margin-inline:auto}
+.btn{display:inline-block;margin-top:30px;background:var(--gold);color:#31301f;padding:15px 42px;border-radius:4px;font-family:var(--serif);font-weight:500;font-size:13px;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;transition:opacity .3s}
+.btn:hover{opacity:.9}
 
-  .submit{background:#efe9df;color:#1c1b19;border:0;padding:15px 40px;font:inherit;font-size:12px;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;transition:opacity .3s;justify-self:start}
-  html[dir="rtl"] .submit{justify-self:end}
-  .submit:hover{opacity:.82}
-  .submit:disabled{opacity:.5;cursor:default}
-  .ghost{background:none;border:1px solid #4a463d;color:#efe9df;padding:12px 22px;font:inherit;font-size:12px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:border-color .3s;justify-self:start}
-  html[dir="rtl"] .ghost{justify-self:end}
-  .ghost:hover{border-color:#b7a888}
-  .backlink{background:none;border:0;color:#9c9483;cursor:pointer;font:inherit;font-size:13px;letter-spacing:.08em;padding:0;text-decoration:underline;text-underline-offset:3px;justify-self:start}
-  html[dir="rtl"] .backlink{justify-self:end}
+.rsvp{background:var(--olive-dark);color:#eee6d5}
+.rsvp .kicker{color:var(--gold)}
+.rsvp h2{color:#fff}
+.rsvp p.lead{color:#d7cfba;margin-inline:auto}
+.rsvpbox{max-width:640px;margin:38px auto 0}
+.step{display:grid;gap:18px}
+label{font-family:var(--serif);font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#c9c0aa;display:block;margin-bottom:8px}
+input,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid #5d6440;color:#fff;padding:12px 2px;font-family:var(--serif);font-size:17px}
+html[dir="rtl"] input,html[dir="rtl"] textarea{font-family:var(--ar)}
+input:focus,textarea:focus{outline:none;border-color:var(--gold)}
+input::placeholder,textarea::placeholder{color:#877e63}
+.submit{background:var(--gold);color:#31301f;border:0;padding:15px 40px;font-family:var(--serif);font-weight:500;font-size:13px;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;transition:opacity .3s;justify-self:start;border-radius:4px}
+html[dir="rtl"] .submit{justify-self:end}
+.submit:hover{opacity:.9}
+.submit:disabled{opacity:.5;cursor:default}
+.ghost{background:none;border:1px solid #5d6440;color:#eee6d5;padding:12px 22px;font-family:var(--serif);font-weight:500;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:border-color .3s;justify-self:start;border-radius:4px}
+html[dir="rtl"] .ghost{justify-self:end}
+.ghost:hover{border-color:var(--gold)}
+.backlink{background:none;border:0;color:#a99;color:#a49a80;cursor:pointer;font-family:var(--serif);font-size:14px;letter-spacing:.06em;padding:0;text-decoration:underline;text-underline-offset:3px;justify-self:start}
+html[dir="rtl"] .backlink{justify-self:end}
+.bigchoice{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:520px){.bigchoice{grid-template-columns:1fr}}
+.choice{background:transparent;border:1px solid #5d6440;color:#eee6d5;padding:34px 20px;cursor:pointer;transition:border-color .3s,background .3s;text-align:center;border-radius:6px}
+.choice:hover{border-color:var(--gold);background:rgba(255,255,255,.03)}
+.choice .big{font-family:var(--hero);font-size:30px;font-weight:400;display:block;margin-bottom:6px;color:#fff}
+html[dir="rtl"] .choice .big{font-family:var(--ar)}
+.choice .sub{font-family:var(--serif);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.guestcard{border:1px solid #4b5233;padding:22px;margin-bottom:16px;display:grid;gap:16px;position:relative;background:rgba(255,255,255,.03);border-radius:6px}
+.guestcard .num{font-family:var(--serif);font-weight:500;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#a49a80}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{background:transparent;border:1px solid #5d6440;color:#d7cfba;padding:8px 16px;border-radius:40px;font-family:var(--serif);font-size:15px;cursor:pointer;transition:all .25s}
+html[dir="rtl"] .pill{font-family:var(--ar)}
+.pill:hover{border-color:var(--gold)}
+.pill.on{background:var(--gold);color:#31301f;border-color:var(--gold)}
+.removeGuest{background:none;border:0;color:#a49a80;cursor:pointer;font-family:var(--serif);font-size:13px;text-decoration:underline;text-underline-offset:3px;justify-self:start;padding:0}
+html[dir="rtl"] .removeGuest{justify-self:end}
+.rowbtns{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:4px}
+.status{min-height:22px;font-family:var(--serif);font-size:15px;margin-top:16px}
+.status.ok{color:#b7cda8}
+.status.err{color:#e0a9a0}
+.thanks{text-align:center;display:grid;gap:14px}
+.thanks .big{font-family:var(--hero);font-size:36px;color:#fff}
+html[dir="rtl"] .thanks .big{font-family:var(--ar)}
 
-  /* big yes/no choice */
-  .bigchoice{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  @media(max-width:520px){.bigchoice{grid-template-columns:1fr}}
-  .choice{background:transparent;border:1px solid #4a463d;color:#efe9df;padding:34px 20px;cursor:pointer;transition:border-color .3s,background .3s;text-align:center}
-  .choice:hover{border-color:#b7a888;background:#2c2a24}
-  .choice .big{font-family:var(--serif);font-size:30px;font-weight:400;display:block;margin-bottom:6px;color:#fff}
-  html[dir="rtl"] .choice .big{font-family:var(--ar)}
-  .choice .sub{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#b7a888}
+footer{text-align:center;padding:70px 24px 80px;background:var(--olive-dark);color:#eee6d5}
+footer .m{font-family:var(--hero);font-size:30px;letter-spacing:.14em;margin-bottom:10px;color:#fff}
+footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-size:12.5px;text-transform:uppercase}
 
-  /* guest cards */
-  .guestcard{border:1px solid #3a382f;padding:22px;margin-bottom:16px;display:grid;gap:16px;position:relative;background:#2a2823}
-  .guestcard .num{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#8f8875}
-  .pills{display:flex;flex-wrap:wrap;gap:8px}
-  .pill{background:transparent;border:1px solid #4a463d;color:#cfc6b5;padding:8px 16px;border-radius:40px;font:inherit;font-size:13px;letter-spacing:.03em;cursor:pointer;transition:all .25s}
-  html[dir="rtl"] .pill{font-family:var(--ar)}
-  .pill:hover{border-color:#b7a888}
-  .pill.on{background:#efe9df;color:#1c1b19;border-color:#efe9df}
-  .removeGuest{background:none;border:0;color:#8f8875;cursor:pointer;font:inherit;font-size:12px;letter-spacing:.08em;text-decoration:underline;text-underline-offset:3px;justify-self:start;padding:0}
-  html[dir="rtl"] .removeGuest{justify-self:end}
-  .rowbtns{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:4px}
-
-  .status{min-height:22px;font-size:14px;letter-spacing:.03em;margin-top:16px}
-  .status.ok{color:#a9c6a0}
-  .status.err{color:#d9a3a3}
-  .thanks{text-align:center;display:grid;gap:14px}
-  .thanks .big{font-family:var(--serif);font-size:34px;color:#fff}
-  html[dir="rtl"] .thanks .big{font-family:var(--ar)}
-
-  footer{text-align:center;padding:60px 24px 70px}
-  footer .m{font-family:var(--serif);font-size:26px;letter-spacing:.14em;margin-bottom:10px}
-  footer small{color:var(--muted);letter-spacing:.14em;font-size:12px;text-transform:uppercase}
-
-  /* ---- paper invitation opening ---- */
-  .invite{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    padding:104px 22px 64px;position:relative;text-align:center;
-    background:linear-gradient(rgba(38,44,28,.52),rgba(38,44,28,.64)),url("photos/venue-hero.jpg") center/cover fixed;}
-  @media(max-width:760px){.invite{background-attachment:scroll}}
-  .card{position:relative;width:100%;max-width:560px;background:var(--paper);color:var(--ink);
-    padding:clamp(42px,6vw,70px) clamp(26px,5vw,58px);border-radius:2px;
-    box-shadow:0 30px 72px rgba(18,22,12,.46), 0 1px 0 rgba(255,255,255,.6) inset;}
-  .card::before{content:"";position:absolute;inset:14px;border:1px solid var(--olive);opacity:.42;pointer-events:none}
-  .card .branch{width:104px;margin:0 auto 20px;color:var(--olive)}
-  .card .branch svg{width:100%;height:auto;display:block}
-  .card .together{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--olive);margin-bottom:20px}
-  .card .names{font-family:var(--serif);font-weight:300;font-size:clamp(46px,10vw,74px);line-height:1;color:var(--ink)}
-  html[dir="rtl"] .card .names{font-family:var(--ar);font-size:clamp(38px,8vw,64px)}
-  .card .names .amp{display:block;font-size:.42em;font-style:italic;color:var(--olive-soft);margin:.12em 0}
-  .card .invite-line{margin-top:20px;font-size:clamp(15px,2vw,17px);color:#4a4a3d;max-width:36ch;margin-inline:auto;line-height:1.6}
-  .card .dvd{display:flex;align-items:center;justify-content:center;gap:14px;margin:26px 0 6px;color:var(--olive)}
-  .card .dvd::before,.card .dvd::after{content:"";height:1px;width:44px;background:var(--olive);opacity:.5}
-  .card .dvd .dot{font-size:8px}
-  .card .when{font-family:var(--serif);font-size:clamp(23px,3.4vw,29px);color:var(--ink);letter-spacing:.02em}
-  .card .where{margin-top:8px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-  .card .cd{margin-top:22px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--olive-soft)}
-  .card .invite-cta{display:inline-block;margin-top:26px;background:var(--olive);color:#fff;text-decoration:none;
-    padding:14px 40px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;border-radius:2px;transition:background .3s}
-  .card .invite-cta:hover{background:#5b653c}
-  .invite .scrollcue{color:#f3efe4}
-
-  /* ---- schedule / the day ---- */
-  .timeline{max-width:420px;margin:48px auto 0;position:relative;text-align:left}
-  html[dir="rtl"] .timeline{text-align:right}
-  .timeline::before{content:"";position:absolute;top:8px;bottom:8px;left:4px;width:1px;background:var(--line)}
-  html[dir="rtl"] .timeline::before{left:auto;right:4px}
-  .tl{position:relative;padding:0 0 34px 34px}
-  html[dir="rtl"] .tl{padding:0 34px 34px 0}
-  .tl:last-child{padding-bottom:0}
-  .tl::before{content:"";position:absolute;left:0;top:7px;width:9px;height:9px;border-radius:50%;background:var(--olive);box-shadow:0 0 0 4px var(--bg)}
-  html[dir="rtl"] .tl::before{left:auto;right:0}
-  .tl .time{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);margin-bottom:5px}
-  .tl h3{font-family:var(--serif);font-weight:400;font-size:24px;color:var(--ink)}
-  html[dir="rtl"] .tl h3{font-family:var(--ar)}
-  .sch-note{margin-top:38px;font-size:13px;color:var(--muted);font-style:italic}
-
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity 1s ease,transform 1s ease}
-  .reveal.in{opacity:1;transform:none}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 1s ease,transform 1s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:640px){.branch.tl,.branch.tr{width:44vw}.branch.bl,.branch.br{width:34vw}}
 </style>
 </head>
 <body>
-
-<header class="bar">
+<div class="tex m"></div><div class="tex s"></div><div class="tex g"></div>
+<header class="bar" id="nav">
   <div class="monogram" data-i18n="monogram">M &middot; N</div>
   <div class="bar-right">
     <nav class="langs" aria-label="Language">
       <button data-lang="en" class="active">EN</button>
       <button data-lang="fr">FR</button>
       <button data-lang="de">DE</button>
-      <button data-lang="ar">ع</button>
+      <button data-lang="ar">&#1593;</button>
     </nav>
     <a class="nav-rsvp" href="#rsvp" data-i18n="nav_rsvp">RSVP</a>
   </div>
 </header>
-
-<!-- PAPER INVITATION (opening) -->
-<div class="invite">
-  <div class="card">
-    <div class="branch" aria-hidden="true">
-      <svg viewBox="0 0 180 60" xmlns="http://www.w3.org/2000/svg">
-        <g stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round">
-          <path d="M90 54 C 74 49, 42 45, 17 23"/>
-          <path d="M90 54 C 106 49, 138 45, 163 23"/>
-        </g>
-        <g fill="currentColor">
-          <ellipse cx="70" cy="47" rx="8" ry="3" transform="rotate(-18 70 47)"/>
-          <ellipse cx="54" cy="43" rx="8.5" ry="3.1" transform="rotate(-26 54 43)"/>
-          <ellipse cx="40" cy="37" rx="8.5" ry="3.1" transform="rotate(-36 40 37)"/>
-          <ellipse cx="28" cy="30" rx="8" ry="3" transform="rotate(-46 28 30)"/>
-          <ellipse cx="110" cy="47" rx="8" ry="3" transform="rotate(18 110 47)"/>
-          <ellipse cx="126" cy="43" rx="8.5" ry="3.1" transform="rotate(26 126 43)"/>
-          <ellipse cx="140" cy="37" rx="8.5" ry="3.1" transform="rotate(36 140 37)"/>
-          <ellipse cx="152" cy="30" rx="8" ry="3" transform="rotate(46 152 30)"/>
-          <circle cx="83" cy="30" r="3.1"/>
-          <circle cx="90" cy="25" r="3.4"/>
-          <circle cx="97" cy="30" r="3.1"/>
-        </g>
-      </svg>
-    </div>
-    <div class="together" data-i18n="inv_together">Together with their families</div>
-    <div class="names serif">
-      <span data-i18n="name1">Mona</span>
+<!-- INVITATION -->
+<div class="hero" id="top">
+  <div class="branch tl"><img alt="" src="branches/olive1.webp"></div>
+  <div class="branch tr"><img alt="" src="branches/olive2.webp"></div>
+  <div class="branch bl"><img alt="" src="branches/olive3.webp"></div>
+  <div class="branch br"><img alt="" src="branches/olive1.webp"></div>
+  <div class="invite">
+    <div class="eyebrow" data-i18n="inv_together">Together with their families</div>
+    <div class="names">
+      <span class="n" data-i18n="name1">Mona Seyfeddine</span>
       <span class="amp">&amp;</span>
-      <span data-i18n="name2">Noah</span>
+      <span class="n" data-i18n="name2">Noah Bohren</span>
     </div>
-    <p class="invite-line" data-i18n="inv_line">joyfully invite you to celebrate their marriage</p>
-    <div class="dvd" aria-hidden="true"><span class="dot">◆</span></div>
-    <div class="when" data-i18n="inv_when">Friday, 7 May 2027</div>
-    <div class="where" data-i18n="inv_where">Rocca di Lonato · Lake Garda, Italy</div>
-    <div class="cd" id="countdown" aria-live="polite"></div>
-    <a class="invite-cta" href="#rsvp" data-i18n="hero_rsvp">RSVP</a>
+    <div class="rule"></div>
+    <div class="lede" data-i18n="inv_line">invite you to celebrate their marriage</div>
+    <div class="meta">
+      <div class="date" data-i18n="inv_when">Friday, 7 May 2027</div>
+      <div class="where" data-i18n="inv_where">Rocca di Lonato &middot; Lake Garda, Italy</div>
+      <div class="cd" id="countdown" aria-live="polite"></div>
+    </div>
+    <a class="cta" href="#rsvp" data-i18n="hero_rsvp">RSVP</a>
   </div>
   <div class="scrollcue" data-i18n="scrollcue">Scroll</div>
 </div>
+
+<hr class="rule" />
 
 <!-- OUR STORY -->
 <section class="center" id="story">
@@ -508,7 +469,7 @@ const I18N = {
   en: {
     monogram:"M · N",
     hero_eyebrow:"We're getting married",
-    name1:"Mona", name2:"Noah",
+    name1:"Mona Seyfeddine", name2:"Noah Bohren",
     hero_date:"7 May 2027 · Rocca di Lonato, Italy",
     scrollcue:"Scroll", nav_rsvp:"RSVP", hero_rsvp:"RSVP",
     inv_together:"Together with their families",
@@ -562,7 +523,7 @@ const I18N = {
   fr: {
     monogram:"M · N",
     hero_eyebrow:"Nous nous marions",
-    name1:"Mona", name2:"Noah",
+    name1:"Mona Seyfeddine", name2:"Noah Bohren",
     hero_date:"7 mai 2027 · Rocca di Lonato, Italie",
     scrollcue:"Défiler", nav_rsvp:"RSVP", hero_rsvp:"Répondre",
     inv_together:"Avec leurs familles",
@@ -616,7 +577,7 @@ const I18N = {
   de: {
     monogram:"M · N",
     hero_eyebrow:"Wir heiraten",
-    name1:"Mona", name2:"Noah",
+    name1:"Mona Seyfeddine", name2:"Noah Bohren",
     hero_date:"7. Mai 2027 · Rocca di Lonato, Italien",
     scrollcue:"Scrollen", nav_rsvp:"RSVP", hero_rsvp:"Zusagen",
     inv_together:"Gemeinsam mit ihren Familien",
@@ -670,7 +631,7 @@ const I18N = {
   ar: {
     monogram:"م · ن",
     hero_eyebrow:"نحن على موعد مع الزواج",
-    name1:"منى", name2:"نوح",
+    name1:"منى سيف الدين", name2:"نوح بوهرن",
     hero_date:"٧ مايو ٢٠٢٧ · روكا دي لوناتو، إيطاليا",
     scrollcue:"مرّر", nav_rsvp:"RSVP", hero_rsvp:"أكّدوا الحضور",
     inv_together:"مع عائلتيهما",
@@ -944,5 +905,6 @@ document.getElementById("submitNo").addEventListener("click", ()=>{
   });
 });
 </script>
+<script>(function(){var n=document.getElementById('nav');function s(){if(window.scrollY>40)n.classList.add('solid');else n.classList.remove('solid');}window.addEventListener('scroll',s,{passive:true});s();})();</script>
 </body>
 </html>
