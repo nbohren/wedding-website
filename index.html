@@ -67,10 +67,10 @@ header.bar.solid{background:rgba(243,238,228,.94);box-shadow:0 1px 0 rgba(120,11
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 26px;overflow:hidden}
 .branch{position:absolute;pointer-events:none;z-index:0}
 .branch img{width:100%;height:auto;display:block}
-.branch.tl{top:-40px;left:-50px;width:clamp(210px,29vw,470px)}
-.branch.tr{top:-50px;right:-50px;width:clamp(210px,29vw,470px);transform:scaleX(-1)}
-.branch.bl{bottom:-40px;left:-46px;width:clamp(150px,19vw,300px);opacity:.96}
-.branch.br{bottom:-44px;right:-48px;width:clamp(150px,19vw,300px);opacity:.96;transform:scale(-1,-1)}
+.branch.nw{top:-40px;left:-50px;width:clamp(210px,29vw,470px)}
+.branch.ne{top:-50px;right:-50px;width:clamp(210px,29vw,470px);transform:scaleX(-1)}
+.branch.sw{bottom:-40px;left:-46px;width:clamp(150px,19vw,300px);opacity:.96}
+.branch.se{bottom:-44px;right:-48px;width:clamp(150px,19vw,300px);opacity:.96;transform:scale(-1,-1)}
 .invite{position:relative;z-index:2;width:100%;max-width:600px}
 .invite .eyebrow{font-family:var(--serif);font-weight:500;font-size:13px;letter-spacing:.46em;text-transform:uppercase;color:var(--muted);margin-bottom:clamp(22px,3.2vw,34px)}
 .invite .names{font-family:var(--hero);font-weight:400;color:var(--ink);line-height:1.04;font-size:clamp(44px,7vw,86px);letter-spacing:.01em}
@@ -209,7 +209,7 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
 
 .reveal{opacity:0;transform:translateY(22px);transition:opacity 1s ease,transform 1s ease}
 .reveal.in{opacity:1;transform:none}
-@media(max-width:640px){.branch.tl,.branch.tr{width:44vw}.branch.bl,.branch.br{width:34vw}}
+@media(max-width:640px){.branch.nw,.branch.ne{width:44vw}.branch.sw,.branch.se{width:34vw}}
 </style>
 </head>
 <body>
@@ -228,10 +228,10 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
 </header>
 <!-- INVITATION -->
 <div class="hero" id="top">
-  <div class="branch tl"><img alt="" src="branches/olive1.webp"></div>
-  <div class="branch tr"><img alt="" src="branches/olive2.webp"></div>
-  <div class="branch bl"><img alt="" src="branches/olive3.webp"></div>
-  <div class="branch br"><img alt="" src="branches/olive1.webp"></div>
+  <div class="branch nw"><img alt="" src="branches/olive1.webp"></div>
+  <div class="branch ne"><img alt="" src="branches/olive2.webp"></div>
+  <div class="branch sw"><img alt="" src="branches/olive3.webp"></div>
+  <div class="branch se"><img alt="" src="branches/olive1.webp"></div>
   <div class="invite">
     <div class="eyebrow" data-i18n="inv_together">Together with their families</div>
     <div class="names">
@@ -308,27 +308,6 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<hr class="rule" />
-
-<!-- SCHEDULE & VENUE -->
-<section id="schedule" class="center">
-  <div class="wrap reveal">
-    <div class="kicker" data-i18n="sch_kicker">The celebration</div>
-    <h2 data-i18n="sch_title">How the day unfolds</h2>
-    <p class="lead" data-i18n="sch_body" style="margin-inline:auto">We'll gather within the walls of Rocca di Lonato — a thousand-year-old fortress on a hill above Lake Garda — to marry and then celebrate long into the evening. Here's the shape of the day.</p>
-  </div>
-  <div class="wrap reveal">
-    <div class="timeline">
-      <div class="tl"><div class="time">15:30</div><h3 class="serif" data-i18n="sch_welcome">Welcome &amp; seating</h3></div>
-      <div class="tl"><div class="time">16:00</div><h3 class="serif" data-i18n="sch_ceremony">Ceremony</h3></div>
-      <div class="tl"><div class="time">17:00</div><h3 class="serif" data-i18n="sch_aperitivo">Aperitivo &amp; photos</h3></div>
-      <div class="tl"><div class="time">19:30</div><h3 class="serif" data-i18n="sch_dinner">Dinner</h3></div>
-      <div class="tl"><div class="time">22:00</div><h3 class="serif" data-i18n="sch_dancing">Dancing</h3></div>
-    </div>
-    <p class="sch-note" data-i18n="sch_note">Timings are provisional — we'll confirm the final schedule closer to the day.</p>
   </div>
 </section>
 
