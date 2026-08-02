@@ -97,7 +97,7 @@ html[dir="rtl"] h2{font-family:var(--ar)}
 p.lead{font-family:var(--serif);font-weight:400;font-size:clamp(18px,2.2vw,21px);color:var(--soft);max-width:62ch;line-height:1.75}
 .center{text-align:center}
 .center p.lead{margin-inline:auto}
-hr.rule{display:none}
+hr.rule{display:block;border:0;height:46px;width:100%;max-width:none;margin:clamp(48px,7vw,90px) auto;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2080%2046%27%20width%3D%2780%27%20height%3D%2746%27%3E%3Cpath%20d%3D%27M0%200%20Q%2013.0%20-7.0%2026.0%200%20Q%2013.0%207.0%200%200%20Z%27%20fill%3D%27%236d774a%27%20transform%3D%27translate%2840.0%2040%29%20rotate%28-90%29%27/%3E%3Cpath%20d%3D%27M0%200%20Q%2010.5%20-6.0%2021.0%200%20Q%2010.5%206.0%200%200%20Z%27%20fill%3D%27%236d774a%27%20transform%3D%27translate%2840.0%2040%29%20rotate%28-140%29%27/%3E%3Cpath%20d%3D%27M0%200%20Q%2010.5%20-6.0%2021.0%200%20Q%2010.5%206.0%200%200%20Z%27%20fill%3D%27%236d774a%27%20transform%3D%27translate%2840.0%2040%29%20rotate%28-40%29%27/%3E%3Ccircle%20cx%3D%2733%27%20cy%3D%2731%27%20r%3D%272.4%27%20fill%3D%27%23b3924f%27/%3E%3Ccircle%20cx%3D%2747%27%20cy%3D%2731%27%20r%3D%272.4%27%20fill%3D%27%23b3924f%27/%3E%3C/svg%3E") center/auto 40px no-repeat}
 .textlink{display:inline-block;margin-top:22px;color:var(--olive-deep);font-family:var(--serif);font-weight:500;font-size:15px;letter-spacing:.04em;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:3px;transition:opacity .3s}
 .textlink:hover{opacity:.7}
 
@@ -116,8 +116,8 @@ hr.rule{display:none}
 .homes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,60px);margin-top:48px}
 @media(max-width:760px){.homes{grid-template-columns:1fr;gap:44px}}
 .home .pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.home .slot{position:relative;aspect-ratio:5/7;overflow:hidden;cursor:pointer;
-  border-radius:50% 50% 5px 5px / 46% 46% 5px 5px;
+.home .slot{position:relative;aspect-ratio:3/4;overflow:hidden;cursor:pointer;
+  border-radius:46% 46% 5px 5px / 33% 33% 5px 5px;
   box-shadow:0 14px 30px rgba(60,54,32,.14);border:1px solid rgba(120,110,80,.14)}
 .home .slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:opacity 1.2s ease}
 .home .slot::after{content:"";position:absolute;inset:0;background:rgba(43,49,34,0);transition:background .4s ease;pointer-events:none}
