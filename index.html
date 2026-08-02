@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mona &amp; Noah — 7 May 2027</title>
+<meta name="description" content="Mona &amp; Noah are getting married — 7 May 2027 at Rocca di Lonato, Italy. Travel details and RSVP inside." />
+<!-- Share preview. NOTE: update the absolute URLs below if you later add a
+     custom domain (e.g. https://mona-and-noah.com/...). Currently set for
+     GitHub Pages at https://nbohren.github.io/wedding-website/ -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Mona &amp; Noah — 7 May 2027" />
+<meta property="og:description" content="We're getting married at Rocca di Lonato, Italy. Travel details &amp; RSVP inside." />
+<meta property="og:url" content="https://nbohren.github.io/wedding-website/" />
+<meta property="og:image" content="https://nbohren.github.io/wedding-website/photos/og-share.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Mona &amp; Noah — 7 May 2027" />
+<meta name="twitter:description" content="We're getting married at Rocca di Lonato, Italy. Travel details &amp; RSVP inside." />
+<meta name="twitter:image" content="https://nbohren.github.io/wedding-website/photos/og-share.jpg" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&family=Noto+Naskh+Arabic:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f1ec; --ink:#1c1b19; --muted:#7a756c; --line:#d8d2c7; --accent:#8a7a5c;
+    --serif:"Cormorant Garamond", Georgia, serif;
+    --sans:"Inter", system-ui, sans-serif;
+    --ar:"Noto Naskh Arabic", "Inter", serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased}
+  html[dir="rtl"] body{font-family:var(--ar)}
+  html[dir="rtl"] .serif{font-family:var(--ar)}
+  img{display:block;max-width:100%}
+  .serif{font-family:var(--serif);font-weight:300}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  .hidden{display:none !important}
+
+  /* floating liquid-glass nav */
+  header.bar{
+    position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:50;
+    width:calc(100% - 28px);max-width:1080px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:11px 18px;color:#fff;border-radius:16px;
+    direction:ltr;   /* keep monogram left / languages right, even in Arabic */
+    background:rgba(28,27,25,.28);
+    -webkit-backdrop-filter:blur(18px) saturate(160%);
+    backdrop-filter:blur(18px) saturate(160%);
+    border:1px solid rgba(255,255,255,.16);
+    box-shadow:0 8px 30px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.22);
+  }
+  /* graceful fallback where backdrop-filter is unsupported */
+  @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+    header.bar{background:rgba(28,27,25,.72)}
+  }
+  .monogram{font-family:var(--serif);font-size:19px;letter-spacing:.18em}
+  .langs{display:flex;gap:2px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+  .langs button{background:none;border:none;color:inherit;cursor:pointer;padding:6px 10px;font:inherit;opacity:.6;transition:opacity .3s,background .3s;letter-spacing:.14em;border-radius:9px}
+  .langs button.active{opacity:1;background:rgba(255,255,255,.16)}
+  .langs button:hover{opacity:1}
+  .bar-right{display:flex;align-items:center;gap:12px}
+  .nav-rsvp{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#fff;text-decoration:none;
+    border:1px solid rgba(255,255,255,.5);border-radius:9px;padding:8px 15px;transition:background .3s,border-color .3s}
+  .nav-rsvp:hover{background:#efe9df;color:#1c1b19;border-color:#efe9df}
+
+  /* hero CTA + countdown */
+  .countdown{margin-top:18px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;opacity:.85}
+  .hero-cta{display:inline-block;margin-top:26px;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.65);
+    padding:13px 34px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;border-radius:10px;transition:background .3s,color .3s,border-color .3s}
+  .hero-cta:hover{background:#efe9df;color:#1c1b19;border-color:#efe9df}
+
+  .hero{height:100vh;min-height:620px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;
+    background:linear-gradient(rgba(20,19,17,.42),rgba(20,19,17,.52)),url("photos/venue-hero.jpg") center/cover;color:#fff;padding:0 24px}
+  .hero .eyebrow{font-size:12px;letter-spacing:.4em;text-transform:uppercase;opacity:.9;margin-bottom:26px}
+  .hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(48px,11vw,116px);line-height:.98;letter-spacing:.01em}
+  html[dir="rtl"] .hero h1{font-family:var(--ar);font-size:clamp(40px,9vw,96px)}
+  .hero .amp{display:block;font-size:.5em;opacity:.85;margin:.15em 0;font-style:italic}
+  .hero .date{margin-top:30px;font-size:14px;letter-spacing:.3em;text-transform:uppercase}
+  .scrollcue{position:absolute;bottom:34px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:.85}
+
+  section{padding:clamp(72px,12vw,140px) 0}
+  .kicker{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
+  h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,5vw,52px);line-height:1.1;margin-bottom:26px}
+  html[dir="rtl"] h2{font-family:var(--ar)}
+  p.lead{font-size:clamp(17px,2.2vw,20px);color:#3b382f;max-width:62ch}
+  .center{text-align:center}
+  .center p.lead{margin-inline:auto}
+  .rule{height:1px;background:var(--line);border:0;margin:0}
+  .textlink{display:inline-block;margin-top:22px;color:var(--accent);font-size:14px;letter-spacing:.06em;text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:3px;transition:opacity .3s}
+  .textlink:hover{opacity:.7}
+
+  /* gallery */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:44px}
+  .gallery img{width:100%;height:100%;object-fit:cover;object-position:center 30%;aspect-ratio:3/4;filter:grayscale(.08)}
+  .gallery .wide{grid-column:span 2;aspect-ratio:3/2}
+  @media(max-width:760px){.gallery{grid-template-columns:repeat(2,1fr)}.gallery .wide{grid-column:span 2}}
+
+  /* split */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,72px);align-items:center}
+  .split img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;filter:grayscale(.1)}
+  @media(max-width:760px){.split{grid-template-columns:1fr}}
+
+  /* homelands */
+  .homes{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:44px}
+  @media(max-width:760px){.homes{grid-template-columns:1fr}}
+  .home{position:relative;overflow:hidden}
+  .home .pics{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+  .home .slot{position:relative;aspect-ratio:3/4;overflow:hidden;cursor:pointer}
+  .home .slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(.06);transition:opacity 1.2s ease}
+  .home .slot::after{content:"";position:absolute;inset:0;background:rgba(28,27,25,0);transition:background .4s ease;pointer-events:none}
+  .home .slot:hover::after{background:rgba(28,27,25,.06)}
+  .home .cap{padding:26px 4px 0}
+  .home .flag{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+  .home h3{font-family:var(--serif);font-size:28px;font-weight:400;margin-bottom:8px}
+  html[dir="rtl"] .home h3{font-family:var(--ar)}
+  .home p{color:#48453c;font-size:15.5px}
+
+  /* travel cards */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);margin-top:44px}
+  .grid3 .cell{background:var(--bg);padding:clamp(26px,3.5vw,40px)}
+  .cell .t{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .cell h3{font-family:var(--serif);font-size:25px;font-weight:400;margin-bottom:10px}
+  .cell p{color:#48453c;font-size:15.5px;line-height:1.65}
+  @media(max-width:760px){.grid3{grid-template-columns:1fr}}
+
+  /* gift */
+  .gift{background:var(--ink);color:#efe9df;text-align:center}
+  .gift .kicker{color:#b7a888}
+  .gift h2{color:#fff}
+  .gift p.lead{color:#cfc6b5;margin-inline:auto}
+  .btn{display:inline-block;margin-top:30px;background:#efe9df;color:#1c1b19;padding:15px 42px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;transition:opacity .3s}
+  .btn:hover{opacity:.82}
+
+  /* ---- RSVP ---- */
+  .rsvp{background:#25231f;color:#efe9df}
+  .rsvp .kicker{color:#b7a888}
+  .rsvp h2{color:#fff}
+  .rsvp p.lead{color:#cfc6b5;margin-inline:auto}
+  .rsvpbox{max-width:640px;margin:38px auto 0}
+  .step{display:grid;gap:18px}
+  label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#c8bfae;display:block;margin-bottom:8px}
+  input,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid #4a463d;color:#fff;padding:12px 2px;font:inherit;font-size:16px;font-family:var(--sans)}
+  html[dir="rtl"] input,html[dir="rtl"] textarea{font-family:var(--ar)}
+  input:focus,textarea:focus{outline:none;border-color:#b7a888}
+  input::placeholder,textarea::placeholder{color:#736c5f}
+
+  .submit{background:#efe9df;color:#1c1b19;border:0;padding:15px 40px;font:inherit;font-size:12px;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;transition:opacity .3s;justify-self:start}
+  html[dir="rtl"] .submit{justify-self:end}
+  .submit:hover{opacity:.82}
+  .submit:disabled{opacity:.5;cursor:default}
+  .ghost{background:none;border:1px solid #4a463d;color:#efe9df;padding:12px 22px;font:inherit;font-size:12px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:border-color .3s;justify-self:start}
+  html[dir="rtl"] .ghost{justify-self:end}
+  .ghost:hover{border-color:#b7a888}
+  .backlink{background:none;border:0;color:#9c9483;cursor:pointer;font:inherit;font-size:13px;letter-spacing:.08em;padding:0;text-decoration:underline;text-underline-offset:3px;justify-self:start}
+  html[dir="rtl"] .backlink{justify-self:end}
+
+  /* big yes/no choice */
+  .bigchoice{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:520px){.bigchoice{grid-template-columns:1fr}}
+  .choice{background:transparent;border:1px solid #4a463d;color:#efe9df;padding:34px 20px;cursor:pointer;transition:border-color .3s,background .3s;text-align:center}
+  .choice:hover{border-color:#b7a888;background:#2c2a24}
+  .choice .big{font-family:var(--serif);font-size:30px;font-weight:400;display:block;margin-bottom:6px;color:#fff}
+  html[dir="rtl"] .choice .big{font-family:var(--ar)}
+  .choice .sub{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#b7a888}
+
+  /* guest cards */
+  .guestcard{border:1px solid #3a382f;padding:22px;margin-bottom:16px;display:grid;gap:16px;position:relative;background:#2a2823}
+  .guestcard .num{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#8f8875}
+  .pills{display:flex;flex-wrap:wrap;gap:8px}
+  .pill{background:transparent;border:1px solid #4a463d;color:#cfc6b5;padding:8px 16px;border-radius:40px;font:inherit;font-size:13px;letter-spacing:.03em;cursor:pointer;transition:all .25s}
+  html[dir="rtl"] .pill{font-family:var(--ar)}
+  .pill:hover{border-color:#b7a888}
+  .pill.on{background:#efe9df;color:#1c1b19;border-color:#efe9df}
+  .removeGuest{background:none;border:0;color:#8f8875;cursor:pointer;font:inherit;font-size:12px;letter-spacing:.08em;text-decoration:underline;text-underline-offset:3px;justify-self:start;padding:0}
+  html[dir="rtl"] .removeGuest{justify-self:end}
+  .rowbtns{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:4px}
+
+  .status{min-height:22px;font-size:14px;letter-spacing:.03em;margin-top:16px}
+  .status.ok{color:#a9c6a0}
+  .status.err{color:#d9a3a3}
+  .thanks{text-align:center;display:grid;gap:14px}
+  .thanks .big{font-family:var(--serif);font-size:34px;color:#fff}
+  html[dir="rtl"] .thanks .big{font-family:var(--ar)}
+
+  footer{text-align:center;padding:60px 24px 70px}
+  footer .m{font-family:var(--serif);font-size:26px;letter-spacing:.14em;margin-bottom:10px}
+  footer small{color:var(--muted);letter-spacing:.14em;font-size:12px;text-transform:uppercase}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity 1s ease,transform 1s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="monogram" data-i18n="monogram">M &middot; N</div>
+  <div class="bar-right">
+    <nav class="langs" aria-label="Language">
+      <button data-lang="en" class="active">EN</button>
+      <button data-lang="fr">FR</button>
+      <button data-lang="de">DE</button>
+      <button data-lang="ar">ع</button>
+    </nav>
+    <a class="nav-rsvp" href="#rsvp" data-i18n="nav_rsvp">RSVP</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="eyebrow" data-i18n="hero_eyebrow">We're getting married</div>
+  <h1 class="serif">
+    <span data-i18n="name1">Mona</span>
+    <span class="amp">&amp;</span>
+    <span data-i18n="name2">Noah</span>
+  </h1>
+  <div class="date" data-i18n="hero_date">7 May 2027 &middot; Rocca di Lonato, Italy</div>
+  <div class="countdown" id="countdown" aria-live="polite"></div>
+  <a class="hero-cta" href="#rsvp" data-i18n="hero_rsvp">RSVP</a>
+  <div class="scrollcue" data-i18n="scrollcue">Scroll</div>
+</div>
+
+<!-- OUR STORY -->
+<section class="center" id="story">
+  <div class="wrap reveal">
+    <div class="kicker" data-i18n="story_kicker">Our story</div>
+    <h2 data-i18n="story_title">Two people, many places, one day</h2>
+    <p class="lead" data-i18n="story_body">From snowy mornings to city walks and kitchens far from home, we've been collecting places and memories together for years. On 7 May 2027 we'll gather everyone we love inside a castle above Lake Garda. Thank you for being part of the story.</p>
+  </div>
+  <div class="wrap reveal">
+    <div class="gallery">
+      <img src="photos/couple-snow.jpg" alt="" />
+      <img src="photos/couple-eiffel.jpg" alt="" />
+      <img src="photos/couple-copenhagen.jpg" alt="" />
+      <img src="photos/couple-garden.jpg" alt="" />
+      <img src="photos/couple-nice.jpg" alt="" />
+      <img src="photos/couple-beirut.jpg" alt="" />
+      <img src="photos/couple-thailand.jpg" alt="" />
+      <img src="photos/couple-interior.jpg" alt="" />
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- WHERE WE COME FROM -->
+<section id="homelands">
+  <div class="wrap center reveal">
+    <div class="kicker" data-i18n="home_kicker">Where we come from</div>
+    <h2 data-i18n="home_title">Between the cedars and the Alps</h2>
+    <p class="lead" data-i18n="home_body">Mona is Lebanese, Noah is Swiss — and between the two of us we speak four languages, as will many of you. Our wedding is a meeting of the Mediterranean and the mountains, of mezze and raclette, and of everyone we love in one place.</p>
+  </div>
+  <div class="wrap reveal">
+    <div class="homes">
+      <div class="home">
+        <div class="pics">
+          <div class="slot" data-side="lb"><img class="rot" src="photos/lebanon-sea.jpg" alt="" /></div>
+          <div class="slot" data-side="lb"><img class="rot" src="photos/lebanon-house.jpg" alt="" /></div>
+        </div>
+        <div class="cap">
+          <div class="flag" data-i18n="home_lb_flag">🇱🇧 Lebanon</div>
+          <h3 class="serif" data-i18n="home_lb_h">Mona's side</h3>
+          <p data-i18n="home_lb_b">Beirut's sea cliffs, arched windows and endless generosity.</p>
+        </div>
+      </div>
+      <div class="home">
+        <div class="pics">
+          <div class="slot" data-side="ch"><img class="rot" src="photos/swiss-saxer.jpg" alt="" /></div>
+          <div class="slot" data-side="ch"><img class="rot" src="photos/swiss-dock.jpg" alt="" /></div>
+        </div>
+        <div class="cap">
+          <div class="flag" data-i18n="home_ch_flag">🇨🇭 Switzerland</div>
+          <h3 class="serif" data-i18n="home_ch_h">Noah's side</h3>
+          <p data-i18n="home_ch_b">Alpine lakes, snow peaks and quiet mountain mornings.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- TRAVEL & STAY -->
+<section id="travel">
+  <div class="wrap split reveal">
+    <div>
+      <div class="kicker" data-i18n="travel_kicker">Travel &amp; stay</div>
+      <h2 data-i18n="travel_title">Getting to Rocca di Lonato</h2>
+      <p class="lead" data-i18n="travel_intro">Rocca di Lonato sits on a hill in Lonato del Garda, Lombardy — a short hop from the southern shore of Lake Garda. Here's how to reach us and where to rest your head.</p>
+      <a class="textlink" href="https://www.google.com/maps/search/?api=1&amp;query=Rocca+di+Lonato+Lonato+del+Garda" target="_blank" rel="noopener" data-i18n="travel_directions">Get directions →</a>
+    </div>
+    <img src="photos/venue-aerial.jpg" alt="Rocca di Lonato seen from above" />
+  </div>
+  <div class="wrap">
+    <div class="grid3 reveal">
+      <div class="cell">
+        <div class="t" data-i18n="travel_air_t">By air</div>
+        <h3 class="serif" data-i18n="travel_air_h">Nearest airports</h3>
+        <p data-i18n="travel_air_b">Verona (VRN) ≈ 30 min · Bergamo (BGY) ≈ 1 hr · Milan (MXP/LIN) ≈ 1.5 hr. Verona is the easiest for most guests.</p>
+      </div>
+      <div class="cell">
+        <div class="t" data-i18n="travel_train_t">By train &amp; road</div>
+        <h3 class="serif" data-i18n="travel_train_h">Trains &amp; parking</h3>
+        <p data-i18n="travel_train_b">Fast trains stop at Desenzano del Garda–Sirmione, 10 min from Lonato by taxi. Free parking is available at the venue.</p>
+      </div>
+      <div class="cell">
+        <div class="t" data-i18n="travel_sleep_t">Where to sleep</div>
+        <h3 class="serif" data-i18n="travel_sleep_h">Staying nearby</h3>
+        <p data-i18n="travel_sleep_b">Lonato del Garda, Desenzano and Sirmione all have lovely hotels by the lake. We'll share a shortlist here soon — booking early is wise for May.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GIFT -->
+<section class="gift" id="gift">
+  <div class="wrap reveal">
+    <div class="kicker" data-i18n="gift_kicker">Gifts</div>
+    <h2 data-i18n="gift_title">Your presence is the present</h2>
+    <p class="lead" data-i18n="gift_body">Many of you are travelling across the globe to celebrate with us in Italy, so your presence truly means the world to us — and it's all we ask for. If you'd still like to contribute to our registry or honeymoon fund, you can do so below, with all our thanks.</p>
+    <a class="btn" id="giftBtn" href="#" target="_blank" rel="noopener" data-i18n="gift_btn">Registry &amp; honeymoon fund</a>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section class="rsvp" id="rsvp">
+  <div class="wrap center reveal">
+    <div class="kicker" data-i18n="rsvp_kicker">Répondez s'il vous plaît</div>
+    <h2 data-i18n="rsvp_title">Will you join us?</h2>
+    <p class="lead" data-i18n="rsvp_body">Kindly reply by 1 March 2027. You'll receive a confirmation email in your language.</p>
+  </div>
+
+  <div class="wrap">
+    <div class="rsvpbox">
+
+      <!-- STEP 1: email -->
+      <div class="step" data-step="email">
+        <div>
+          <label data-i18n="r_email_label">Your email</label>
+          <input type="email" id="r_email" data-i18n-ph="r_email_ph" autocomplete="email" />
+        </div>
+        <button type="button" class="submit" id="toAttend" data-i18n="r_continue">Continue</button>
+      </div>
+
+      <!-- STEP 2: attend? -->
+      <div class="step hidden" data-step="attend">
+        <label data-i18n="r_attend_q">Will you be joining us?</label>
+        <div class="bigchoice">
+          <button type="button" class="choice" data-attend="yes">
+            <span class="big" data-i18n="r_yes">Joyfully accepts</span>
+            <span class="sub" data-i18n="r_yes_sub">We'll be there</span>
+          </button>
+          <button type="button" class="choice" data-attend="no">
+            <span class="big" data-i18n="r_no">Regretfully declines</span>
+            <span class="sub" data-i18n="r_no_sub">Can't make it</span>
+          </button>
+        </div>
+        <button type="button" class="backlink" data-back="email" data-i18n="r_back">Back</button>
+      </div>
+
+      <!-- STEP 3a: YES -> guests -->
+      <div class="step hidden" data-step="yes">
+        <p class="lead" style="color:#cfc6b5;max-width:none" data-i18n="r_yes_intro">Wonderful! Tell us who's coming. Add each guest below — you can suggest a song for the playlist too.</p>
+        <div id="guests"></div>
+        <div class="rowbtns">
+          <button type="button" class="ghost" id="addGuest" data-i18n="r_add_guest">+ Add another guest</button>
+        </div>
+        <button type="button" class="submit" id="submitYes" data-i18n="r_send">Send RSVP</button>
+        <button type="button" class="backlink" data-back="attend" data-i18n="r_back">Back</button>
+      </div>
+
+      <!-- STEP 3b: NO -->
+      <div class="step hidden" data-step="no">
+        <p class="lead" style="color:#cfc6b5;max-width:none" data-i18n="r_no_line">We'll miss you — thank you for letting us know.</p>
+        <div>
+          <label data-i18n="r_no_note_label">A note for us (optional)</label>
+          <textarea id="noMsg" rows="3" data-i18n-ph="r_no_note_ph"></textarea>
+        </div>
+        <button type="button" class="submit" id="submitNo" data-i18n="r_send">Send RSVP</button>
+        <button type="button" class="backlink" data-back="attend" data-i18n="r_back">Back</button>
+      </div>
+
+      <!-- DONE -->
+      <div class="step hidden" data-step="done">
+        <div class="thanks">
+          <div class="big serif" data-i18n="r_done_title">Thank you!</div>
+          <p class="lead" style="color:#cfc6b5;margin-inline:auto" id="doneMsg" data-i18n="r_done_body">Your RSVP is in. Check your inbox for a confirmation.</p>
+        </div>
+      </div>
+
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="m serif" data-i18n="foot_names">Mona &amp; Noah</div>
+  <small data-i18n="foot_date">07 · 05 · 2027 — Rocca di Lonato, Italy</small>
+</footer>
+
+<script>
+/* ============================================================
+   CONFIG
+   1) RSVP_ENDPOINT — your deployed Google Apps Script Web App URL.
+   2) GIFT_URL      — your registry / honeymoon fund link.
+   ============================================================ */
+const CONFIG = {
+  RSVP_ENDPOINT: "https://script.google.com/macros/s/AKfycbzdWAlx-_rMEQfOOWvw7LXL7Myve3TVMcquBIhjf3ChZUB6nH7Bkb6cN-8jlxGOu_shXg/exec",
+  GIFT_URL: "PASTE_YOUR_REGISTRY_OR_HONEYMOON_LINK_HERE"
+};
+
+const DIETS = ["omnivore","vegetarian","vegan","pescatarian","halal"];
+
+const I18N = {
+  en: {
+    monogram:"M · N",
+    hero_eyebrow:"We're getting married",
+    name1:"Mona", name2:"Noah",
+    hero_date:"7 May 2027 · Rocca di Lonato, Italy",
+    scrollcue:"Scroll", nav_rsvp:"RSVP", hero_rsvp:"RSVP",
+    cd_days:"days to go", cd_tomorrow:"Tomorrow!", cd_today:"Today!",
+    story_kicker:"Our story", story_title:"Two people, many places, one day",
+    story_body:"From snowy mornings to city walks and kitchens far from home, we've been collecting places and memories together for years. On 7 May 2027 we'll gather everyone we love inside a castle above Lake Garda. Thank you for being part of the story.",
+    home_kicker:"Where we come from", home_title:"Between the cedars and the Alps",
+    home_body:"Mona is Lebanese, Noah is Swiss — and between the two of us we speak four languages, as will many of you. Our wedding is a meeting of the Mediterranean and the mountains, of mezze and raclette, and of everyone we love in one place.",
+    home_lb_flag:"🇱🇧 Lebanon", home_lb_h:"Mona's side", home_lb_b:"Endless mezze, open doors and a generosity that never runs out.",
+    home_ch_flag:"🇨🇭 Switzerland", home_ch_h:"Noah's side", home_ch_b:"Mountains, clear lakes and an easy, unhurried calm.",
+    travel_kicker:"Travel & stay", travel_title:"Getting to Rocca di Lonato",
+    travel_intro:"Rocca di Lonato sits on a hill in Lonato del Garda, Lombardy — a short hop from the southern shore of Lake Garda. Here's how to reach us and where to rest your head.",
+    travel_air_t:"By air", travel_air_h:"Nearest airports",
+    travel_air_b:"Verona (VRN) ≈ 30 min · Bergamo (BGY) ≈ 1 hr · Milan (MXP/LIN) ≈ 1.5 hr. Verona is the easiest for most guests.",
+    travel_train_t:"By train & road", travel_train_h:"Trains & parking",
+    travel_train_b:"Fast trains stop at Desenzano del Garda–Sirmione, 10 min from Lonato by taxi. Free parking is available at the venue.",
+    travel_sleep_t:"Where to sleep", travel_sleep_h:"Staying nearby",
+    travel_sleep_b:"Lonato del Garda, Desenzano and Sirmione all have lovely hotels by the lake. We'll share a shortlist here soon — booking early is wise for May.",
+    travel_directions:"Get directions →",
+    gift_kicker:"Gifts", gift_title:"Your presence is the present",
+    gift_body:"Many of you are travelling across the globe to celebrate with us in Italy, so your presence truly means the world to us — and it's all we ask for. If you'd still like to contribute to our registry or honeymoon fund, you can do so below, with all our thanks.",
+    gift_btn:"Registry & honeymoon fund",
+    rsvp_kicker:"Répondez s'il vous plaît", rsvp_title:"Will you join us?",
+    rsvp_body:"Kindly reply by 1 October 2026. You'll receive a confirmation email, and we'll keep adding details here — travel, timings and more — as the day approaches.",
+    r_email_label:"Your email", r_email_ph:"you@example.com", r_continue:"Continue",
+    r_attend_q:"Will you be joining us?",
+    r_yes:"Joyfully accepts", r_yes_sub:"We'll be there",
+    r_no:"Regretfully declines", r_no_sub:"Can't make it",
+    r_yes_intro:"Wonderful! Tell us who's coming. Add each guest below — you can suggest a song for the playlist too.",
+    r_guest_name:"Full name", r_name_ph:"Guest name",
+    r_diet_label:"Meal preference",
+    diet_omnivore:"Omnivore", diet_vegetarian:"Vegetarian", diet_vegan:"Vegan", diet_pescatarian:"Pescatarian", diet_halal:"Halal",
+    r_allergy:"Allergies (optional)", r_allergy_ph:"e.g. nuts, shellfish…",
+    r_song:"Suggest a song 🎵 (optional)", r_song_ph:"Artist — Title",
+    r_add_guest:"+ Add another guest", r_remove:"Remove", r_send:"Send RSVP", r_back:"Back",
+    r_no_line:"We'll miss you — thank you for letting us know.",
+    r_no_note_label:"A note for us (optional)", r_no_note_ph:"Say hello…",
+    r_done_title:"Thank you!", r_done_body:"Your RSVP is in — check your inbox for a confirmation. We'll keep this site updated with more details closer to the day.",
+    foot_names:"Mona & Noah", foot_date:"07 · 05 · 2027 — Rocca di Lonato, Italy",
+    st_sending:"Sending…",
+    st_email_required:"Please enter a valid email.",
+    st_name_required:"Please add at least one guest name.",
+    st_err:"Something went wrong. Please try again or email us directly."
+  },
+  fr: {
+    monogram:"M · N",
+    hero_eyebrow:"Nous nous marions",
+    name1:"Mona", name2:"Noah",
+    hero_date:"7 mai 2027 · Rocca di Lonato, Italie",
+    scrollcue:"Défiler", nav_rsvp:"RSVP", hero_rsvp:"Répondre",
+    cd_days:"jours restants", cd_tomorrow:"Demain !", cd_today:"C'est aujourd'hui !",
+    story_kicker:"Notre histoire", story_title:"Deux personnes, mille endroits, un jour",
+    story_body:"Des matins enneigés aux balades en ville et aux cuisines loin de chez nous, nous collectionnons ensemble des lieux et des souvenirs depuis des années. Le 7 mai 2027, nous réunirons tous ceux que nous aimons dans un château au-dessus du lac de Garde. Merci de faire partie de l'histoire.",
+    home_kicker:"D'où nous venons", home_title:"Entre les cèdres et les Alpes",
+    home_body:"Mona est libanaise, Noah est suisse — et à nous deux nous parlons quatre langues, comme beaucoup d'entre vous. Notre mariage est une rencontre entre la Méditerranée et la montagne, entre le mezzé et la raclette, et entre tous ceux que nous aimons réunis en un même lieu.",
+    home_lb_flag:"🇱🇧 Liban", home_lb_h:"Le côté de Mona", home_lb_b:"Un mezzé sans fin, des portes toujours ouvertes et une générosité inépuisable.",
+    home_ch_flag:"🇨🇭 Suisse", home_ch_h:"Le côté de Noah", home_ch_b:"Les montagnes, des lacs limpides et un calme paisible.",
+    travel_kicker:"Venir & se loger", travel_title:"Se rendre à la Rocca di Lonato",
+    travel_intro:"La Rocca di Lonato domine une colline à Lonato del Garda, en Lombardie — à deux pas de la rive sud du lac de Garde. Voici comment nous rejoindre et où dormir.",
+    travel_air_t:"En avion", travel_air_h:"Aéroports les plus proches",
+    travel_air_b:"Vérone (VRN) ≈ 30 min · Bergame (BGY) ≈ 1 h · Milan (MXP/LIN) ≈ 1 h 30. Vérone est le plus pratique pour la plupart des invités.",
+    travel_train_t:"En train & voiture", travel_train_h:"Trains & parking",
+    travel_train_b:"Les trains rapides s'arrêtent à Desenzano del Garda–Sirmione, à 10 min de Lonato en taxi. Un parking gratuit est disponible sur place.",
+    travel_sleep_t:"Où dormir", travel_sleep_h:"Se loger à proximité",
+    travel_sleep_b:"Lonato del Garda, Desenzano et Sirmione offrent de beaux hôtels au bord du lac. Nous partagerons bientôt une sélection ici — réservez tôt pour le mois de mai.",
+    travel_directions:"Obtenir l'itinéraire →",
+    gift_kicker:"Cadeaux", gift_title:"Votre présence est notre plus beau cadeau",
+    gift_body:"Beaucoup d'entre vous traversent le monde pour célébrer avec nous en Italie ; votre présence compte plus que tout — et c'est tout ce que nous demandons. Si vous souhaitez malgré tout contribuer à notre liste ou à notre cagnotte de lune de miel, vous pouvez le faire ci-dessous, avec toute notre gratitude.",
+    gift_btn:"Liste & cagnotte lune de miel",
+    rsvp_kicker:"Répondez s'il vous plaît", rsvp_title:"Serez-vous des nôtres ?",
+    rsvp_body:"Merci de répondre avant le 1er octobre 2026. Vous recevrez un e-mail de confirmation, et nous ajouterons ici d'autres détails — voyage, horaires et plus — à l'approche du jour.",
+    r_email_label:"Votre e-mail", r_email_ph:"vous@exemple.com", r_continue:"Continuer",
+    r_attend_q:"Serez-vous parmi nous ?",
+    r_yes:"Accepte avec joie", r_yes_sub:"Nous serons là",
+    r_no:"Décline à regret", r_no_sub:"Ne peut pas venir",
+    r_yes_intro:"Merveilleux ! Dites-nous qui vient. Ajoutez chaque invité ci-dessous — vous pouvez aussi suggérer une chanson pour la playlist.",
+    r_guest_name:"Nom complet", r_name_ph:"Nom de l'invité",
+    r_diet_label:"Préférence de repas",
+    diet_omnivore:"Omnivore", diet_vegetarian:"Végétarien", diet_vegan:"Végan", diet_pescatarian:"Pescétarien", diet_halal:"Halal",
+    r_allergy:"Allergies (facultatif)", r_allergy_ph:"ex. fruits à coque, fruits de mer…",
+    r_song:"Suggérer une chanson 🎵 (facultatif)", r_song_ph:"Artiste — Titre",
+    r_add_guest:"+ Ajouter un invité", r_remove:"Retirer", r_send:"Envoyer", r_back:"Retour",
+    r_no_line:"Vous nous manquerez — merci de nous avoir prévenus.",
+    r_no_note_label:"Un mot pour nous (facultatif)", r_no_note_ph:"Dites-nous bonjour…",
+    r_done_title:"Merci !", r_done_body:"Votre réponse est enregistrée — une confirmation vous attend par e-mail. Nous mettrons ce site à jour avec plus de détails à l'approche du jour.",
+    foot_names:"Mona & Noah", foot_date:"07 · 05 · 2027 — Rocca di Lonato, Italie",
+    st_sending:"Envoi…",
+    st_email_required:"Merci d'entrer un e-mail valide.",
+    st_name_required:"Merci d'ajouter au moins un nom d'invité.",
+    st_err:"Une erreur est survenue. Réessayez ou écrivez-nous directement."
+  },
+  de: {
+    monogram:"M · N",
+    hero_eyebrow:"Wir heiraten",
+    name1:"Mona", name2:"Noah",
+    hero_date:"7. Mai 2027 · Rocca di Lonato, Italien",
+    scrollcue:"Scrollen", nav_rsvp:"RSVP", hero_rsvp:"Zusagen",
+    cd_days:"Tage bis dahin", cd_tomorrow:"Morgen!", cd_today:"Heute!",
+    story_kicker:"Unsere Geschichte", story_title:"Zwei Menschen, viele Orte, ein Tag",
+    story_body:"Von verschneiten Morgen über Spaziergänge durch fremde Städte bis zu Küchen fern der Heimat sammeln wir seit Jahren gemeinsam Orte und Erinnerungen. Am 7. Mai 2027 versammeln wir alle, die wir lieben, in einer Burg über dem Gardasee. Danke, dass ihr Teil dieser Geschichte seid.",
+    home_kicker:"Woher wir kommen", home_title:"Zwischen den Zedern und den Alpen",
+    home_body:"Mona ist Libanesin, Noah ist Schweizer — und zu zweit sprechen wir vier Sprachen, so wie viele von euch. Unsere Hochzeit ist eine Begegnung zwischen Mittelmeer und Bergen, zwischen Mezze und Raclette und zwischen allen, die wir lieben, an einem Ort.",
+    home_lb_flag:"🇱🇧 Libanon", home_lb_h:"Monas Seite", home_lb_b:"Endloses Mezze, offene Türen und grenzenlose Großzügigkeit.",
+    home_ch_flag:"🇨🇭 Schweiz", home_ch_h:"Noahs Seite", home_ch_b:"Berge, klare Seen und eine gelassene, unaufgeregte Ruhe.",
+    travel_kicker:"Anreise & Übernachten", travel_title:"So kommt ihr zur Rocca di Lonato",
+    travel_intro:"Die Rocca di Lonato thront auf einem Hügel in Lonato del Garda in der Lombardei — nur einen Katzensprung vom Südufer des Gardasees entfernt. So erreicht ihr uns und hier könnt ihr übernachten.",
+    travel_air_t:"Mit dem Flugzeug", travel_air_h:"Nächste Flughäfen",
+    travel_air_b:"Verona (VRN) ≈ 30 Min · Bergamo (BGY) ≈ 1 Std · Mailand (MXP/LIN) ≈ 1,5 Std. Verona ist für die meisten Gäste am einfachsten.",
+    travel_train_t:"Zug & Auto", travel_train_h:"Züge & Parken",
+    travel_train_b:"Schnellzüge halten in Desenzano del Garda–Sirmione, 10 Min von Lonato mit dem Taxi. Kostenlose Parkplätze gibt es am Veranstaltungsort.",
+    travel_sleep_t:"Wo übernachten", travel_sleep_h:"In der Nähe wohnen",
+    travel_sleep_b:"Lonato del Garda, Desenzano und Sirmione bieten schöne Hotels am See. Wir teilen bald eine Auswahl hier — im Mai lohnt sich frühes Buchen.",
+    travel_directions:"Route anzeigen →",
+    gift_kicker:"Geschenke", gift_title:"Eure Anwesenheit ist das Geschenk",
+    gift_body:"Viele von euch reisen um die halbe Welt, um mit uns in Italien zu feiern — eure Anwesenheit bedeutet uns wirklich alles, und mehr wünschen wir uns nicht. Wer dennoch zu unserer Wunschliste oder zur Flitterwochen-Kasse beitragen möchte, kann das unten tun, mit unserem herzlichen Dank.",
+    gift_btn:"Wunschliste & Flitterwochen-Kasse",
+    rsvp_kicker:"Um Antwort wird gebeten", rsvp_title:"Seid ihr dabei?",
+    rsvp_body:"Bitte antwortet bis zum 1. Oktober 2026. Ihr erhaltet eine Bestätigungs-E-Mail, und wir ergänzen hier laufend weitere Details — Anreise, Zeiten und mehr — je näher der Tag rückt.",
+    r_email_label:"Eure E-Mail", r_email_ph:"du@beispiel.com", r_continue:"Weiter",
+    r_attend_q:"Werdet ihr dabei sein?",
+    r_yes:"Nimmt herzlich an", r_yes_sub:"Wir kommen",
+    r_no:"Muss leider absagen", r_no_sub:"Können nicht kommen",
+    r_yes_intro:"Wunderbar! Sagt uns, wer kommt. Fügt jeden Gast unten hinzu — ihr könnt auch einen Song für die Playlist vorschlagen.",
+    r_guest_name:"Vollständiger Name", r_name_ph:"Name des Gastes",
+    r_diet_label:"Essenswunsch",
+    diet_omnivore:"Alles", diet_vegetarian:"Vegetarisch", diet_vegan:"Vegan", diet_pescatarian:"Pescetarisch", diet_halal:"Halal",
+    r_allergy:"Allergien (optional)", r_allergy_ph:"z. B. Nüsse, Meeresfrüchte…",
+    r_song:"Einen Song vorschlagen 🎵 (optional)", r_song_ph:"Künstler — Titel",
+    r_add_guest:"+ Weiteren Gast hinzufügen", r_remove:"Entfernen", r_send:"Absenden", r_back:"Zurück",
+    r_no_line:"Wir werden euch vermissen — danke fürs Bescheidgeben.",
+    r_no_note_label:"Eine Nachricht an uns (optional)", r_no_note_ph:"Sagt Hallo…",
+    r_done_title:"Danke!", r_done_body:"Eure Antwort ist eingegangen — schaut in euer Postfach für die Bestätigung. Wir halten diese Seite bis zum großen Tag mit weiteren Details aktuell.",
+    foot_names:"Mona & Noah", foot_date:"07 · 05 · 2027 — Rocca di Lonato, Italien",
+    st_sending:"Wird gesendet…",
+    st_email_required:"Bitte gebt eine gültige E-Mail-Adresse ein.",
+    st_name_required:"Bitte fügt mindestens einen Gastnamen hinzu.",
+    st_err:"Etwas ist schiefgelaufen. Bitte versucht es erneut oder schreibt uns direkt."
+  },
+  ar: {
+    monogram:"م · ن",
+    hero_eyebrow:"نحن على موعد مع الزواج",
+    name1:"منى", name2:"نوح",
+    hero_date:"٧ مايو ٢٠٢٧ · روكا دي لوناتو، إيطاليا",
+    scrollcue:"مرّر", nav_rsvp:"RSVP", hero_rsvp:"أكّدوا الحضور",
+    cd_days:"يومًا حتى الموعد", cd_tomorrow:"غدًا!", cd_today:"اليوم!",
+    story_kicker:"قصتنا", story_title:"شخصان، أماكن كثيرة، ويوم واحد",
+    story_body:"من صباحات الثلج إلى نزهات المدن والمطابخ البعيدة عن الوطن، نجمع الأماكن والذكريات معًا منذ سنوات. في ٧ مايو ٢٠٢٧ سنجمع كل من نحب داخل قلعة تطل على بحيرة غاردا. شكرًا لكونكم جزءًا من الحكاية.",
+    home_kicker:"من أين نأتي", home_title:"بين الأرز وجبال الألب",
+    home_body:"منى لبنانية ونوح سويسري — ونحن الاثنان نتحدث أربع لغات، مثل كثيرين منكم. زفافنا لقاءٌ بين المتوسط والجبال، بين المازة والراكليت، وبين كل من نحب في مكان واحد.",
+    home_lb_flag:"🇱🇧 لبنان", home_lb_h:"جانب منى", home_lb_b:"مازةٌ لا تنتهي، وأبوابٌ مفتوحة، وكرمٌ لا ينضب.",
+    home_ch_flag:"🇨🇭 سويسرا", home_ch_h:"جانب نوح", home_ch_b:"جبالٌ وبحيراتٌ صافية، وهدوءٌ رحبٌ لطيف.",
+    travel_kicker:"السفر والإقامة", travel_title:"الوصول إلى روكا دي لوناتو",
+    travel_intro:"تقع روكا دي لوناتو على تلة في لوناتو ديل غاردا بمنطقة لومبارديا، على مقربة من الشاطئ الجنوبي لبحيرة غاردا. إليكم كيفية الوصول وأين تقيمون.",
+    travel_air_t:"جوًّا", travel_air_h:"أقرب المطارات",
+    travel_air_b:"فيرونا (VRN) ≈ ٣٠ دقيقة · بيرغامو (BGY) ≈ ساعة · ميلانو (MXP/LIN) ≈ ساعة ونصف. فيرونا الأسهل لمعظم الضيوف.",
+    travel_train_t:"بالقطار والسيارة", travel_train_h:"القطارات والمواقف",
+    travel_train_b:"تتوقف القطارات السريعة في ديزينزانو ديل غاردا–سيرميوني، على بُعد ١٠ دقائق من لوناتو بسيارة الأجرة. يتوفر موقف مجاني في الموقع.",
+    travel_sleep_t:"أين تقيمون", travel_sleep_h:"الإقامة القريبة",
+    travel_sleep_b:"تضم لوناتو ديل غاردا وديزينزانو وسيرميوني فنادق جميلة على ضفاف البحيرة. سنشارك قائمة مقترحة هنا قريبًا — يُستحسن الحجز مبكرًا في مايو.",
+    travel_directions:"← عرض الاتجاهات",
+    gift_kicker:"الهدايا", gift_title:"حضوركم هو أجمل هدية",
+    gift_body:"يقطع كثيرٌ منكم العالم للاحتفال معنا في إيطاليا، لذا فإن حضوركم يعني لنا كل شيء — وهو كل ما نطلبه. وإن رغبتم رغم ذلك في المساهمة في قائمة هدايانا أو صندوق شهر العسل، يمكنكم ذلك أدناه، مع خالص شكرنا.",
+    gift_btn:"قائمة الهدايا وصندوق شهر العسل",
+    rsvp_kicker:"نرجو تأكيد الحضور", rsvp_title:"هل ستشاركوننا؟",
+    rsvp_body:"يرجى الرد قبل ١ أكتوبر ٢٠٢٦. ستصلكم رسالة تأكيد، وسنضيف هنا مزيدًا من التفاصيل — السفر والمواعيد وغيرها — كلما اقترب الموعد.",
+    r_email_label:"بريدكم الإلكتروني", r_email_ph:"you@example.com", r_continue:"متابعة",
+    r_attend_q:"هل ستكونون معنا؟",
+    r_yes:"أقبل بكل سرور", r_yes_sub:"سنكون هناك",
+    r_no:"أعتذر مع الأسف", r_no_sub:"لا أستطيع الحضور",
+    r_yes_intro:"رائع! أخبرونا من سيحضر. أضيفوا كل ضيف أدناه — ويمكنكم اقتراح أغنية لقائمة التشغيل أيضًا.",
+    r_guest_name:"الاسم الكامل", r_name_ph:"اسم الضيف",
+    r_diet_label:"تفضيل الطعام",
+    diet_omnivore:"يأكل كل شيء", diet_vegetarian:"نباتي", diet_vegan:"نباتي صِرف", diet_pescatarian:"سمكي", diet_halal:"حلال",
+    r_allergy:"الحساسية (اختياري)", r_allergy_ph:"مثال: مكسرات، محار…",
+    r_song:"اقترح أغنية 🎵 (اختياري)", r_song_ph:"الفنان — العنوان",
+    r_add_guest:"+ إضافة ضيف آخر", r_remove:"إزالة", r_send:"إرسال التأكيد", r_back:"رجوع",
+    r_no_line:"سنفتقدكم — شكرًا لإعلامنا.",
+    r_no_note_label:"كلمة لنا (اختياري)", r_no_note_ph:"ألقوا التحية…",
+    r_done_title:"شكرًا لكم!", r_done_body:"تم تسجيل ردّكم — ستصلكم رسالة تأكيد على بريدكم. وسنحدّث هذا الموقع بمزيدٍ من التفاصيل كلما اقترب الموعد.",
+    foot_names:"منى & نوح", foot_date:"٠٧ · ٠٥ · ٢٠٢٧ — روكا دي لوناتو، إيطاليا",
+    st_sending:"جارٍ الإرسال…",
+    st_email_required:"يرجى إدخال بريد إلكتروني صحيح.",
+    st_name_required:"يرجى إضافة اسم ضيف واحد على الأقل.",
+    st_err:"حدث خطأ ما. يرجى المحاولة مجددًا أو مراسلتنا مباشرة."
+  }
+};
+
+/* ---------- Language ---------- */
+const RTL = ["ar"];
+let currentLang = "en";
+function t(k){ return (I18N[currentLang] && I18N[currentLang][k]) || I18N.en[k] || ""; }
+
+function applyLang(lang){
+  currentLang = lang;
+  const dict = I18N[lang];
+  const html = document.documentElement;
+  html.lang = lang;
+  html.dir = RTL.includes(lang) ? "rtl" : "ltr";
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k = el.getAttribute("data-i18n");
+    if(dict[k] !== undefined) el.innerHTML = dict[k];
+  });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el=>{
+    const k = el.getAttribute("data-i18n-ph");
+    if(dict[k] !== undefined) el.placeholder = dict[k];
+  });
+  document.querySelectorAll(".langs button").forEach(b=> b.classList.toggle("active", b.dataset.lang === lang));
+  updateCountdown();
+  try{ localStorage.setItem("wed_lang", lang); }catch(e){}
+}
+
+/* countdown to the wedding */
+function updateCountdown(){
+  const el = document.getElementById("countdown");
+  if(!el) return;
+  const target = new Date(2027, 4, 7);      // 7 May 2027 (month is 0-based)
+  const now = new Date();
+  const days = Math.ceil((target - new Date(now.getFullYear(),now.getMonth(),now.getDate())) / 86400000);
+  if(days > 1) el.textContent = days + " " + t("cd_days");
+  else if(days === 1) el.textContent = t("cd_tomorrow");
+  else if(days === 0) el.textContent = t("cd_today");
+  else el.textContent = "";
+}
+document.querySelectorAll(".langs button").forEach(b=> b.addEventListener("click", ()=> applyLang(b.dataset.lang)));
+(function initLang(){
+  let saved; try{ saved = localStorage.getItem("wed_lang"); }catch(e){}
+  const nav = (navigator.language||"en").slice(0,2);
+  applyLang(saved || (I18N[nav] ? nav : "en"));
+})();
+
+/* ---------- Gift link ---------- */
+(function(){
+  const g = document.getElementById("giftBtn");
+  if(!CONFIG.GIFT_URL.startsWith("PASTE")) g.href = CONFIG.GIFT_URL;
+  else g.addEventListener("click", e=>e.preventDefault());
+})();
+
+/* ---------- Reveal on scroll ---------- */
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+/* ---------- Interactive homelands gallery ----------
+   4 tiles on screen (2 Lebanon + 2 Switzerland). CLICK / TAP a tile and it
+   cross-dissolves to another photo from that country's curated pool. The same
+   photo can never be shown in two tiles at once. */
+const POOLS = {
+  lb: ["lebanon-sea.jpg","lebanon-house.jpg","lebanon-columns.jpg",
+       "lebanon-oranges.jpg","lebanon-bakery.jpg"],
+  ch: ["swiss-saxer.jpg","swiss-dock.jpg","swiss-peak.jpg","swiss-flags.jpg",
+       "swiss-pansies.jpg","swiss-airone.jpg","swiss-aescher.jpg","swiss-window.jpg"]
+};
+(function interactiveHomelands(){
+  const slots = [...document.querySelectorAll(".home .slot")];
+  if(!slots.length) return;
+  Object.values(POOLS).flat().forEach(f=>{ const i=new Image(); i.src="photos/"+f; });
+  // remember each slot's current file (updated the instant a swap starts,
+  // so a duplicate can never be picked even mid-transition)
+  slots.forEach(s=>{ s.dataset.cur = s.querySelector("img").getAttribute("src").split("/").pop(); });
+
+  function swap(slot){
+    if(slot._busy) return;
+    const side = slot.dataset.side;
+    const showing = new Set(slots.filter(s=> s.dataset.side===side).map(s=> s.dataset.cur));
+    const options = POOLS[side].filter(f=> !showing.has(f));
+    if(!options.length) return;
+    const next = options[Math.floor(Math.random()*options.length)];
+    slot._busy = true;
+    slot.dataset.cur = next;                 // reserve immediately
+    const pre = new Image();
+    pre.onload = ()=>{
+      const base = slot.querySelector("img");
+      const layer = new Image();
+      layer.className = "rot"; layer.alt = "";
+      layer.style.opacity = "0";
+      layer.src = "photos/"+next;
+      slot.appendChild(layer);
+      requestAnimationFrame(()=> requestAnimationFrame(()=>{ layer.style.opacity = "1"; }));
+      setTimeout(()=>{ base.remove(); slot._busy = false; }, 1300);
+    };
+    pre.onerror = ()=>{ slot._busy = false; };
+    pre.src = "photos/"+next;
+  }
+  slots.forEach(slot=> slot.addEventListener("click", ()=> swap(slot)));
+})();
+
+/* ---------- RSVP flow ---------- */
+const steps = {};
+document.querySelectorAll(".step").forEach(s=> steps[s.dataset.step] = s);
+const statusEl = document.getElementById("status");
+let attendance = null;
+
+function show(name){
+  Object.values(steps).forEach(s=> s.classList.add("hidden"));
+  steps[name].classList.remove("hidden");
+  statusEl.textContent=""; statusEl.className="status";
+}
+function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+document.getElementById("toAttend").addEventListener("click", ()=>{
+  const email = document.getElementById("r_email").value.trim();
+  if(!validEmail(email)){ statusEl.textContent=t("st_email_required"); statusEl.className="status err"; return; }
+  show("attend");
+});
+
+document.querySelectorAll(".choice").forEach(c=>{
+  c.addEventListener("click", ()=>{
+    attendance = c.dataset.attend;
+    if(attendance === "yes"){
+      if(!document.querySelector(".guestcard")) addGuest();
+      show("yes");
+    } else {
+      show("no");
+    }
+  });
+});
+
+document.querySelectorAll("[data-back]").forEach(b=> b.addEventListener("click", ()=> show(b.dataset.back)));
+
+/* guest cards */
+const guestsWrap = document.getElementById("guests");
+function addGuest(){
+  const el = document.createElement("div");
+  el.className = "guestcard";
+  el.innerHTML =
+    '<div class="num"></div>'+
+    '<div><label data-i18n="r_guest_name"></label><input class="g-name" data-i18n-ph="r_name_ph" /></div>'+
+    '<div><label data-i18n="r_diet_label"></label><div class="pills">'+
+      DIETS.map(d=>'<button type="button" class="pill" data-diet="'+d+'" data-i18n="diet_'+d+'"></button>').join('')+
+    '</div></div>'+
+    '<div><label data-i18n="r_allergy"></label><input class="g-allergy" data-i18n-ph="r_allergy_ph" /></div>'+
+    '<div><label data-i18n="r_song"></label><input class="g-song" data-i18n-ph="r_song_ph" /></div>'+
+    '<button type="button" class="removeGuest" data-i18n="r_remove"></button>';
+  guestsWrap.appendChild(el);
+  el.querySelectorAll(".pill").forEach(p=> p.addEventListener("click", ()=>{
+    el.querySelectorAll(".pill").forEach(x=> x.classList.remove("on"));
+    p.classList.add("on");
+  }));
+  el.querySelector('.pill[data-diet="omnivore"]').classList.add("on");
+  el.querySelector(".removeGuest").addEventListener("click", ()=>{
+    el.remove();
+    if(!document.querySelector(".guestcard")) addGuest();
+    renumber();
+  });
+  applyLang(currentLang);
+  renumber();
+}
+function renumber(){
+  document.querySelectorAll(".guestcard").forEach((c,i)=>{
+    c.querySelector(".num").textContent = t("r_guest_name") + " " + (i+1);
+  });
+}
+document.getElementById("addGuest").addEventListener("click", addGuest);
+
+/* submit — uses a hidden-iframe form POST, the most reliable way to reach
+   Google Apps Script cross-origin (native form posts aren't CORS-restricted,
+   so this works from any host and always triggers doPost). */
+function send(payload, okKey){
+  statusEl.textContent = t("st_sending"); statusEl.className = "status";
+  if(CONFIG.RSVP_ENDPOINT.startsWith("PASTE")){
+    setTimeout(()=>{ document.getElementById("doneMsg").textContent = t("r_done_body")+" (demo)"; show("done"); }, 700);
+    return;
+  }
+  let sink = document.getElementById("rsvp_sink");
+  if(!sink){
+    sink = document.createElement("iframe");
+    sink.name = "rsvp_sink"; sink.id = "rsvp_sink"; sink.style.display = "none";
+    document.body.appendChild(sink);
+  }
+  const form = document.createElement("form");
+  form.method = "POST";
+  form.action = CONFIG.RSVP_ENDPOINT;
+  form.target = "rsvp_sink";
+  const input = document.createElement("input");
+  input.type = "hidden"; input.name = "payload"; input.value = JSON.stringify(payload);
+  form.appendChild(input);
+  document.body.appendChild(form);
+
+  let done = false;
+  const finish = ()=>{ if(done) return; done = true; try{ form.remove(); }catch(e){} show("done"); };
+  sink.onload = finish;                 // fires once Apps Script responds
+  setTimeout(finish, 2500);             // fallback in case onload is suppressed cross-origin
+  form.submit();
+}
+
+document.getElementById("submitYes").addEventListener("click", ()=>{
+  const guests = [...document.querySelectorAll(".guestcard")].map(c=>({
+    name:c.querySelector(".g-name").value.trim(),
+    diet:(c.querySelector(".pill.on")||{dataset:{}}).dataset.diet||"",
+    allergies:c.querySelector(".g-allergy").value.trim(),
+    song:c.querySelector(".g-song").value.trim()
+  })).filter(g=> g.name);
+  if(!guests.length){ statusEl.textContent=t("st_name_required"); statusEl.className="status err"; return; }
+  send({
+    email: document.getElementById("r_email").value.trim(),
+    attending: "yes", guests, lang: currentLang
+  });
+});
+
+document.getElementById("submitNo").addEventListener("click", ()=>{
+  send({
+    email: document.getElementById("r_email").value.trim(),
+    attending: "no", note: document.getElementById("noMsg").value.trim(),
+    guests: [], lang: currentLang
+  });
+});
+</script>
+</body>
+</html>
