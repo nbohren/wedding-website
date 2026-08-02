@@ -25,7 +25,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&family=Noto+Naskh+Arabic:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f4f1ec; --ink:#1c1b19; --muted:#7a756c; --line:#d8d2c7; --accent:#8a7a5c;
+    --bg:#f4f1ec; --ink:#1c1b19; --muted:#7a756c; --line:#d8d2c7; --accent:#6f7a4c;
+    --olive:#6f7a4c; --olive-soft:#8a936a; --olive-deep:#2b3122; --paper:#faf7ef;
     --serif:"Cormorant Garamond", Georgia, serif;
     --sans:"Inter", system-ui, sans-serif;
     --ar:"Noto Naskh Arabic", "Inter", serif;
@@ -128,7 +129,7 @@
   @media(max-width:760px){.grid3{grid-template-columns:1fr}}
 
   /* gift */
-  .gift{background:var(--ink);color:#efe9df;text-align:center}
+  .gift{background:var(--olive-deep);color:#efe9df;text-align:center}
   .gift .kicker{color:#b7a888}
   .gift h2{color:#fff}
   .gift p.lead{color:#cfc6b5;margin-inline:auto}
@@ -136,7 +137,7 @@
   .btn:hover{opacity:.82}
 
   /* ---- RSVP ---- */
-  .rsvp{background:#25231f;color:#efe9df}
+  .rsvp{background:var(--olive-deep);color:#efe9df}
   .rsvp .kicker{color:#b7a888}
   .rsvp h2{color:#fff}
   .rsvp p.lead{color:#cfc6b5;margin-inline:auto}
@@ -190,6 +191,48 @@
   footer .m{font-family:var(--serif);font-size:26px;letter-spacing:.14em;margin-bottom:10px}
   footer small{color:var(--muted);letter-spacing:.14em;font-size:12px;text-transform:uppercase}
 
+  /* ---- paper invitation opening ---- */
+  .invite{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:104px 22px 64px;position:relative;text-align:center;
+    background:linear-gradient(rgba(38,44,28,.52),rgba(38,44,28,.64)),url("photos/venue-hero.jpg") center/cover fixed;}
+  @media(max-width:760px){.invite{background-attachment:scroll}}
+  .card{position:relative;width:100%;max-width:560px;background:var(--paper);color:var(--ink);
+    padding:clamp(42px,6vw,70px) clamp(26px,5vw,58px);border-radius:2px;
+    box-shadow:0 30px 72px rgba(18,22,12,.46), 0 1px 0 rgba(255,255,255,.6) inset;}
+  .card::before{content:"";position:absolute;inset:14px;border:1px solid var(--olive);opacity:.42;pointer-events:none}
+  .card .branch{width:104px;margin:0 auto 20px;color:var(--olive)}
+  .card .branch svg{width:100%;height:auto;display:block}
+  .card .together{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--olive);margin-bottom:20px}
+  .card .names{font-family:var(--serif);font-weight:300;font-size:clamp(46px,10vw,74px);line-height:1;color:var(--ink)}
+  html[dir="rtl"] .card .names{font-family:var(--ar);font-size:clamp(38px,8vw,64px)}
+  .card .names .amp{display:block;font-size:.42em;font-style:italic;color:var(--olive-soft);margin:.12em 0}
+  .card .invite-line{margin-top:20px;font-size:clamp(15px,2vw,17px);color:#4a4a3d;max-width:36ch;margin-inline:auto;line-height:1.6}
+  .card .dvd{display:flex;align-items:center;justify-content:center;gap:14px;margin:26px 0 6px;color:var(--olive)}
+  .card .dvd::before,.card .dvd::after{content:"";height:1px;width:44px;background:var(--olive);opacity:.5}
+  .card .dvd .dot{font-size:8px}
+  .card .when{font-family:var(--serif);font-size:clamp(23px,3.4vw,29px);color:var(--ink);letter-spacing:.02em}
+  .card .where{margin-top:8px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .card .cd{margin-top:22px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--olive-soft)}
+  .card .invite-cta{display:inline-block;margin-top:26px;background:var(--olive);color:#fff;text-decoration:none;
+    padding:14px 40px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;border-radius:2px;transition:background .3s}
+  .card .invite-cta:hover{background:#5b653c}
+  .invite .scrollcue{color:#f3efe4}
+
+  /* ---- schedule / the day ---- */
+  .timeline{max-width:420px;margin:48px auto 0;position:relative;text-align:left}
+  html[dir="rtl"] .timeline{text-align:right}
+  .timeline::before{content:"";position:absolute;top:8px;bottom:8px;left:4px;width:1px;background:var(--line)}
+  html[dir="rtl"] .timeline::before{left:auto;right:4px}
+  .tl{position:relative;padding:0 0 34px 34px}
+  html[dir="rtl"] .tl{padding:0 34px 34px 0}
+  .tl:last-child{padding-bottom:0}
+  .tl::before{content:"";position:absolute;left:0;top:7px;width:9px;height:9px;border-radius:50%;background:var(--olive);box-shadow:0 0 0 4px var(--bg)}
+  html[dir="rtl"] .tl::before{left:auto;right:0}
+  .tl .time{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);margin-bottom:5px}
+  .tl h3{font-family:var(--serif);font-weight:400;font-size:24px;color:var(--ink)}
+  html[dir="rtl"] .tl h3{font-family:var(--ar)}
+  .sch-note{margin-top:38px;font-size:13px;color:var(--muted);font-style:italic}
+
   .reveal{opacity:0;transform:translateY(22px);transition:opacity 1s ease,transform 1s ease}
   .reveal.in{opacity:1;transform:none}
 </style>
@@ -209,17 +252,43 @@
   </div>
 </header>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="eyebrow" data-i18n="hero_eyebrow">We're getting married</div>
-  <h1 class="serif">
-    <span data-i18n="name1">Mona</span>
-    <span class="amp">&amp;</span>
-    <span data-i18n="name2">Noah</span>
-  </h1>
-  <div class="date" data-i18n="hero_date">7 May 2027 &middot; Rocca di Lonato, Italy</div>
-  <div class="countdown" id="countdown" aria-live="polite"></div>
-  <a class="hero-cta" href="#rsvp" data-i18n="hero_rsvp">RSVP</a>
+<!-- PAPER INVITATION (opening) -->
+<div class="invite">
+  <div class="card">
+    <div class="branch" aria-hidden="true">
+      <svg viewBox="0 0 180 60" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round">
+          <path d="M90 54 C 74 49, 42 45, 17 23"/>
+          <path d="M90 54 C 106 49, 138 45, 163 23"/>
+        </g>
+        <g fill="currentColor">
+          <ellipse cx="70" cy="47" rx="8" ry="3" transform="rotate(-18 70 47)"/>
+          <ellipse cx="54" cy="43" rx="8.5" ry="3.1" transform="rotate(-26 54 43)"/>
+          <ellipse cx="40" cy="37" rx="8.5" ry="3.1" transform="rotate(-36 40 37)"/>
+          <ellipse cx="28" cy="30" rx="8" ry="3" transform="rotate(-46 28 30)"/>
+          <ellipse cx="110" cy="47" rx="8" ry="3" transform="rotate(18 110 47)"/>
+          <ellipse cx="126" cy="43" rx="8.5" ry="3.1" transform="rotate(26 126 43)"/>
+          <ellipse cx="140" cy="37" rx="8.5" ry="3.1" transform="rotate(36 140 37)"/>
+          <ellipse cx="152" cy="30" rx="8" ry="3" transform="rotate(46 152 30)"/>
+          <circle cx="83" cy="30" r="3.1"/>
+          <circle cx="90" cy="25" r="3.4"/>
+          <circle cx="97" cy="30" r="3.1"/>
+        </g>
+      </svg>
+    </div>
+    <div class="together" data-i18n="inv_together">Together with their families</div>
+    <div class="names serif">
+      <span data-i18n="name1">Mona</span>
+      <span class="amp">&amp;</span>
+      <span data-i18n="name2">Noah</span>
+    </div>
+    <p class="invite-line" data-i18n="inv_line">joyfully invite you to celebrate their marriage</p>
+    <div class="dvd" aria-hidden="true"><span class="dot">◆</span></div>
+    <div class="when" data-i18n="inv_when">Friday, 7 May 2027</div>
+    <div class="where" data-i18n="inv_where">Rocca di Lonato · Lake Garda, Italy</div>
+    <div class="cd" id="countdown" aria-live="polite"></div>
+    <a class="invite-cta" href="#rsvp" data-i18n="hero_rsvp">RSVP</a>
+  </div>
   <div class="scrollcue" data-i18n="scrollcue">Scroll</div>
 </div>
 
@@ -278,6 +347,27 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- SCHEDULE & VENUE -->
+<section id="schedule" class="center">
+  <div class="wrap reveal">
+    <div class="kicker" data-i18n="sch_kicker">The celebration</div>
+    <h2 data-i18n="sch_title">How the day unfolds</h2>
+    <p class="lead" data-i18n="sch_body" style="margin-inline:auto">We'll gather within the walls of Rocca di Lonato — a thousand-year-old fortress on a hill above Lake Garda — to marry and then celebrate long into the evening. Here's the shape of the day.</p>
+  </div>
+  <div class="wrap reveal">
+    <div class="timeline">
+      <div class="tl"><div class="time">15:30</div><h3 class="serif" data-i18n="sch_welcome">Welcome &amp; seating</h3></div>
+      <div class="tl"><div class="time">16:00</div><h3 class="serif" data-i18n="sch_ceremony">Ceremony</h3></div>
+      <div class="tl"><div class="time">17:00</div><h3 class="serif" data-i18n="sch_aperitivo">Aperitivo &amp; photos</h3></div>
+      <div class="tl"><div class="time">19:30</div><h3 class="serif" data-i18n="sch_dinner">Dinner</h3></div>
+      <div class="tl"><div class="time">22:00</div><h3 class="serif" data-i18n="sch_dancing">Dancing</h3></div>
+    </div>
+    <p class="sch-note" data-i18n="sch_note">Timings are provisional — we'll confirm the final schedule closer to the day.</p>
   </div>
 </section>
 
@@ -421,6 +511,13 @@ const I18N = {
     name1:"Mona", name2:"Noah",
     hero_date:"7 May 2027 · Rocca di Lonato, Italy",
     scrollcue:"Scroll", nav_rsvp:"RSVP", hero_rsvp:"RSVP",
+    inv_together:"Together with their families",
+    inv_line:"joyfully invite you to celebrate their marriage",
+    inv_when:"Friday, 7 May 2027", inv_where:"Rocca di Lonato · Lake Garda, Italy",
+    sch_kicker:"The celebration", sch_title:"How the day unfolds",
+    sch_body:"We'll gather within the walls of Rocca di Lonato — a thousand-year-old fortress on a hill above Lake Garda — to marry and then celebrate long into the evening. Here's the shape of the day.",
+    sch_welcome:"Welcome & seating", sch_ceremony:"Ceremony", sch_aperitivo:"Aperitivo & photos", sch_dinner:"Dinner", sch_dancing:"Dancing",
+    sch_note:"Timings are provisional — we'll confirm the final schedule closer to the day.",
     cd_days:"days to go", cd_tomorrow:"Tomorrow!", cd_today:"Today!",
     story_kicker:"Our story", story_title:"Two people, many places, one day",
     story_body:"From snowy mornings to city walks and kitchens far from home, we've been collecting places and memories together for years. On 7 May 2027 we'll gather everyone we love inside a castle above Lake Garda. Thank you for being part of the story.",
@@ -468,6 +565,13 @@ const I18N = {
     name1:"Mona", name2:"Noah",
     hero_date:"7 mai 2027 · Rocca di Lonato, Italie",
     scrollcue:"Défiler", nav_rsvp:"RSVP", hero_rsvp:"Répondre",
+    inv_together:"Avec leurs familles",
+    inv_line:"ont la joie de vous convier à célébrer leur mariage",
+    inv_when:"Vendredi 7 mai 2027", inv_where:"Rocca di Lonato · Lac de Garde, Italie",
+    sch_kicker:"La célébration", sch_title:"Le déroulé de la journée",
+    sch_body:"Nous nous réunirons entre les murs de la Rocca di Lonato — une forteresse millénaire sur une colline au-dessus du lac de Garde — pour nous marier, puis célébrer jusque tard dans la soirée. Voici le déroulé de la journée.",
+    sch_welcome:"Accueil & installation", sch_ceremony:"Cérémonie", sch_aperitivo:"Apéritif & photos", sch_dinner:"Dîner", sch_dancing:"Soirée dansante",
+    sch_note:"Les horaires sont provisoires — nous confirmerons le programme définitif à l'approche du jour.",
     cd_days:"jours restants", cd_tomorrow:"Demain !", cd_today:"C'est aujourd'hui !",
     story_kicker:"Notre histoire", story_title:"Deux personnes, mille endroits, un jour",
     story_body:"Des matins enneigés aux balades en ville et aux cuisines loin de chez nous, nous collectionnons ensemble des lieux et des souvenirs depuis des années. Le 7 mai 2027, nous réunirons tous ceux que nous aimons dans un château au-dessus du lac de Garde. Merci de faire partie de l'histoire.",
@@ -515,6 +619,13 @@ const I18N = {
     name1:"Mona", name2:"Noah",
     hero_date:"7. Mai 2027 · Rocca di Lonato, Italien",
     scrollcue:"Scrollen", nav_rsvp:"RSVP", hero_rsvp:"Zusagen",
+    inv_together:"Gemeinsam mit ihren Familien",
+    inv_line:"laden euch voller Freude ein, ihre Hochzeit zu feiern",
+    inv_when:"Freitag, 7. Mai 2027", inv_where:"Rocca di Lonato · Gardasee, Italien",
+    sch_kicker:"Die Feier", sch_title:"Der Ablauf des Tages",
+    sch_body:"Wir versammeln uns in den Mauern der Rocca di Lonato — einer tausendjährigen Festung auf einem Hügel über dem Gardasee —, um zu heiraten und anschließend bis spät in den Abend zu feiern. So sieht der Tag aus.",
+    sch_welcome:"Empfang & Platznahme", sch_ceremony:"Trauung", sch_aperitivo:"Aperitivo & Fotos", sch_dinner:"Abendessen", sch_dancing:"Tanz",
+    sch_note:"Die Zeiten sind vorläufig — den endgültigen Ablauf bestätigen wir näher am Tag.",
     cd_days:"Tage bis dahin", cd_tomorrow:"Morgen!", cd_today:"Heute!",
     story_kicker:"Unsere Geschichte", story_title:"Zwei Menschen, viele Orte, ein Tag",
     story_body:"Von verschneiten Morgen über Spaziergänge durch fremde Städte bis zu Küchen fern der Heimat sammeln wir seit Jahren gemeinsam Orte und Erinnerungen. Am 7. Mai 2027 versammeln wir alle, die wir lieben, in einer Burg über dem Gardasee. Danke, dass ihr Teil dieser Geschichte seid.",
@@ -562,6 +673,13 @@ const I18N = {
     name1:"منى", name2:"نوح",
     hero_date:"٧ مايو ٢٠٢٧ · روكا دي لوناتو، إيطاليا",
     scrollcue:"مرّر", nav_rsvp:"RSVP", hero_rsvp:"أكّدوا الحضور",
+    inv_together:"مع عائلتيهما",
+    inv_line:"يسعدهما دعوتكم لمشاركتهما فرحة زفافهما",
+    inv_when:"الجمعة، ٧ مايو ٢٠٢٧", inv_where:"روكا دي لوناتو · بحيرة غاردا، إيطاليا",
+    sch_kicker:"الاحتفال", sch_title:"كيف يمرّ اليوم",
+    sch_body:"سنجتمع داخل أسوار روكا دي لوناتو — قلعة يعود عمرها إلى ألف عام على تلّة تطلّ على بحيرة غاردا — لنتزوّج ثم نحتفل حتى وقت متأخّر من المساء. إليكم برنامج اليوم.",
+    sch_welcome:"الاستقبال والجلوس", sch_ceremony:"مراسم الزواج", sch_aperitivo:"الأبريتيفو والصور", sch_dinner:"العشاء", sch_dancing:"الرقص والسهر",
+    sch_note:"المواعيد مبدئية — سنؤكّد البرنامج النهائي مع اقتراب الموعد.",
     cd_days:"يومًا حتى الموعد", cd_tomorrow:"غدًا!", cd_today:"اليوم!",
     story_kicker:"قصتنا", story_title:"شخصان، أماكن كثيرة، ويوم واحد",
     story_body:"من صباحات الثلج إلى نزهات المدن والمطابخ البعيدة عن الوطن، نجمع الأماكن والذكريات معًا منذ سنوات. في ٧ مايو ٢٠٢٧ سنجمع كل من نحب داخل قلعة تطل على بحيرة غاردا. شكرًا لكونكم جزءًا من الحكاية.",
