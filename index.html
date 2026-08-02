@@ -70,7 +70,13 @@ header.bar.solid{background:rgba(243,238,228,.94);box-shadow:0 1px 0 rgba(120,11
 .branch img{width:100%;height:auto;display:block}
 .branch.ne img{transform:scaleX(-1)}
 .branch.se img{transform:scale(-1,-1)}
-.branch{transition:transform .12s linear;will-change:transform}
+.branch{opacity:0;animation-duration:1.6s;animation-timing-function:cubic-bezier(.16,.72,.18,1);animation-fill-mode:both;animation-delay:.15s}
+.branch.nw{animation-name:inNW}.branch.ne{animation-name:inNE}.branch.sw{animation-name:inSW}.branch.se{animation-name:inSE}
+@keyframes inNW{from{opacity:0;transform:translate(-90px,-90px)}to{opacity:1;transform:none}}
+@keyframes inNE{from{opacity:0;transform:translate(90px,-90px)}to{opacity:1;transform:none}}
+@keyframes inSW{from{opacity:0;transform:translate(-80px,80px)}to{opacity:1;transform:none}}
+@keyframes inSE{from{opacity:0;transform:translate(80px,80px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.branch{animation:none;opacity:1}}
 .branch.nw{top:-40px;left:-50px;width:clamp(210px,29vw,470px)}
 .branch.ne{top:-50px;right:-50px;width:clamp(210px,29vw,470px)}
 .branch.sw{bottom:-40px;left:-46px;width:clamp(150px,19vw,300px);opacity:.96}
@@ -101,7 +107,7 @@ html[dir="rtl"] h2{font-family:var(--ar)}
 p.lead{font-family:var(--serif);font-weight:400;font-size:clamp(18px,2.2vw,21px);color:var(--soft);max-width:62ch;line-height:1.75}
 .center{text-align:center}
 .center p.lead{margin-inline:auto}
-hr.rule{display:block;border:0;height:44px;width:100%;max-width:none;margin:clamp(46px,7vw,86px) auto;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20170%2044%27%20width%3D%27170%27%20height%3D%2744%27%3E%3Cpath%20d%3D%22M10.0%2027.3%20C%2061.2%2020.2%20112.2%2016.7%20160.0%2010.6%22%20fill%3D%22none%22%20stroke%3D%22%236d774a%22%20stroke-width%3D%220%22%20stroke-linecap%3D%22round%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.6%20-4.8%2012.4%20-2.2%2020.0%203.8%20C%2012.4%205.2%203.6%204.8%200%200%20Z%22%20fill%3D%22%236d774a%22%20transform%3D%22translate%2826.1%2025.2%29%20rotate%2834.0%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.3%20-4.6%2011.2%20-2.3%2018.1%203.2%20C%2011.2%204.9%203.3%204.6%200%200%20Z%22%20fill%3D%22%238f9a6f%22%20transform%3D%22translate%2845.2%2022.9%29%20rotate%28-47.5%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.4%20-4.8%2011.7%20-2.4%2018.9%203.1%20C%2011.7%204.9%203.4%204.8%200%200%20Z%22%20fill%3D%22%236d774a%22%20transform%3D%22translate%2862.2%2021.1%29%20rotate%2823.9%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.4%20-4.6%2011.8%20-2.0%2019.1%204.0%20C%2011.8%205.2%203.4%204.6%200%200%20Z%22%20fill%3D%22%238f9a6f%22%20transform%3D%22translate%2877.3%2019.5%29%20rotate%28-36.3%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.5%20-5.1%2012.0%20-2.6%2019.3%203.4%20C%2012.0%205.3%203.5%205.1%200%200%20Z%22%20fill%3D%22%236d774a%22%20transform%3D%22translate%2895.4%2017.7%29%20rotate%2822.5%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.3%20-5.0%2011.3%20-3.0%2018.2%202.3%20C%2011.3%204.8%203.3%205.0%200%200%20Z%22%20fill%3D%22%238f9a6f%22%20transform%3D%22translate%28108.4%2016.4%29%20rotate%28-35.2%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.7%20-4.4%2012.9%20-2.1%2020.7%203.4%20C%2012.9%204.8%203.7%204.4%200%200%20Z%22%20fill%3D%22%236d774a%22%20transform%3D%22translate%28130.1%2014.1%29%20rotate%2835.2%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.2%20-4.9%2011.1%20-2.2%2017.8%203.9%20C%2011.1%205.3%203.2%204.9%200%200%20Z%22%20fill%3D%22%238f9a6f%22%20transform%3D%22translate%28144.8%2012.4%29%20rotate%28-43.7%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.2%20-4.3%2010.9%20-2.5%2017.6%202.1%20C%2010.9%204.1%203.2%204.3%200%200%20Z%22%20fill%3D%22%236d774a%22%20transform%3D%22translate%28159.9%2010.6%29%20rotate%2821.3%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%202.1%20-2.7%207.4%20-1.3%2011.9%202.0%20C%207.4%202.9%202.1%202.7%200%200%20Z%22%20fill%3D%22%236d774a%22%20transform%3D%22translate%28160.0%2010.6%29%20rotate%28-7.3%29%22/%3E%3Cellipse%20cx%3D%2286.9%22%20cy%3D%2224.6%22%20rx%3D%224.4%22%20ry%3D%225.8%22%20fill%3D%22%23b3924f%22%20transform%3D%22rotate%2812.2%2086.9%2024.6%29%22/%3E%3C/svg%3E") center/auto 34px no-repeat}
+hr.rule{display:block;border:0;height:44px;width:100%;max-width:none;margin:clamp(46px,7vw,86px) auto;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20180%2046%27%20width%3D%27180%27%20height%3D%2746%27%3E%3Cpath%20d%3D%22M10.0%2023.0%20C%2061.2%2023.0%20118.8%2023.0%20170.0%2023.0%22%20fill%3D%22none%22%20stroke%3D%22%236d774a%22%20stroke-width%3D%220%22%20stroke-linecap%3D%22round%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.6%20-4.8%2012.4%20-2.2%2020.0%203.8%20C%2012.4%205.2%203.6%204.8%200%200%20Z%22%20fill%3D%22%236d774a%22%20transform%3D%22translate%2826.3%2023.0%29%20rotate%2847.1%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.3%20-4.6%2011.2%20-2.3%2018.1%203.2%20C%2011.2%204.9%203.3%204.6%200%200%20Z%22%20fill%3D%22%238f9a6f%22%20transform%3D%22translate%2846.1%2023.0%29%20rotate%28-47.1%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.4%20-4.8%2011.7%20-2.4%2018.9%203.1%20C%2011.7%204.9%203.4%204.8%200%200%20Z%22%20fill%3D%22%236d774a%22%20transform%3D%22translate%2864.1%2023.0%29%20rotate%2835.9%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.4%20-4.6%2011.8%20-2.0%2019.1%204.0%20C%2011.8%205.2%203.4%204.6%200%200%20Z%22%20fill%3D%22%238f9a6f%22%20transform%3D%22translate%2880.3%2023.0%29%20rotate%28-36.5%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.5%20-5.1%2012.0%20-2.6%2019.3%203.4%20C%2012.0%205.3%203.5%205.1%200%200%20Z%22%20fill%3D%22%236d774a%22%20transform%3D%22translate%2899.9%2023.0%29%20rotate%2834.2%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.3%20-5.0%2011.3%20-3.0%2018.2%202.3%20C%2011.3%204.8%203.3%205.0%200%200%20Z%22%20fill%3D%22%238f9a6f%22%20transform%3D%22translate%28114.0%2023.0%29%20rotate%28-35.4%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.7%20-4.4%2012.9%20-2.1%2020.7%203.4%20C%2012.9%204.8%203.7%204.4%200%200%20Z%22%20fill%3D%22%236d774a%22%20transform%3D%22translate%28137.7%2023.0%29%20rotate%2847.4%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.2%20-4.9%2011.1%20-2.2%2017.8%203.9%20C%2011.1%205.3%203.2%204.9%200%200%20Z%22%20fill%3D%22%238f9a6f%22%20transform%3D%22translate%28153.6%2023.0%29%20rotate%28-43.1%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%203.2%20-4.3%2010.9%20-2.5%2017.6%202.1%20C%2010.9%204.1%203.2%204.3%200%200%20Z%22%20fill%3D%22%236d774a%22%20transform%3D%22translate%28169.8%2023.0%29%20rotate%2834.7%29%22/%3E%3Cpath%20d%3D%22M0%200%20C%202.1%20-2.7%207.4%20-1.3%2011.9%202.0%20C%207.4%202.9%202.1%202.7%200%200%20Z%22%20fill%3D%22%236d774a%22%20transform%3D%22translate%28170.0%2023.0%29%20rotate%280.0%29%22/%3E%3Cellipse%20cx%3D%2290.0%22%20cy%3D%2229.0%22%20rx%3D%224.4%22%20ry%3D%225.8%22%20fill%3D%22%23b3924f%22%20transform%3D%22rotate%2818.0%2090.0%2029.0%29%22/%3E%3C/svg%3E") center/auto 30px no-repeat}
 .textlink{display:inline-block;margin-top:22px;color:var(--olive-deep);font-family:var(--serif);font-weight:500;font-size:15px;letter-spacing:.04em;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:3px;transition:opacity .3s}
 .textlink:hover{opacity:.7}
 
@@ -888,23 +894,6 @@ document.getElementById("submitNo").addEventListener("click", ()=>{
   });
 });
 </script>
-<script>(function(){
- var n=document.getElementById('nav');
- var br=[].slice.call(document.querySelectorAll('.hero .branch'));
- var conf={nw:[0.12,-0.004],ne:[0.16,0.004],sw:[-0.05,0.003],se:[-0.09,-0.003]};
- var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- var sy=0,ticking=false;
- function apply(){
-   if(window.scrollY>40)n.classList.add('solid');else n.classList.remove('solid');
-   if(!reduce){br.forEach(function(b){
-     var k=['nw','ne','sw','se'].filter(function(c){return b.classList.contains(c);})[0];
-     if(!k)return; var c=conf[k];
-     b.style.transform='translate3d(0,'+(sy*c[0]).toFixed(1)+'px,0) rotate('+(sy*c[1]).toFixed(3)+'deg)';
-   });}
-   ticking=false;
- }
- function onScroll(){sy=window.scrollY;if(!ticking){requestAnimationFrame(apply);ticking=true;}}
- window.addEventListener('scroll',onScroll,{passive:true}); apply();
-})();</script>
+<script>(function(){var n=document.getElementById('nav');function s(){if(window.scrollY>40)n.classList.add('solid');else n.classList.remove('solid');}window.addEventListener('scroll',s,{passive:true});s();})();</script>
 </body>
 </html>
