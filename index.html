@@ -181,6 +181,18 @@ html[dir="rtl"] .tl h3{font-family:var(--ar)}
 .paybtn{margin-top:20px;display:inline-block;background:var(--gold);color:#31301f;text-decoration:none;padding:13px 32px;border-radius:4px;font-family:var(--serif);font-weight:500;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:opacity .3s}
 .paybtn:hover{opacity:.9}
 .pay-note{margin:26px auto 0;max-width:56ch;font-family:var(--serif);font-style:italic;font-size:16px;color:#d7cfba}
+#giftOpen{border:0;cursor:pointer;margin-top:26px}
+.modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:22px}
+.modal.open{display:flex}
+.modal-bg{position:absolute;inset:0;background:rgba(24,28,16,.5);-webkit-backdrop-filter:blur(10px) saturate(115%);backdrop-filter:blur(10px) saturate(115%)}
+.modal-card{position:relative;z-index:1;width:100%;max-width:940px;max-height:88vh;overflow:auto;background:var(--olive-dark);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:clamp(34px,4vw,54px) clamp(22px,4vw,48px);text-align:center;box-shadow:0 40px 120px rgba(0,0,0,.55), inset 0 0 130px rgba(0,0,0,.4);animation:modalIn .38s cubic-bezier(.18,.72,.2,1) both}
+@keyframes modalIn{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+.modal-title{font-family:var(--hero);color:#fff;font-size:clamp(26px,4vw,38px)}
+.modal .pay{margin-top:30px}
+.modal-close{position:absolute;top:12px;right:18px;background:none;border:0;color:#cfc6b5;font-size:32px;line-height:1;cursor:pointer;transition:color .2s}
+.modal-close:hover{color:#fff}
+html[dir="rtl"] .modal-close{right:auto;left:18px}
+@media(prefers-reduced-motion:reduce){.modal-card{animation:none}}
 
 .rsvp{background:var(--olive-dark);color:#eee6d5}
 .rsvp .kicker{color:var(--gold)}
@@ -373,6 +385,17 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
     <div class="kicker" data-i18n="gift_kicker">Gifts</div>
     <h2 data-i18n="gift_title">Your presence is the present</h2>
     <p class="lead" data-i18n="gift_body">Many of you are travelling across the globe to celebrate with us in Italy, so your presence truly means the world to us, and it's all we ask for. If you'd still like to contribute to our wedding registry, you can do so below, with all our thanks.</p>
+    <p class="pay-note" data-i18n="pay_cash">A box will also be there on the day for those who prefer to give cash.</p>
+    <button class="btn" id="giftOpen" type="button" data-i18n="gift_btn">Wedding registry</button>
+  </div>
+</section>
+
+<!-- GIFT MODAL -->
+<div class="modal" id="giftModal" aria-hidden="true">
+  <div class="modal-bg" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-label="Gifts">
+    <button class="modal-close" type="button" data-close aria-label="Close">&times;</button>
+    <div class="modal-title" data-i18n="pay_title">Ways to give</div>
     <div class="pay">
       <div class="paycard">
         <div class="payt" data-i18n="pay_bank">Bank transfer</div>
@@ -397,7 +420,7 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
     </div>
     <p class="pay-note" data-i18n="pay_cash">A box will also be there on the day for those who prefer to give cash.</p>
   </div>
-</section>
+</div>
 
 <!-- RSVP -->
 <section class="rsvp" id="rsvp">
@@ -520,7 +543,7 @@ const I18N = {
     travel_directions:"Get directions →",
     gift_kicker:"Gifts", gift_title:"Your presence is the present",
     gift_body:"Many of you are travelling across the globe to celebrate with us in Italy, so your presence truly means the world to us, and it's all we ask for. If you'd still like to contribute to our wedding registry, you can do so below, with all our thanks.",
-    gift_btn:"Wedding registry", pay_bank:"Bank transfer", pay_iban:"Account (IBAN)", pay_holder:"Account holder", pay_number:"Number", pay_ref:"Message", pay_revbtn:"Open Revolut", pay_cash:"A box will also be there on the day for those who prefer to give cash.",
+    gift_btn:"Wedding registry", pay_bank:"Bank transfer", pay_iban:"Account (IBAN)", pay_holder:"Account holder", pay_number:"Number", pay_ref:"Message", pay_revbtn:"Open Revolut", pay_title:"Ways to give", pay_cash:"A box will also be there on the day for those who prefer to give cash.",
     rsvp_kicker:"Kindly reply", rsvp_title:"Will you join us?",
     rsvp_body:"Kindly reply by 1 October 2026. You'll receive a confirmation email, and we'll add more information to this site as the big day approaches. We're also holding a pre-wedding gathering the day before, so plan to arrive a day or two early. More details to come.",
     r_email_label:"Your email", r_email_ph:"you@example.com", r_continue:"Continue",
@@ -574,7 +597,7 @@ const I18N = {
     travel_directions:"Obtenir l'itinéraire →",
     gift_kicker:"Cadeaux", gift_title:"Votre présence est notre plus beau cadeau",
     gift_body:"Beaucoup d'entre vous traversent le monde pour célébrer avec nous en Italie ; votre présence compte plus que tout, et c'est tout ce que nous demandons. Si vous souhaitez malgré tout contribuer à notre liste de mariage, vous pouvez le faire ci-dessous, avec toute notre gratitude.",
-    gift_btn:"Liste de mariage", pay_bank:"Virement bancaire", pay_iban:"Compte (IBAN)", pay_holder:"Titulaire du compte", pay_number:"Numéro", pay_ref:"Message", pay_revbtn:"Ouvrir Revolut", pay_cash:"Une urne sera aussi à disposition le jour même pour ceux qui préfèrent offrir en espèces.",
+    gift_btn:"Liste de mariage", pay_bank:"Virement bancaire", pay_iban:"Compte (IBAN)", pay_holder:"Titulaire du compte", pay_number:"Numéro", pay_ref:"Message", pay_revbtn:"Ouvrir Revolut", pay_title:"Comment contribuer", pay_cash:"Une urne sera aussi à disposition le jour même pour ceux qui préfèrent offrir en espèces.",
     rsvp_kicker:"Réponse", rsvp_title:"Serez-vous là ?",
     rsvp_body:"Merci de répondre avant le 1er octobre 2026. Vous recevrez un e-mail de confirmation, et nous ajouterons plus d'informations sur ce site à l'approche du jour « J ». Nous organiserons aussi un pré-mariage la veille. Prévoyez d'arriver un à deux jours à l'avance. Plus de détails à venir.",
     r_email_label:"Votre e-mail", r_email_ph:"vous@exemple.com", r_continue:"Continuer",
@@ -628,7 +651,7 @@ const I18N = {
     travel_directions:"← عرض الاتجاهات",
     gift_kicker:"الهدايا", gift_title:"حضوركم هو أجمل هدية",
     gift_body:"يقطع كثيرٌ منكم العالم للاحتفال معنا في إيطاليا، لذا فإن حضوركم يعني لنا كل شيء، وهو كل ما نطلبه. وإن رغبتم رغم ذلك في المساهمة في قائمة هدايانا، يمكنكم ذلك أدناه، مع خالص شكرنا.",
-    gift_btn:"قائمة الهدايا", pay_bank:"تحويل بنكي", pay_iban:"الحساب (IBAN)", pay_holder:"صاحب الحساب", pay_number:"الرقم", pay_ref:"الرسالة", pay_revbtn:"فتح Revolut", pay_cash:"سيتوفّر أيضًا صندوق في اليوم نفسه لمن يفضّل تقديم هدية نقدية.",
+    gift_btn:"قائمة الهدايا", pay_bank:"تحويل بنكي", pay_iban:"الحساب (IBAN)", pay_holder:"صاحب الحساب", pay_number:"الرقم", pay_ref:"الرسالة", pay_revbtn:"فتح Revolut", pay_title:"طرق المساهمة", pay_cash:"سيتوفّر أيضًا صندوق في اليوم نفسه لمن يفضّل تقديم هدية نقدية.",
     rsvp_kicker:"نرجو تأكيد الحضور", rsvp_title:"هل ستكونون معنا؟",
     rsvp_body:"يرجى الرد قبل ١ أكتوبر ٢٠٢٦. ستصلكم رسالة تأكيد، وسنضيف مزيدًا من المعلومات على هذا الموقع مع اقتراب اليوم الموعود. سننظّم أيضًا لقاءً قبل الزفاف عشية اليوم، فاحرصوا على الوصول قبل يوم أو يومين. المزيد من التفاصيل قريبًا.",
     r_email_label:"بريدكم الإلكتروني", r_email_ph:"you@example.com", r_continue:"متابعة",
@@ -700,6 +723,16 @@ document.querySelectorAll(".langs button").forEach(b=> b.addEventListener("click
 (function(){
   const g = document.getElementById("giftBtn");
   if(g){ if(!CONFIG.GIFT_URL.startsWith("PASTE")) g.href = CONFIG.GIFT_URL; else g.addEventListener("click", e=>e.preventDefault()); }
+})();
+/* ---------- Gift modal ---------- */
+(function(){
+  var openBtn=document.getElementById("giftOpen"), modal=document.getElementById("giftModal");
+  if(!openBtn||!modal) return;
+  function show(){modal.classList.add("open");modal.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";}
+  function hide(){modal.classList.remove("open");modal.setAttribute("aria-hidden","true");document.body.style.overflow="";}
+  openBtn.addEventListener("click",show);
+  modal.querySelectorAll("[data-close]").forEach(function(el){el.addEventListener("click",hide);});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")hide();});
 })();
 
 /* ---------- Reveal on scroll ---------- */
