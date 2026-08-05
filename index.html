@@ -170,6 +170,16 @@ html[dir="rtl"] .tl h3{font-family:var(--ar)}
 .gift p.lead{color:#d7cfba;margin-inline:auto}
 .btn{display:inline-block;margin-top:30px;background:var(--gold);color:#31301f;padding:15px 42px;border-radius:4px;font-family:var(--serif);font-weight:500;font-size:13px;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;transition:opacity .3s}
 .btn:hover{opacity:.9}
+.pay{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:940px;margin:46px auto 0}
+@media(max-width:820px){.pay{grid-template-columns:1fr;max-width:430px}}
+.paycard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:12px;padding:30px 22px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.paycard .payt{font-family:var(--hero);font-size:25px;color:#fff;margin-bottom:14px}
+.paycard .qr{width:180px;height:auto;background:#fff;border-radius:12px;padding:12px}
+.paycard .payk{font-family:var(--serif);font-weight:500;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:16px}
+.paycard .payv{font-family:var(--serif);font-size:17px;color:#eee6d5;margin-top:3px;line-height:1.4}
+.paycard .payv.mono{direction:ltr;letter-spacing:.03em}
+.paybtn{margin-top:20px;display:inline-block;background:var(--gold);color:#31301f;text-decoration:none;padding:13px 32px;border-radius:4px;font-family:var(--serif);font-weight:500;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:opacity .3s}
+.paybtn:hover{opacity:.9}
 
 .rsvp{background:var(--olive-dark);color:#eee6d5}
 .rsvp .kicker{color:var(--gold)}
@@ -362,7 +372,28 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
     <div class="kicker" data-i18n="gift_kicker">Gifts</div>
     <h2 data-i18n="gift_title">Your presence is the present</h2>
     <p class="lead" data-i18n="gift_body">Many of you are travelling across the globe to celebrate with us in Italy, so your presence truly means the world to us, and it's all we ask for. If you'd still like to contribute to our wedding registry, you can do so below, with all our thanks.</p>
-    <a class="btn" id="giftBtn" href="#" target="_blank" rel="noopener" data-i18n="gift_btn">Wedding registry</a>
+    <div class="pay">
+      <div class="paycard">
+        <div class="payt" data-i18n="pay_bank">Bank transfer</div>
+        <img class="qr" src="photos/qr-bill.png" alt="Swiss QR bill" />
+        <div class="payk" data-i18n="pay_iban">Account (IBAN)</div>
+        <div class="payv mono">CH90 0070 0114 9054 0548 8</div>
+        <div class="payk" data-i18n="pay_holder">Account holder</div>
+        <div class="payv">Bohren Noah oder Seyfeddine Mona</div>
+      </div>
+      <div class="paycard">
+        <div class="payt">TWINT</div>
+        <div class="payk" data-i18n="pay_number">Number</div>
+        <div class="payv mono">078 625 04 82</div>
+        <div class="payk" data-i18n="pay_ref">Message</div>
+        <div class="payv">wedding</div>
+      </div>
+      <div class="paycard">
+        <div class="payt">Revolut</div>
+        <div class="payv" style="margin-top:14px">revolut.me/noahm9ypm</div>
+        <a class="paybtn" href="https://revolut.me/noahm9ypm" target="_blank" rel="noopener" data-i18n="pay_revbtn">Open Revolut</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -487,7 +518,7 @@ const I18N = {
     travel_directions:"Get directions →",
     gift_kicker:"Gifts", gift_title:"Your presence is the present",
     gift_body:"Many of you are travelling across the globe to celebrate with us in Italy, so your presence truly means the world to us, and it's all we ask for. If you'd still like to contribute to our wedding registry, you can do so below, with all our thanks.",
-    gift_btn:"Wedding registry",
+    gift_btn:"Wedding registry", pay_bank:"Bank transfer", pay_iban:"Account (IBAN)", pay_holder:"Account holder", pay_number:"Number", pay_ref:"Message", pay_revbtn:"Open Revolut",
     rsvp_kicker:"Kindly reply", rsvp_title:"Will you join us?",
     rsvp_body:"Kindly reply by 1 October 2026. You'll receive a confirmation email, and we'll add more information to this site as the big day approaches. We're also holding a pre-wedding gathering the day before, so plan to arrive a day or two early. More details to come.",
     r_email_label:"Your email", r_email_ph:"you@example.com", r_continue:"Continue",
@@ -541,8 +572,8 @@ const I18N = {
     travel_directions:"Obtenir l'itinéraire →",
     gift_kicker:"Cadeaux", gift_title:"Votre présence est notre plus beau cadeau",
     gift_body:"Beaucoup d'entre vous traversent le monde pour célébrer avec nous en Italie ; votre présence compte plus que tout, et c'est tout ce que nous demandons. Si vous souhaitez malgré tout contribuer à notre liste de mariage, vous pouvez le faire ci-dessous, avec toute notre gratitude.",
-    gift_btn:"Liste de mariage",
-    rsvp_kicker:"Réponse", rsvp_title:"Vous serez là ?",
+    gift_btn:"Liste de mariage", pay_bank:"Virement bancaire", pay_iban:"Compte (IBAN)", pay_holder:"Titulaire du compte", pay_number:"Numéro", pay_ref:"Message", pay_revbtn:"Ouvrir Revolut",
+    rsvp_kicker:"Réponse", rsvp_title:"Serez-vous là ?",
     rsvp_body:"Merci de répondre avant le 1er octobre 2026. Vous recevrez un e-mail de confirmation, et nous ajouterons plus d'informations sur ce site à l'approche du jour « J ». Nous organiserons aussi un pré-mariage la veille. Prévoyez d'arriver un à deux jours à l'avance. Plus de détails à venir.",
     r_email_label:"Votre e-mail", r_email_ph:"vous@exemple.com", r_continue:"Continuer",
     r_attend_q:"Serez-vous parmi nous ?",
@@ -595,7 +626,7 @@ const I18N = {
     travel_directions:"← عرض الاتجاهات",
     gift_kicker:"الهدايا", gift_title:"حضوركم هو أجمل هدية",
     gift_body:"يقطع كثيرٌ منكم العالم للاحتفال معنا في إيطاليا، لذا فإن حضوركم يعني لنا كل شيء، وهو كل ما نطلبه. وإن رغبتم رغم ذلك في المساهمة في قائمة هدايانا، يمكنكم ذلك أدناه، مع خالص شكرنا.",
-    gift_btn:"قائمة الهدايا",
+    gift_btn:"قائمة الهدايا", pay_bank:"تحويل بنكي", pay_iban:"الحساب (IBAN)", pay_holder:"صاحب الحساب", pay_number:"الرقم", pay_ref:"الرسالة", pay_revbtn:"فتح Revolut",
     rsvp_kicker:"نرجو تأكيد الحضور", rsvp_title:"هل ستكونون معنا؟",
     rsvp_body:"يرجى الرد قبل ١ أكتوبر ٢٠٢٦. ستصلكم رسالة تأكيد، وسنضيف مزيدًا من المعلومات على هذا الموقع مع اقتراب اليوم الموعود. سننظّم أيضًا لقاءً قبل الزفاف عشية اليوم، فاحرصوا على الوصول قبل يوم أو يومين. المزيد من التفاصيل قريبًا.",
     r_email_label:"بريدكم الإلكتروني", r_email_ph:"you@example.com", r_continue:"متابعة",
@@ -666,8 +697,7 @@ document.querySelectorAll(".langs button").forEach(b=> b.addEventListener("click
 /* ---------- Gift link ---------- */
 (function(){
   const g = document.getElementById("giftBtn");
-  if(!CONFIG.GIFT_URL.startsWith("PASTE")) g.href = CONFIG.GIFT_URL;
-  else g.addEventListener("click", e=>e.preventDefault());
+  if(g){ if(!CONFIG.GIFT_URL.startsWith("PASTE")) g.href = CONFIG.GIFT_URL; else g.addEventListener("click", e=>e.preventDefault()); }
 })();
 
 /* ---------- Reveal on scroll ---------- */
