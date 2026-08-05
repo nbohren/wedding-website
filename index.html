@@ -16,7 +16,6 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500&display=swap" rel="stylesheet">
 <style>
 @font-face{font-family:'Cormorant';font-weight:400;font-display:swap;src:url('fonts/cormorant-400.woff2') format('woff2')}
 @font-face{font-family:'Cormorant';font-weight:500;font-display:swap;src:url('fonts/cormorant-500.woff2') format('woff2')}
@@ -24,13 +23,16 @@
 @font-face{font-family:'Cormorant Garamond';font-weight:500;font-display:swap;src:url('fonts/cormorantgaramond-500.woff2') format('woff2')}
 @font-face{font-family:'Cormorant Garamond';font-weight:400;font-style:italic;font-display:swap;src:url('fonts/cormorantgaramond-italic-400.woff2') format('woff2')}
 
+@font-face{font-family:'Amiri';font-weight:400;font-display:swap;src:url('fonts/amiri-400.woff2') format('woff2')}@font-face{font-family:'Amiri';font-weight:700;font-display:swap;src:url('fonts/amiri-700.woff2') format('woff2')}
 *{box-sizing:border-box;margin:0;padding:0}
+html[dir="rtl"] body *{letter-spacing:normal !important}
+html[dir="rtl"] .monogram{font-family:var(--ar)}
 html{scroll-behavior:smooth;overflow-x:hidden}
 :root{
   --paper:#f0e9db; --ink:#37332a; --soft:#6f6a5a; --muted:#9a9483; --line:#d9d2c2;
   --olive:#6d774a; --olive-deep:#515a34; --olive-dark:#3a4229; --gold:#b3924f;
   --hero:"Cormorant",Georgia,serif; --serif:"Cormorant Garamond",Georgia,serif;
-  --sans:"Cormorant Garamond",Georgia,serif; --ar:"Noto Naskh Arabic","Cormorant Garamond",serif;
+  --sans:"Cormorant Garamond",Georgia,serif; --ar:"Amiri","Cormorant Garamond",serif;
 }
 body{color:var(--ink);font-family:var(--serif);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
   background:radial-gradient(160% 120% at 50% -10%, #f7f2e9 0%, rgba(247,242,233,0) 55%),linear-gradient(180deg,#f3eee4 0%, #ebe4d5 100%);}
@@ -83,16 +85,17 @@ header.bar.solid{background:rgba(243,238,228,.94);box-shadow:0 1px 0 rgba(120,11
 .branch.se{bottom:-44px;right:-48px;width:clamp(150px,19vw,300px);opacity:.96}
 .invite{position:relative;z-index:2;width:100%;max-width:600px}
 .invite .eyebrow{font-family:var(--serif);font-weight:500;font-size:13px;letter-spacing:.46em;text-transform:uppercase;color:var(--muted);margin-bottom:clamp(22px,3.2vw,34px)}
-.invite .names{font-family:var(--hero);font-weight:400;color:var(--ink);line-height:1.05;font-size:clamp(36px,7.4vw,86px);letter-spacing:.01em;word-break:break-word}
+.invite .names{font-family:var(--hero);font-weight:400;color:var(--ink);line-height:1.05;font-size:clamp(36px,7.4vw,86px);letter-spacing:.01em;word-break:break-word;display:flex;flex-direction:column;align-items:center}
 html[dir="rtl"] .invite .names{font-family:var(--ar);font-size:clamp(36px,6vw,72px)}
 .invite .names .n{display:block}
-.invite .names .amp{display:block;font-weight:400;color:var(--gold);font-size:.5em;line-height:1;margin:.16em 0 .06em}
+.invite .names .amp{font-weight:400;color:var(--gold);font-size:.52em;line-height:1;margin:.12em 0}
 .invite .rule{width:54px;height:1px;background:var(--gold);opacity:.7;margin:clamp(20px,3vw,30px) auto}
 .invite .lede{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(19px,2.4vw,25px);color:var(--soft)}
 .invite .meta{margin-top:clamp(24px,3.4vw,36px);display:flex;flex-direction:column;gap:11px}
 .invite .date{font-family:var(--serif);font-weight:500;font-size:14.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink)}
 .invite .where{font-family:var(--serif);font-weight:400;font-size:13.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
 .invite .cd{font-family:var(--serif);font-weight:500;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.invite .cd:not(:empty)::before{content:"";display:inline-block;width:1em;height:1em;margin-inline-end:.5em;vertical-align:-.16em;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%2337332a%27%20stroke-width%3D%271.7%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M6%203h12%27/%3E%3Cpath%20d%3D%27M6%2021h12%27/%3E%3Cpath%20d%3D%27M7%203v3.2c0%201.8%202.8%203.6%205%205.8%202.2-2.2%205-4%205-5.8V3%27/%3E%3Cpath%20d%3D%27M7%2021v-3.2c0-1.8%202.8-3.6%205-5.8%202.2%202.2%205%204%205%205.8V21%27/%3E%3C/svg%3E") center/contain no-repeat}
 .invite .cta{display:inline-block;margin-top:clamp(30px,4.2vw,44px);background:var(--olive-deep);color:#f4efe4;text-decoration:none;
   padding:16px 54px;border-radius:4px;font-family:var(--serif);font-weight:500;font-size:13px;letter-spacing:.3em;text-transform:uppercase;
   box-shadow:0 10px 24px rgba(63,71,38,.22);transition:transform .25s,background .25s}
@@ -230,7 +233,6 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
     <nav class="langs" aria-label="Language">
       <button data-lang="en" class="active">EN</button>
       <button data-lang="fr">FR</button>
-      <button data-lang="de">DE</button>
       <button data-lang="ar">&#1593;</button>
     </nav>
     <a class="nav-rsvp" href="#rsvp" data-i18n="nav_rsvp">RSVP</a>
@@ -252,7 +254,7 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
     <div class="rule"></div>
     <div class="lede" data-i18n="inv_line">invite you to celebrate their marriage</div>
     <div class="meta">
-      <div class="date" data-i18n="inv_when">Friday, 7 May 2027</div>
+      <div class="date" data-i18n="inv_when">Friday 7 May 2027</div>
       <div class="where" data-i18n="inv_where">Rocca di Lonato &middot; Lake Garda, Italy</div>
       <div class="cd" id="countdown" aria-live="polite"></div>
     </div>
@@ -268,7 +270,7 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
   <div class="wrap reveal">
     <div class="kicker" data-i18n="story_kicker">Our story</div>
     <h2 data-i18n="story_title">Two people, many places, one day</h2>
-    <p class="lead" data-i18n="story_body">From snowy mornings to city walks and kitchens far from home, we've been collecting places and memories together for years. On 7 May 2027 we'll gather everyone we love inside a castle above Lake Garda. Thank you for being part of the story.</p>
+    <p class="lead" data-i18n="story_body">Noah is a serene golfer, master of his emotions. Mona is an engineer who loves absolutely everything — except engineering (or so she says). She sings and dances; he prefers to observe, and quiet music (elevator music, according to Mona). He plays classical guitar; she loves the qanun. So many contradictions, personal and cultural — and yet, they're inseparable.</p>
   </div>
   <div class="wrap reveal">
     <div class="gallery">
@@ -291,7 +293,7 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
   <div class="wrap center reveal">
     <div class="kicker" data-i18n="home_kicker">Where we come from</div>
     <h2 data-i18n="home_title">Between the cedars and the Alps</h2>
-    <p class="lead" data-i18n="home_body">Mona is Lebanese, Noah is Swiss — and between the two of us we speak four languages, as will many of you. Our wedding is a meeting of the Mediterranean and the mountains, of mezze and raclette, and of everyone we love in one place.</p>
+    <p class="lead" data-i18n="home_body">Our wedding is a meeting of the Mediterranean and the mountains, of mezze and raclette, of toum and Aromat, and of everyone we love gathered in one place.</p>
   </div>
   <div class="wrap reveal">
     <div class="homes">
@@ -314,7 +316,7 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
         <div class="cap">
           <div class="flag" data-i18n="home_ch_flag">🇨🇭 Switzerland</div>
           <h3 class="serif" data-i18n="home_ch_h">Noah's side</h3>
-          <p data-i18n="home_ch_b">Alpine lakes, snow peaks and quiet mountain mornings.</p>
+          <p data-i18n="home_ch_b">Mountains, clear lakes and an unhurried calm — a paradise for photographers and pragmatic creative genius.</p>
         </div>
       </div>
     </div>
@@ -339,7 +341,7 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
       <div class="cell">
         <div class="t" data-i18n="travel_air_t">By air</div>
         <h3 class="serif" data-i18n="travel_air_h">Nearest airports</h3>
-        <p data-i18n="travel_air_b">Verona (VRN) ≈ 30 min · Bergamo (BGY) ≈ 1 hr · Milan (MXP/LIN) ≈ 1.5 hr. Verona is the easiest for most guests.</p>
+        <p data-i18n="travel_air_b">Approx. drive time to the venue:<br>Verona (VRN) — 40 min · small, local airport<br>Bergamo (BGY) — 1 to 1.5 hr<br>Milan Malpensa (MXP) — 2 to 2.5 hr</p>
       </div>
       <div class="cell">
         <div class="t" data-i18n="travel_train_t">By train &amp; road</div>
@@ -349,7 +351,7 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
       <div class="cell">
         <div class="t" data-i18n="travel_sleep_t">Where to sleep</div>
         <h3 class="serif" data-i18n="travel_sleep_h">Staying nearby</h3>
-        <p data-i18n="travel_sleep_b">Lonato del Garda, Desenzano and Sirmione all have lovely hotels by the lake. We'll share a shortlist here soon — booking early is wise for May.</p>
+        <p data-i18n="travel_sleep_b">Lonato del Garda, Desenzano and Sirmione all have lovely hotels by the lake. We'll share a shortlist here soon.</p>
       </div>
     </div>
   </div>
@@ -360,8 +362,8 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
   <div class="wrap reveal">
     <div class="kicker" data-i18n="gift_kicker">Gifts</div>
     <h2 data-i18n="gift_title">Your presence is the present</h2>
-    <p class="lead" data-i18n="gift_body">Many of you are travelling across the globe to celebrate with us in Italy, so your presence truly means the world to us — and it's all we ask for. If you'd still like to contribute to our registry or honeymoon fund, you can do so below, with all our thanks.</p>
-    <a class="btn" id="giftBtn" href="#" target="_blank" rel="noopener" data-i18n="gift_btn">Registry &amp; honeymoon fund</a>
+    <p class="lead" data-i18n="gift_body">Many of you are travelling across the globe to celebrate with us in Italy, so your presence truly means the world to us — and it's all we ask for. If you'd still like to contribute to our wedding registry, you can do so below, with all our thanks.</p>
+    <a class="btn" id="giftBtn" href="#" target="_blank" rel="noopener" data-i18n="gift_btn">Wedding registry</a>
   </div>
 </section>
 
@@ -370,7 +372,7 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
   <div class="wrap center reveal">
     <div class="kicker" data-i18n="rsvp_kicker">Kindly reply</div>
     <h2 data-i18n="rsvp_title">Will you join us?</h2>
-    <p class="lead" data-i18n="rsvp_body">Kindly reply by 1 March 2027. You'll receive a confirmation email in your language.</p>
+    <p class="lead" data-i18n="rsvp_body">Kindly reply by 1 October 2026. You'll receive a confirmation email, and we'll add more information to this site as the big day approaches. We're also planning a pre-wedding gathering — plan to arrive a day or two early. More details to come.</p>
   </div>
 
   <div class="wrap">
@@ -463,32 +465,32 @@ const I18N = {
     scrollcue:"Scroll", nav_rsvp:"RSVP", hero_rsvp:"RSVP",
     inv_together:"Together with their families",
     inv_line:"joyfully invite you to celebrate their marriage",
-    inv_when:"Friday, 7 May 2027", inv_where:"Rocca di Lonato · Lake Garda, Italy",
+    inv_when:"Friday 7 May 2027", inv_where:"Rocca di Lonato · Lake Garda, Italy",
     sch_kicker:"The celebration", sch_title:"How the day unfolds",
     sch_body:"We'll gather within the walls of Rocca di Lonato — a thousand-year-old fortress on a hill above Lake Garda — to marry and then celebrate long into the evening. Here's the shape of the day.",
     sch_welcome:"Welcome & seating", sch_ceremony:"Ceremony", sch_aperitivo:"Aperitivo & photos", sch_dinner:"Dinner", sch_dancing:"Dancing",
     sch_note:"Timings are provisional — we'll confirm the final schedule closer to the day.",
     cd_days:"days to go", cd_tomorrow:"Tomorrow!", cd_today:"Today!",
     story_kicker:"Our story", story_title:"Two people, many places, one day",
-    story_body:"From snowy mornings to city walks and kitchens far from home, we've been collecting places and memories together for years. On 7 May 2027 we'll gather everyone we love inside a castle above Lake Garda. Thank you for being part of the story.",
+    story_body:"Noah is a serene golfer, master of his emotions. Mona is an engineer who loves absolutely everything — except engineering (or so she says). She sings and dances; he prefers to observe, and quiet music (elevator music, according to Mona). He plays classical guitar; she loves the qanun. So many contradictions, personal and cultural — and yet, they're inseparable.",
     home_kicker:"Where we come from", home_title:"Between the cedars and the Alps",
-    home_body:"Mona is Lebanese, Noah is Swiss — and between the two of us we speak four languages, as will many of you. Our wedding is a meeting of the Mediterranean and the mountains, of mezze and raclette, and of everyone we love in one place.",
+    home_body:"Our wedding is a meeting of the Mediterranean and the mountains, of mezze and raclette, of toum and Aromat, and of everyone we love gathered in one place.",
     home_lb_flag:"🇱🇧 Lebanon", home_lb_h:"Mona's side", home_lb_b:"Endless mezze, open doors and a generosity that never runs out.",
-    home_ch_flag:"🇨🇭 Switzerland", home_ch_h:"Noah's side", home_ch_b:"Mountains, clear lakes and an easy, unhurried calm.",
+    home_ch_flag:"🇨🇭 Switzerland", home_ch_h:"Noah's side", home_ch_b:"Mountains, clear lakes and an unhurried calm — a paradise for photographers and pragmatic creative genius.",
     travel_kicker:"Travel & stay", travel_title:"Getting to Rocca di Lonato",
     travel_intro:"Rocca di Lonato sits on a hill in Lonato del Garda, Lombardy — a short hop from the southern shore of Lake Garda. Here's how to reach us and where to rest your head.",
     travel_air_t:"By air", travel_air_h:"Nearest airports",
-    travel_air_b:"Verona (VRN) ≈ 30 min · Bergamo (BGY) ≈ 1 hr · Milan (MXP/LIN) ≈ 1.5 hr. Verona is the easiest for most guests.",
+    travel_air_b:"Approx. drive time to the venue:<br>Verona (VRN) — 40 min · small, local airport<br>Bergamo (BGY) — 1 to 1.5 hr<br>Milan Malpensa (MXP) — 2 to 2.5 hr",
     travel_train_t:"By train & road", travel_train_h:"Trains & parking",
     travel_train_b:"Fast trains stop at Desenzano del Garda–Sirmione, 10 min from Lonato by taxi. Free parking is available at the venue.",
     travel_sleep_t:"Where to sleep", travel_sleep_h:"Staying nearby",
-    travel_sleep_b:"Lonato del Garda, Desenzano and Sirmione all have lovely hotels by the lake. We'll share a shortlist here soon — booking early is wise for May.",
+    travel_sleep_b:"Lonato del Garda, Desenzano and Sirmione all have lovely hotels by the lake. We'll share a shortlist here soon.",
     travel_directions:"Get directions →",
     gift_kicker:"Gifts", gift_title:"Your presence is the present",
-    gift_body:"Many of you are travelling across the globe to celebrate with us in Italy, so your presence truly means the world to us — and it's all we ask for. If you'd still like to contribute to our registry or honeymoon fund, you can do so below, with all our thanks.",
-    gift_btn:"Registry & honeymoon fund",
+    gift_body:"Many of you are travelling across the globe to celebrate with us in Italy, so your presence truly means the world to us — and it's all we ask for. If you'd still like to contribute to our wedding registry, you can do so below, with all our thanks.",
+    gift_btn:"Wedding registry",
     rsvp_kicker:"Kindly reply", rsvp_title:"Will you join us?",
-    rsvp_body:"Kindly reply by 1 October 2026. You'll receive a confirmation email, and we'll keep adding details here — travel, timings and more — as the day approaches.",
+    rsvp_body:"Kindly reply by 1 October 2026. You'll receive a confirmation email, and we'll add more information to this site as the big day approaches. We're also planning a pre-wedding gathering — plan to arrive a day or two early. More details to come.",
     r_email_label:"Your email", r_email_ph:"you@example.com", r_continue:"Continue",
     r_attend_q:"Will you be joining us?",
     r_yes:"Joyfully accepts", r_yes_sub:"We'll be there",
@@ -517,32 +519,32 @@ const I18N = {
     scrollcue:"Défiler", nav_rsvp:"RSVP", hero_rsvp:"Répondre",
     inv_together:"Avec leurs familles",
     inv_line:"ont la joie de vous convier à célébrer leur mariage",
-    inv_when:"Vendredi 7 mai 2027", inv_where:"Rocca di Lonato · Lac de Garde, Italie",
+    inv_when:"Le vendredi 7 mai 2027", inv_where:"Rocca di Lonato · Lac de Garde, Italie",
     sch_kicker:"La célébration", sch_title:"Le déroulé de la journée",
     sch_body:"Nous nous réunirons entre les murs de la Rocca di Lonato — une forteresse millénaire sur une colline au-dessus du lac de Garde — pour nous marier, puis célébrer jusque tard dans la soirée. Voici le déroulé de la journée.",
     sch_welcome:"Accueil & installation", sch_ceremony:"Cérémonie", sch_aperitivo:"Apéritif & photos", sch_dinner:"Dîner", sch_dancing:"Soirée dansante",
     sch_note:"Les horaires sont provisoires — nous confirmerons le programme définitif à l'approche du jour.",
     cd_days:"jours restants", cd_tomorrow:"Demain !", cd_today:"C'est aujourd'hui !",
     story_kicker:"Notre histoire", story_title:"Deux personnes, mille endroits, un jour",
-    story_body:"Des matins enneigés aux balades en ville et aux cuisines loin de chez nous, nous collectionnons ensemble des lieux et des souvenirs depuis des années. Le 7 mai 2027, nous réunirons tous ceux que nous aimons dans un château au-dessus du lac de Garde. Merci de faire partie de l'histoire.",
+    story_body:"Noah est un golfeur serein, maître de ses émotions. Mona est ingénieure et adore à peu près tout — sauf l'ingénierie (enfin, c'est ce qu'elle dit). Elle chante et danse ; lui préfère observer, et la musique douce (pour Mona, de la musique d'ascenseur). Il joue de la guitare classique, elle aime le qanûn. Autant de contradictions, personnelles et culturelles — et pourtant, ils sont inséparables.",
     home_kicker:"D'où nous venons", home_title:"Entre les cèdres et les Alpes",
-    home_body:"Mona est libanaise, Noah est suisse — et à nous deux nous parlons quatre langues, comme beaucoup d'entre vous. Notre mariage est une rencontre entre la Méditerranée et la montagne, entre le mezzé et la raclette, et entre tous ceux que nous aimons réunis en un même lieu.",
+    home_body:"Notre mariage est une rencontre entre la Méditerranée et la montagne, entre le mezzé et la raclette, entre le toum et l'Aromat, et entre tous ceux que nous aimons réunis en un même lieu.",
     home_lb_flag:"🇱🇧 Liban", home_lb_h:"Le côté de Mona", home_lb_b:"Un mezzé sans fin, des portes toujours ouvertes et une générosité inépuisable.",
-    home_ch_flag:"🇨🇭 Suisse", home_ch_h:"Le côté de Noah", home_ch_b:"Les montagnes, des lacs limpides et un calme paisible.",
+    home_ch_flag:"🇨🇭 Suisse", home_ch_h:"Le côté de Noah", home_ch_b:"Montagnes, lacs limpides et un calme paisible — un paradis pour les photographes et le génie créatif pragmatique.",
     travel_kicker:"Venir & se loger", travel_title:"Se rendre à la Rocca di Lonato",
     travel_intro:"La Rocca di Lonato domine une colline à Lonato del Garda, en Lombardie — à deux pas de la rive sud du lac de Garde. Voici comment nous rejoindre et où dormir.",
     travel_air_t:"En avion", travel_air_h:"Aéroports les plus proches",
-    travel_air_b:"Vérone (VRN) ≈ 30 min · Bergame (BGY) ≈ 1 h · Milan (MXP/LIN) ≈ 1 h 30. Vérone est le plus pratique pour la plupart des invités.",
+    travel_air_b:"Temps de route approximatif jusqu'au lieu :<br>Vérone (VRN) — 40 min · petit aéroport local<br>Bergame (BGY) — 1 h à 1 h 30<br>Milan Malpensa (MXP) — 2 h à 2 h 30",
     travel_train_t:"En train & voiture", travel_train_h:"Trains & parking",
     travel_train_b:"Les trains rapides s'arrêtent à Desenzano del Garda–Sirmione, à 10 min de Lonato en taxi. Un parking gratuit est disponible sur place.",
     travel_sleep_t:"Où dormir", travel_sleep_h:"Se loger à proximité",
-    travel_sleep_b:"Lonato del Garda, Desenzano et Sirmione offrent de beaux hôtels au bord du lac. Nous partagerons bientôt une sélection ici — réservez tôt pour le mois de mai.",
+    travel_sleep_b:"Lonato del Garda, Desenzano et Sirmione offrent de beaux hôtels au bord du lac. Nous partagerons bientôt une sélection ici.",
     travel_directions:"Obtenir l'itinéraire →",
     gift_kicker:"Cadeaux", gift_title:"Votre présence est notre plus beau cadeau",
-    gift_body:"Beaucoup d'entre vous traversent le monde pour célébrer avec nous en Italie ; votre présence compte plus que tout — et c'est tout ce que nous demandons. Si vous souhaitez malgré tout contribuer à notre liste ou à notre cagnotte de lune de miel, vous pouvez le faire ci-dessous, avec toute notre gratitude.",
-    gift_btn:"Liste & cagnotte lune de miel",
-    rsvp_kicker:"Répondez s'il vous plaît", rsvp_title:"Serez-vous des nôtres ?",
-    rsvp_body:"Merci de répondre avant le 1er octobre 2026. Vous recevrez un e-mail de confirmation, et nous ajouterons ici d'autres détails — voyage, horaires et plus — à l'approche du jour.",
+    gift_body:"Beaucoup d'entre vous traversent le monde pour célébrer avec nous en Italie ; votre présence compte plus que tout — et c'est tout ce que nous demandons. Si vous souhaitez malgré tout contribuer à notre liste de mariage, vous pouvez le faire ci-dessous, avec toute notre gratitude.",
+    gift_btn:"Liste de mariage",
+    rsvp_kicker:"Réponse", rsvp_title:"Vous serez là ?",
+    rsvp_body:"Merci de répondre avant le 1er octobre 2026. Vous recevrez un e-mail de confirmation, et nous ajouterons plus d'informations sur ce site à l'approche du jour « J ». Nous organiserons aussi un pré-mariage — prévoyez d'arriver un à deux jours à l'avance. Plus de détails à venir.",
     r_email_label:"Votre e-mail", r_email_ph:"vous@exemple.com", r_continue:"Continuer",
     r_attend_q:"Serez-vous parmi nous ?",
     r_yes:"Accepte avec joie", r_yes_sub:"Nous serons là",
@@ -563,60 +565,6 @@ const I18N = {
     st_name_required:"Merci d'ajouter au moins un nom d'invité.",
     st_err:"Une erreur est survenue. Réessayez ou écrivez-nous directement."
   },
-  de: {
-    monogram:"M · N",
-    hero_eyebrow:"Wir heiraten",
-    name1:"Mona Seyfeddine", name2:"Noah Bohren",
-    hero_date:"7. Mai 2027 · Rocca di Lonato, Italien",
-    scrollcue:"Scrollen", nav_rsvp:"RSVP", hero_rsvp:"Zusagen",
-    inv_together:"Gemeinsam mit ihren Familien",
-    inv_line:"laden euch voller Freude ein, ihre Hochzeit zu feiern",
-    inv_when:"Freitag, 7. Mai 2027", inv_where:"Rocca di Lonato · Gardasee, Italien",
-    sch_kicker:"Die Feier", sch_title:"Der Ablauf des Tages",
-    sch_body:"Wir versammeln uns in den Mauern der Rocca di Lonato — einer tausendjährigen Festung auf einem Hügel über dem Gardasee —, um zu heiraten und anschließend bis spät in den Abend zu feiern. So sieht der Tag aus.",
-    sch_welcome:"Empfang & Platznahme", sch_ceremony:"Trauung", sch_aperitivo:"Aperitivo & Fotos", sch_dinner:"Abendessen", sch_dancing:"Tanz",
-    sch_note:"Die Zeiten sind vorläufig — den endgültigen Ablauf bestätigen wir näher am Tag.",
-    cd_days:"Tage bis dahin", cd_tomorrow:"Morgen!", cd_today:"Heute!",
-    story_kicker:"Unsere Geschichte", story_title:"Zwei Menschen, viele Orte, ein Tag",
-    story_body:"Von verschneiten Morgen über Spaziergänge durch fremde Städte bis zu Küchen fern der Heimat sammeln wir seit Jahren gemeinsam Orte und Erinnerungen. Am 7. Mai 2027 versammeln wir alle, die wir lieben, in einer Burg über dem Gardasee. Danke, dass ihr Teil dieser Geschichte seid.",
-    home_kicker:"Woher wir kommen", home_title:"Zwischen den Zedern und den Alpen",
-    home_body:"Mona ist Libanesin, Noah ist Schweizer — und zu zweit sprechen wir vier Sprachen, so wie viele von euch. Unsere Hochzeit ist eine Begegnung zwischen Mittelmeer und Bergen, zwischen Mezze und Raclette und zwischen allen, die wir lieben, an einem Ort.",
-    home_lb_flag:"🇱🇧 Libanon", home_lb_h:"Monas Seite", home_lb_b:"Endloses Mezze, offene Türen und grenzenlose Großzügigkeit.",
-    home_ch_flag:"🇨🇭 Schweiz", home_ch_h:"Noahs Seite", home_ch_b:"Berge, klare Seen und eine gelassene, unaufgeregte Ruhe.",
-    travel_kicker:"Anreise & Übernachten", travel_title:"So kommt ihr zur Rocca di Lonato",
-    travel_intro:"Die Rocca di Lonato thront auf einem Hügel in Lonato del Garda in der Lombardei — nur einen Katzensprung vom Südufer des Gardasees entfernt. So erreicht ihr uns und hier könnt ihr übernachten.",
-    travel_air_t:"Mit dem Flugzeug", travel_air_h:"Nächste Flughäfen",
-    travel_air_b:"Verona (VRN) ≈ 30 Min · Bergamo (BGY) ≈ 1 Std · Mailand (MXP/LIN) ≈ 1,5 Std. Verona ist für die meisten Gäste am einfachsten.",
-    travel_train_t:"Zug & Auto", travel_train_h:"Züge & Parken",
-    travel_train_b:"Schnellzüge halten in Desenzano del Garda–Sirmione, 10 Min von Lonato mit dem Taxi. Kostenlose Parkplätze gibt es am Veranstaltungsort.",
-    travel_sleep_t:"Wo übernachten", travel_sleep_h:"In der Nähe wohnen",
-    travel_sleep_b:"Lonato del Garda, Desenzano und Sirmione bieten schöne Hotels am See. Wir teilen bald eine Auswahl hier — im Mai lohnt sich frühes Buchen.",
-    travel_directions:"Route anzeigen →",
-    gift_kicker:"Geschenke", gift_title:"Eure Anwesenheit ist das Geschenk",
-    gift_body:"Viele von euch reisen um die halbe Welt, um mit uns in Italien zu feiern — eure Anwesenheit bedeutet uns wirklich alles, und mehr wünschen wir uns nicht. Wer dennoch zu unserer Wunschliste oder zur Flitterwochen-Kasse beitragen möchte, kann das unten tun, mit unserem herzlichen Dank.",
-    gift_btn:"Wunschliste & Flitterwochen-Kasse",
-    rsvp_kicker:"Um Antwort wird gebeten", rsvp_title:"Seid ihr dabei?",
-    rsvp_body:"Bitte antwortet bis zum 1. Oktober 2026. Ihr erhaltet eine Bestätigungs-E-Mail, und wir ergänzen hier laufend weitere Details — Anreise, Zeiten und mehr — je näher der Tag rückt.",
-    r_email_label:"Eure E-Mail", r_email_ph:"du@beispiel.com", r_continue:"Weiter",
-    r_attend_q:"Werdet ihr dabei sein?",
-    r_yes:"Nimmt herzlich an", r_yes_sub:"Wir kommen",
-    r_no:"Muss leider absagen", r_no_sub:"Können nicht kommen",
-    r_yes_intro:"Wunderbar! Sagt uns, wer kommt. Fügt jeden Gast unten hinzu — ihr könnt auch einen Song für die Playlist vorschlagen.",
-    r_guest_name:"Vollständiger Name", r_name_ph:"Name des Gastes",
-    r_diet_label:"Essenswunsch",
-    diet_omnivore:"Alles", diet_vegetarian:"Vegetarisch", diet_vegan:"Vegan", diet_pescatarian:"Pescetarisch", diet_halal:"Halal",
-    r_allergy:"Allergien (optional)", r_allergy_ph:"z. B. Nüsse, Meeresfrüchte…",
-    r_song:"Einen Song vorschlagen 🎵 (optional)", r_song_ph:"Künstler — Titel",
-    r_add_guest:"+ Weiteren Gast hinzufügen", r_remove:"Entfernen", r_send:"Absenden", r_back:"Zurück",
-    r_no_line:"Wir werden euch vermissen — danke fürs Bescheidgeben.",
-    r_no_note_label:"Eine Nachricht an uns (optional)", r_no_note_ph:"Sagt Hallo…",
-    r_done_title:"Danke!", r_done_body:"Eure Antwort ist eingegangen — schaut in euer Postfach für die Bestätigung. Wir halten diese Seite bis zum großen Tag mit weiteren Details aktuell.",
-    foot_names:"Mona & Noah", foot_date:"07 · 05 · 2027 — Rocca di Lonato, Italien",
-    st_sending:"Wird gesendet…",
-    st_email_required:"Bitte gebt eine gültige E-Mail-Adresse ein.",
-    st_name_required:"Bitte fügt mindestens einen Gastnamen hinzu.",
-    st_err:"Etwas ist schiefgelaufen. Bitte versucht es erneut oder schreibt uns direkt."
-  },
   ar: {
     monogram:"م · ن",
     hero_eyebrow:"نحن على موعد مع الزواج",
@@ -625,32 +573,32 @@ const I18N = {
     scrollcue:"مرّر", nav_rsvp:"RSVP", hero_rsvp:"أكّدوا الحضور",
     inv_together:"مع عائلتيهما",
     inv_line:"يسعدهما دعوتكم لمشاركتهما فرحة زفافهما",
-    inv_when:"الجمعة، ٧ مايو ٢٠٢٧", inv_where:"روكا دي لوناتو · بحيرة غاردا، إيطاليا",
+    inv_when:"الجمعة ٧ مايو ٢٠٢٧", inv_where:"روكا دي لوناتو · بحيرة غاردا، إيطاليا",
     sch_kicker:"الاحتفال", sch_title:"كيف يمرّ اليوم",
     sch_body:"سنجتمع داخل أسوار روكا دي لوناتو — قلعة يعود عمرها إلى ألف عام على تلّة تطلّ على بحيرة غاردا — لنتزوّج ثم نحتفل حتى وقت متأخّر من المساء. إليكم برنامج اليوم.",
     sch_welcome:"الاستقبال والجلوس", sch_ceremony:"مراسم الزواج", sch_aperitivo:"الأبريتيفو والصور", sch_dinner:"العشاء", sch_dancing:"الرقص والسهر",
     sch_note:"المواعيد مبدئية — سنؤكّد البرنامج النهائي مع اقتراب الموعد.",
     cd_days:"يومًا حتى الموعد", cd_tomorrow:"غدًا!", cd_today:"اليوم!",
     story_kicker:"قصتنا", story_title:"شخصان، أماكن كثيرة، ويوم واحد",
-    story_body:"من صباحات الثلج إلى نزهات المدن والمطابخ البعيدة عن الوطن، نجمع الأماكن والذكريات معًا منذ سنوات. في ٧ مايو ٢٠٢٧ سنجمع كل من نحب داخل قلعة تطل على بحيرة غاردا. شكرًا لكونكم جزءًا من الحكاية.",
+    story_body:"نوح لاعب غولف هادئ يتحكّم في مشاعره. منى مهندسة تحبّ كل شيء تقريبًا — إلا الهندسة (هكذا تقول على الأقل). هي تغنّي وترقص، وهو يفضّل المراقبة والموسيقى الهادئة (موسيقى مصاعد، بحسب منى). يعزف الغيتار الكلاسيكي، وهي تحبّ القانون. تناقضات كثيرة، شخصية وثقافية — ومع ذلك لا ينفصلان.",
     home_kicker:"من أين نأتي", home_title:"بين الأرز وجبال الألب",
-    home_body:"منى لبنانية ونوح سويسري — ونحن الاثنان نتحدث أربع لغات، مثل كثيرين منكم. زفافنا لقاءٌ بين المتوسط والجبال، بين المازة والراكليت، وبين كل من نحب في مكان واحد.",
+    home_body:"زفافنا لقاءٌ بين المتوسط والجبال، بين المازة والراكليت، بين التوم والأرومات، وبين كل من نحب في مكان واحد.",
     home_lb_flag:"🇱🇧 لبنان", home_lb_h:"جانب منى", home_lb_b:"مازةٌ لا تنتهي، وأبوابٌ مفتوحة، وكرمٌ لا ينضب.",
-    home_ch_flag:"🇨🇭 سويسرا", home_ch_h:"جانب نوح", home_ch_b:"جبالٌ وبحيراتٌ صافية، وهدوءٌ رحبٌ لطيف.",
+    home_ch_flag:"🇨🇭 سويسرا", home_ch_h:"جانب نوح", home_ch_b:"جبال وبحيرات صافية وهدوء رحب — جنّة للمصوّرين وللعبقرية الإبداعية العملية.",
     travel_kicker:"السفر والإقامة", travel_title:"الوصول إلى روكا دي لوناتو",
     travel_intro:"تقع روكا دي لوناتو على تلة في لوناتو ديل غاردا بمنطقة لومبارديا، على مقربة من الشاطئ الجنوبي لبحيرة غاردا. إليكم كيفية الوصول وأين تقيمون.",
     travel_air_t:"جوًّا", travel_air_h:"أقرب المطارات",
-    travel_air_b:"فيرونا (VRN) ≈ ٣٠ دقيقة · بيرغامو (BGY) ≈ ساعة · ميلانو (MXP/LIN) ≈ ساعة ونصف. فيرونا الأسهل لمعظم الضيوف.",
+    travel_air_b:"زمن القيادة التقريبي إلى المكان:<br>فيرونا (VRN) — ٤٠ دقيقة · مطار محلي صغير<br>بيرغامو (BGY) — ساعة إلى ساعة ونصف<br>ميلانو مالبينسا (MXP) — ساعتان إلى ساعتين ونصف",
     travel_train_t:"بالقطار والسيارة", travel_train_h:"القطارات والمواقف",
     travel_train_b:"تتوقف القطارات السريعة في ديزينزانو ديل غاردا–سيرميوني، على بُعد ١٠ دقائق من لوناتو بسيارة الأجرة. يتوفر موقف مجاني في الموقع.",
     travel_sleep_t:"أين تقيمون", travel_sleep_h:"الإقامة القريبة",
-    travel_sleep_b:"تضم لوناتو ديل غاردا وديزينزانو وسيرميوني فنادق جميلة على ضفاف البحيرة. سنشارك قائمة مقترحة هنا قريبًا — يُستحسن الحجز مبكرًا في مايو.",
+    travel_sleep_b:"تضم لوناتو ديل غاردا وديزينزانو وسيرميوني فنادق جميلة على ضفاف البحيرة. سنشارك قائمة مقترحة هنا قريبًا.",
     travel_directions:"← عرض الاتجاهات",
     gift_kicker:"الهدايا", gift_title:"حضوركم هو أجمل هدية",
-    gift_body:"يقطع كثيرٌ منكم العالم للاحتفال معنا في إيطاليا، لذا فإن حضوركم يعني لنا كل شيء — وهو كل ما نطلبه. وإن رغبتم رغم ذلك في المساهمة في قائمة هدايانا أو صندوق شهر العسل، يمكنكم ذلك أدناه، مع خالص شكرنا.",
-    gift_btn:"قائمة الهدايا وصندوق شهر العسل",
-    rsvp_kicker:"نرجو تأكيد الحضور", rsvp_title:"هل ستشاركوننا؟",
-    rsvp_body:"يرجى الرد قبل ١ أكتوبر ٢٠٢٦. ستصلكم رسالة تأكيد، وسنضيف هنا مزيدًا من التفاصيل — السفر والمواعيد وغيرها — كلما اقترب الموعد.",
+    gift_body:"يقطع كثيرٌ منكم العالم للاحتفال معنا في إيطاليا، لذا فإن حضوركم يعني لنا كل شيء — وهو كل ما نطلبه. وإن رغبتم رغم ذلك في المساهمة في قائمة هدايانا، يمكنكم ذلك أدناه، مع خالص شكرنا.",
+    gift_btn:"قائمة الهدايا",
+    rsvp_kicker:"نرجو تأكيد الحضور", rsvp_title:"هل ستكونون معنا؟",
+    rsvp_body:"يرجى الرد قبل ١ أكتوبر ٢٠٢٦. ستصلكم رسالة تأكيد، وسنضيف مزيدًا من المعلومات على هذا الموقع مع اقتراب اليوم الموعود. سننظّم أيضًا لقاءً قبل الزفاف — احرصوا على الوصول قبل يوم أو يومين. المزيد من التفاصيل قريبًا.",
     r_email_label:"بريدكم الإلكتروني", r_email_ph:"you@example.com", r_continue:"متابعة",
     r_attend_q:"هل ستكونون معنا؟",
     r_yes:"أقبل بكل سرور", r_yes_sub:"سنكون هناك",
@@ -713,7 +661,7 @@ document.querySelectorAll(".langs button").forEach(b=> b.addEventListener("click
 (function initLang(){
   let saved; try{ saved = localStorage.getItem("wed_lang"); }catch(e){}
   const nav = (navigator.language||"en").slice(0,2);
-  applyLang(saved || (I18N[nav] ? nav : "en"));
+  applyLang((saved && I18N[saved]) ? saved : (I18N[nav] ? nav : "en"));
 })();
 
 /* ---------- Gift link ---------- */
