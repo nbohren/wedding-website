@@ -40,7 +40,7 @@ html[dir="rtl"] body{font-family:var(--ar)}
 html[dir="rtl"] .serif,html[dir="rtl"] .hero-font{font-family:var(--ar)}
 img{display:block;max-width:100%}
 .serif{font-family:var(--hero);font-weight:400}
-.wrap{max-width:1080px;margin:0 auto;padding:0 30px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 30px;position:relative;z-index:1}
 .hidden{display:none !important}
 /* paper texture layers */
 .tex{position:fixed;inset:0;pointer-events:none;z-index:-1}
@@ -83,6 +83,18 @@ header.bar.solid{background:rgba(243,238,228,.94);box-shadow:0 1px 0 rgba(120,11
 .branch.ne{top:-50px;right:-50px;width:clamp(210px,29vw,470px)}
 .branch.sw{bottom:-40px;left:-46px;width:clamp(150px,19vw,300px);opacity:.96}
 .branch.se{bottom:-44px;right:-48px;width:clamp(150px,19vw,300px);opacity:.96}
+/* side olive branches that glide in per section */
+.sbranch{position:absolute;top:50%;z-index:0;pointer-events:none;width:clamp(150px,19vw,320px);opacity:0;will-change:transform,opacity;transition:opacity 1.5s ease,transform 1.6s cubic-bezier(.16,.72,.18,1)}
+.sbranch img{width:100%;height:auto;display:block}
+.sbranch.r img{transform:scaleX(-1)}
+.sbranch.l{left:0;transform:translate(-64%,-50%) rotate(-5deg)}
+.sbranch.r{right:0;transform:translate(64%,-50%) rotate(-5deg)}
+.sbranch.l.in{opacity:.9;transform:translate(-34%,-50%) rotate(-3deg)}
+.sbranch.r.in{opacity:.9;transform:translate(34%,-50%) rotate(-3deg)}
+.gift .sbranch,.rsvp .sbranch{opacity:0}
+.gift .sbranch.in,.rsvp .sbranch.in{opacity:.78}
+@media(prefers-reduced-motion:reduce){.sbranch{transition:none}.sbranch.l{transform:translate(-34%,-50%) rotate(-3deg)}.sbranch.r{transform:translate(34%,-50%) rotate(-3deg)}}
+@media(max-width:820px){.sbranch{width:24vw;opacity:0}.sbranch.l{transform:translate(-72%,-50%) rotate(-5deg)}.sbranch.r{transform:translate(72%,-50%) rotate(-5deg)}.sbranch.l.in{transform:translate(-52%,-50%) rotate(-3deg)}.sbranch.r.in{transform:translate(52%,-50%) rotate(-3deg)}.sbranch.in{opacity:.55}}
 .invite{position:relative;z-index:2;width:100%;max-width:600px}
 .invite .eyebrow{font-family:var(--serif);font-weight:500;font-size:13px;letter-spacing:.46em;text-transform:uppercase;color:var(--muted);margin-bottom:clamp(22px,3.2vw,34px)}
 .invite .names{font-family:var(--hero);font-weight:400;color:var(--ink);line-height:1.05;font-size:clamp(36px,7.4vw,86px);letter-spacing:.01em;word-break:break-word;display:flex;flex-direction:column;align-items:center}
@@ -289,6 +301,8 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
 
 <!-- OUR STORY -->
 <section class="center" id="story">
+  <div class="sbranch l"><img alt="" src="branches/olive3.webp"></div>
+  <div class="sbranch r"><img alt="" src="branches/olive1.webp"></div>
   <div class="wrap reveal">
     <div class="kicker" data-i18n="story_kicker">Our story</div>
     <h2 data-i18n="story_title">Poles apart, never apart</h2>
@@ -312,6 +326,8 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
 
 <!-- WHERE WE COME FROM -->
 <section id="homelands">
+  <div class="sbranch l"><img alt="" src="branches/olive1.webp"></div>
+  <div class="sbranch r"><img alt="" src="branches/olive2.webp"></div>
   <div class="wrap center reveal">
     <div class="kicker" data-i18n="home_kicker">Where we come from</div>
     <h2 data-i18n="home_title">Between the cedars and the Alps</h2>
@@ -349,6 +365,8 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
 
 <!-- TRAVEL & STAY -->
 <section id="travel">
+  <div class="sbranch l"><img alt="" src="branches/olive2.webp"></div>
+  <div class="sbranch r"><img alt="" src="branches/olive3.webp"></div>
   <div class="wrap split reveal">
     <div>
       <div class="kicker" data-i18n="travel_kicker">Travel &amp; stay</div>
@@ -381,6 +399,8 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
 
 <!-- GIFT -->
 <section class="gift" id="gift">
+  <div class="sbranch l"><img alt="" src="branches/olive3.webp"></div>
+  <div class="sbranch r"><img alt="" src="branches/olive1.webp"></div>
   <div class="wrap reveal">
     <div class="kicker" data-i18n="gift_kicker">Gifts</div>
     <h2 data-i18n="gift_title">Your presence is the present</h2>
@@ -429,6 +449,8 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
 
 <!-- RSVP -->
 <section class="rsvp" id="rsvp">
+  <div class="sbranch l"><img alt="" src="branches/olive1.webp"></div>
+  <div class="sbranch r"><img alt="" src="branches/olive3.webp"></div>
   <div class="wrap center reveal">
     <div class="kicker" data-i18n="rsvp_kicker">Kindly reply</div>
     <h2 data-i18n="rsvp_title">Will you join us?</h2>
@@ -744,7 +766,7 @@ document.querySelectorAll(".langs button").forEach(b=> b.addEventListener("click
 const io = new IntersectionObserver(es=>{
   es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
 },{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+document.querySelectorAll(".reveal,.sbranch").forEach(el=>io.observe(el));
 
 /* ---------- Interactive homelands gallery ----------
    4 tiles on screen (2 Lebanon + 2 Switzerland). CLICK / TAP a tile and it
