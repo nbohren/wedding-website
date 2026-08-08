@@ -117,8 +117,8 @@ html[dir="rtl"] .invite .names{font-family:var(--ar);font-size:clamp(36px,6vw,72
 section{padding:clamp(76px,11vw,140px) 0}
 .kicker{font-family:var(--serif);font-weight:500;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--olive);margin-bottom:20px}
 h2{font-family:var(--hero);font-weight:400;font-size:clamp(32px,5vw,54px);line-height:1.12;margin-bottom:24px;color:var(--ink)}
-html[dir="rtl"] h2{font-family:var(--ar);font-size:clamp(42px,6.6vw,72px);line-height:1.3}
-html[dir="rtl"] .kicker{font-family:var(--ar);font-size:19px;line-height:1.6}
+html[dir="rtl"] h2{font-family:var(--ar);font-size:clamp(25px,3.9vw,42px);line-height:1.42}
+html[dir="rtl"] .kicker{font-family:var(--ar);font-size:15px;line-height:1.6}
 p.lead{font-family:var(--serif);font-weight:400;font-size:clamp(18px,2.2vw,21px);color:var(--soft);max-width:62ch;line-height:1.75}
 .center{text-align:center}
 .center p.lead{margin-inline:auto}
@@ -405,8 +405,7 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
   <div class="wrap reveal">
     <div class="kicker" data-i18n="gift_kicker">Gifts</div>
     <h2 data-i18n="gift_title">Your presence is the present</h2>
-    <p class="lead" data-i18n="gift_body">Many of you are travelling across the globe to celebrate with us in Italy, so your presence truly means the world to us, and it's all we ask for. If you'd still like to contribute to our wedding registry, you can do so below, with all our thanks.</p>
-    <p class="pay-note" data-i18n="pay_cash">A box will also be there on the day for those who prefer to give cash.</p>
+    <p class="lead" data-i18n="gift_body">Many of you are travelling from near and far to celebrate with us in Italy. Having you there means more to us than anything, and your presence is truly all we could ask for. If you would nevertheless like to contribute to our wedding fund, you can do so below, with all our love and gratitude.</p>
     <button class="btn" id="giftOpen" type="button" data-i18n="gift_btn">Wedding registry</button>
   </div>
 </section>
@@ -444,7 +443,7 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
         <a class="paybtn" href="https://revolut.me/noahm9ypm" target="_blank" rel="noopener" data-i18n="pay_revbtn">Open Revolut</a>
       </div>
     </div>
-    <p class="pay-note" data-i18n="pay_cash">A box will also be there on the day for those who prefer to give cash.</p>
+    <p class="pay-note" data-i18n="pay_cash">If you prefer to give your gift in person, there will also be a card box available on the day. Your thoughtfulness and generosity mean so much to us.</p>
   </div>
 </div>
 
@@ -555,11 +554,11 @@ const I18N = {
     sch_note:"Timings are provisional — we'll confirm the final schedule closer to the day.",
     cd_days:"days to go", cd_tomorrow:"Tomorrow!", cd_today:"Today!",
     story_kicker:"Our story", story_title:"Different notes, perfect harmony",
-    story_body:"Noah is an economist and a calm golfer who keeps his emotions in check. Mona is a funky engineer who loves just about everything except engineering (or so she says). She loves to sing and dance; while he prefers to watch and listen to soft lounge music (which Mona calls “elevator music”). He plays classical guitar; she loves the qanûn but definitely doesn’t know how to play it! So many contradictions, personal and cultural, and yet they are inseparable.",
+    story_body:"Noah is an economist and a calm golfer who keeps his emotions in check. Mona is a funky engineer who loves just about everything except engineering (or so she says). She loves to sing and dance; while he prefers to watch and listen to soft lounge music (which Mona calls “<em>elevator music</em>”). He plays classical guitar; she loves the qanûn but definitely doesn’t know how to play it! So many contradictions, personal and cultural, and yet they are inseparable.",
     home_kicker:"Where we come from", home_title:"Between the cedars and the Alps",
     home_body:"Our wedding is a meeting of the Mediterranean and the mountains, of mezze and raclette, of toum and chocolate, and of everyone we love gathered in one place.",
-    home_lb_flag:"🇱🇧 Lebanon", home_lb_h:"Mona's side", home_lb_b:"Endless mezze, open doors and a generosity that never runs out.",
-    home_ch_flag:"🇨🇭 Switzerland", home_ch_h:"Noah's side", home_ch_b:"Wonderful mountains, clear lakes and a land of creative genius.",
+    home_lb_flag:"🇱🇧 Lebanon", home_lb_h:"Mona's side", home_lb_b:"An endless mezze, doors that are always open, and a generosity that knows no bounds.",
+    home_ch_flag:"🇨🇭 Switzerland", home_ch_h:"Noah's side", home_ch_b:"Mountains that watch over us, lakes that bring us peace, and a landscape that invites us to slow down.",
     travel_kicker:"Travel & stay", travel_title:"Getting to Rocca di Lonato",
     travel_intro:"Rocca di Lonato sits on a hill in Lonato del Garda, Lombardy, a short hop from the southern shore of Lake Garda. Here's how to reach us and where to rest your head.",
     travel_air_t:"By air", travel_air_h:"Nearest airports",
@@ -570,8 +569,8 @@ const I18N = {
     travel_sleep_b:"Lonato del Garda, Desenzano and Sirmione all have lovely hotels by the lake. We'll share a shortlist here soon.",
     travel_directions:"Get directions →",
     gift_kicker:"Gifts", gift_title:"Your presence is the present",
-    gift_body:"Many of you are travelling across the globe to celebrate with us in Italy, so your presence truly means the world to us, and it's all we ask for. If you'd still like to contribute to our wedding registry, you can do so below, with all our thanks.",
-    gift_btn:"Wedding registry", pay_bank:"Bank transfer", pay_iban:"Account (IBAN)", pay_holder:"Account holder", pay_address:"Address", pay_link:"Link", pay_number:"Number", pay_ref:"Message", pay_revbtn:"Open Revolut", pay_title:"Ways to give", pay_cash:"A box will also be there on the day for those who prefer to give cash.",
+    gift_body:"Many of you are travelling from near and far to celebrate with us in Italy. Having you there means more to us than anything, and your presence is truly all we could ask for. If you would nevertheless like to contribute to our wedding fund, you can do so below, with all our love and gratitude.",
+    gift_btn:"Wedding registry", pay_bank:"Bank transfer", pay_iban:"Account (IBAN)", pay_holder:"Account holder", pay_address:"Address", pay_link:"Link", pay_number:"Number", pay_ref:"Message", pay_revbtn:"Open Revolut", pay_title:"Ways to give", pay_cash:"If you prefer to give your gift in person, there will also be a card box available on the day. Your thoughtfulness and generosity mean so much to us.",
     rsvp_kicker:"Kindly reply", rsvp_title:"Will you join us?",
     rsvp_body:"Kindly reply by 1 October 2026. You'll receive a confirmation email, and we'll add more information to this site as the big day approaches. We're also holding a pre-wedding gathering the day before, so plan to arrive a day or two early. More details to come.",
     r_email_label:"Your email", r_email_ph:"you@example.com", r_continue:"Continue",
@@ -613,7 +612,7 @@ const I18N = {
     home_kicker:"D'où nous venons", home_title:"Entre les cèdres et les Alpes",
     home_body:"Notre mariage est une rencontre entre la Méditerranée et la montagne, entre le mezzé et la raclette, entre le toum et le chocolat, et entre tous ceux que nous aimons réunis en un même lieu.",
     home_lb_flag:"🇱🇧 Liban", home_lb_h:"Le côté de Mona", home_lb_b:"Un mezzé sans fin, des portes toujours ouvertes et une générosité inépuisable.",
-    home_ch_flag:"🇨🇭 Suisse", home_ch_h:"Le côté de Noah", home_ch_b:"Montagnes merveilleuses, lacs limpides et terre de génie créatif.",
+    home_ch_flag:"🇨🇭 Suisse", home_ch_h:"Le côté de Noah", home_ch_b:"Des montagnes qui veillent, des lacs qui apaisent et une nature qui invite à ralentir.",
     travel_kicker:"Venir & se loger", travel_title:"Se rendre à la Rocca di Lonato",
     travel_intro:"La Rocca di Lonato domine une colline à Lonato del Garda, en Lombardie, à deux pas de la rive sud du lac de Garde. Voici comment nous rejoindre et où dormir.",
     travel_air_t:"En avion", travel_air_h:"Aéroports les plus proches",
@@ -625,7 +624,7 @@ const I18N = {
     travel_directions:"Obtenir l'itinéraire →",
     gift_kicker:"Cadeaux", gift_title:"Votre présence est notre plus beau cadeau",
     gift_body:"Beaucoup d'entre vous traversent le monde pour célébrer avec nous en Italie ; votre présence compte plus que tout, et c'est tout ce que nous demandons. Si vous souhaitez malgré tout contribuer à notre liste de mariage, vous pouvez le faire ci-dessous, avec toute notre gratitude.",
-    gift_btn:"Liste de mariage", pay_bank:"Virement bancaire", pay_iban:"Compte (IBAN)", pay_holder:"Titulaire du compte", pay_address:"Adresse", pay_link:"Lien", pay_number:"Numéro", pay_ref:"Message", pay_revbtn:"Ouvrir Revolut", pay_title:"Comment contribuer", pay_cash:"Une urne sera aussi à disposition le jour même pour ceux qui préfèrent offrir en espèces.",
+    gift_btn:"Liste de mariage", pay_bank:"Virement bancaire", pay_iban:"Compte (IBAN)", pay_holder:"Titulaire du compte", pay_address:"Adresse", pay_link:"Lien", pay_number:"Numéro", pay_ref:"Message", pay_revbtn:"Ouvrir Revolut", pay_title:"Comment contribuer", pay_cash:"Si vous préférez nous offrir votre cadeau en personne, une urne sera aussi à disposition le jour J. Votre attention et votre générosité nous touchent beaucoup.",
     rsvp_kicker:"Réponse", rsvp_title:"Serez-vous là ?",
     rsvp_body:"Merci de répondre avant le 1er octobre 2026. Vous recevrez un e-mail de confirmation, et nous ajouterons plus d'informations sur ce site à l'approche du jour « J ». Nous organiserons aussi un pré-mariage la veille. Prévoyez d'arriver un à deux jours à l'avance. Plus de détails à venir.",
     r_email_label:"Votre e-mail", r_email_ph:"vous@exemple.com", r_continue:"Continuer",
@@ -662,12 +661,12 @@ const I18N = {
     sch_welcome:"الاستقبال والجلوس", sch_ceremony:"مراسم الزواج", sch_aperitivo:"الأبريتيفو والصور", sch_dinner:"العشاء", sch_dancing:"الرقص والسهر",
     sch_note:"المواعيد مبدئية — سنؤكّد البرنامج النهائي مع اقتراب الموعد.",
     cd_days:"يومًا حتى الموعد", cd_tomorrow:"غدًا!", cd_today:"اليوم!",
-    story_kicker:"قصتنا", story_title:"كلّ وردة من بستان، جمعهم ربيع واحد",
-    story_body:"نوح لاعب غولف كتير رايق، بيتحكم بمشاعره بسهولة. منى مهندسة ام عجقة. بتحبّ كل شيء تقريبًا، ما عدا الهندسة (أو بالقليلة هيك بتقول). بتحب تغنّي وترقص، بينما هو بفضّل يتفرّج ويسمع أغاني «lounge» رايقة (موني بتسمّيهن «موسيقى ascenseur»). بحبّ العزف على الجيتار الكلاسيكي، وهي بتحب تسمع القانون، بس بيناتنا، اكيد ما بتعرف تعزف. بالرغم من كلّ هالتناقضات، الشخصيّة والثقافيّة، ما في شي بفرّقهن!",
-    home_kicker:"من أين نأتي", home_title:"بين الأرز وجبال الألب",
-    home_body:"زفافنا لقاءٌ بين المتوسط والجبال، بين المازة والراكليت، بين التوم والشوكولاتة، وبين كل من نحب في مكان واحد.",
-    home_lb_flag:"🇱🇧 لبنان", home_lb_h:"جانب منى", home_lb_b:"مازةٌ لا تنتهي، وأبوابٌ مفتوحة، وكرمٌ لا ينضب.",
-    home_ch_flag:"🇨🇭 سويسرا", home_ch_h:"جانب نوح", home_ch_b:"جبال رائعة وبحيرات صافية وأرض العبقرية الإبداعية.",
+    story_kicker:"قصّتنا (باللبناني)", story_title:"كلّ وردة من بستان، جمعهم ربيع واحد",
+    story_body:"نوح خبير اقتصادي و لاعب غولف كتير رايق، بيتحكم بمشاعره بسهولة. منى مهندسة ام عجقة. بتحبّ كل شيء تقريبًا، ما عدا الهندسة (أو بالقليلة هيك بتقول). بتحب تغنّي وترقص، بينما هو بفضّل يتفرّج ويسمع أغاني «lounge» رايقة (موني بتسمّيهن «موسيقى <em>ascenseur</em>»). بحبّ العزف على الجيتار الكلاسيكي، وهي بتحب تسمع القانون، بس بيناتنا، اكيد ما بتعرف تعزف. بالرغم من كلّ هالتناقضات، الشخصيّة والثقافيّة، ما في شي بفرّقهن!",
+    home_kicker:"جذورنا", home_title:"بين الأرز وجبال الألب",
+    home_body:"زفافنا هو لقاء بين دفء البحر الأبيض المتوسط وسحر جبال الألب، بين المازة والراكليت، بين الثوم والشوكولاتة؛ وقبل كل شيء، لقاء يجمع في مكانٍ واحد كل من نحب.",
+    home_lb_flag:"🇱🇧 لبنان", home_lb_h:"جانب منى", home_lb_b:"مائدةٌ لا تنتهي، وأبوابٌ مفتوحة دائمًا، وكرمٌ لا حدود له.",
+    home_ch_flag:"🇨🇭 سويسرا", home_ch_h:"جانب نوح", home_ch_b:"جبالٌ تحيط بنا، وبحيراتٌ تبعث فينا السكينة، وطبيعةٌ تدعونا إلى التمهّل والاستمتاع باللحظة.",
     travel_kicker:"السفر والإقامة", travel_title:"الوصول إلى روكا دي لوناتو",
     travel_intro:"تقع روكا دي لوناتو على تلة في لوناتو ديل غاردا بمنطقة لومبارديا، على مقربة من الشاطئ الجنوبي لبحيرة غاردا. إليكم كيفية الوصول وأين تقيمون.",
     travel_air_t:"جوًّا", travel_air_h:"أقرب المطارات",
@@ -678,8 +677,8 @@ const I18N = {
     travel_sleep_b:"تضم لوناتو ديل غاردا وديزينزانو وسيرميوني فنادق جميلة على ضفاف البحيرة. سنشارك قائمة مقترحة هنا قريبًا.",
     travel_directions:"← عرض الاتجاهات",
     gift_kicker:"الهدايا", gift_title:"حضوركم هو أجمل هدية",
-    gift_body:"يقطع كثيرٌ منكم العالم للاحتفال معنا في إيطاليا، لذا فإن حضوركم يعني لنا كل شيء، وهو كل ما نطلبه. وإن رغبتم رغم ذلك في المساهمة في قائمة هدايانا، يمكنكم ذلك أدناه، مع خالص شكرنا.",
-    gift_btn:"قائمة الهدايا", pay_bank:"تحويل بنكي", pay_iban:"الحساب (IBAN)", pay_holder:"صاحب الحساب", pay_address:"العنوان", pay_link:"الرابط", pay_number:"الرقم", pay_ref:"الرسالة", pay_revbtn:"فتح Revolut", pay_title:"طرق المساهمة", pay_cash:"سيتوفّر أيضًا صندوق في اليوم نفسه لمن يفضّل تقديم هدية نقدية.",
+    gift_body:"يسافر كثيرٌ منكم من أماكن بعيدة وقريبة ليشاركنا فرحتنا ويحتفل معنا في إيطاليا. وجودكم إلى جانبنا يعني لنا أكثر من أي شيء، وهو أجمل ما يمكن أن نطلبه. وإذا رغبتم، رغم ذلك، في المساهمة في قائمة زفافنا، يمكنكم القيام بذلك أدناه، مع خالص محبتنا وامتناننا.",
+    gift_btn:"قائمة الهدايا", pay_bank:"تحويل بنكي", pay_iban:"الحساب (IBAN)", pay_holder:"صاحب الحساب", pay_address:"العنوان", pay_link:"الرابط", pay_number:"الرقم", pay_ref:"الرسالة", pay_revbtn:"فتح Revolut", pay_title:"طرق المساهمة", pay_cash:"وإذا فضّلتم تقديم هديتكم لنا شخصيًا، ستكون هناك أيضًا علبة مخصّصة للهدايا يوم الزفاف. لطفكم وكرمكم يعنيان لنا الكثير.",
     rsvp_kicker:"نرجو تأكيد الحضور", rsvp_title:"هل ستكونون معنا؟",
     rsvp_body:"يرجى الرد قبل ١ أكتوبر ٢٠٢٦. ستصلكم رسالة تأكيد، وسنضيف مزيدًا من المعلومات على هذا الموقع مع اقتراب اليوم الموعود. سننظّم أيضًا لقاءً قبل الزفاف عشية اليوم، فاحرصوا على الوصول قبل يوم أو يومين. المزيد من التفاصيل قريبًا.",
     r_email_label:"بريدكم الإلكتروني", r_email_ph:"you@example.com", r_continue:"متابعة",
@@ -811,6 +810,21 @@ const POOLS = {
     pre.src = "photos/"+next;
   }
   slots.forEach(slot=> slot.addEventListener("click", ()=> swap(slot)));
+
+  // auto-advance: each photo gently fades to the next every 5s (staggered
+  // so they don't all change at once). Manual tapping still works.
+  const AUTO = 5000;
+  function startAuto(){
+    slots.forEach((slot,i)=>{
+      clearInterval(slot._auto);
+      slot._auto = setInterval(()=> swap(slot), AUTO);
+    });
+  }
+  function stopAuto(){ slots.forEach(s=>{ clearInterval(s._auto); s._auto=null; }); }
+  // stagger the first cycle so the four frames don't flip in unison
+  slots.forEach((slot,i)=> setTimeout(()=>{ if(!document.hidden) swap(slot);
+    slot._auto = setInterval(()=> swap(slot), AUTO); }, AUTO + i*1200));
+  document.addEventListener("visibilitychange", ()=>{ document.hidden ? stopAuto() : startAuto(); });
 })();
 
 /* ---------- RSVP flow ---------- */
