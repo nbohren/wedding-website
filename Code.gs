@@ -16,8 +16,8 @@
 
 const CONFIG = {
   COUPLE_NAMES: "Mona & Noah",
-  WEDDING_DATE: "07.05.2027",         // used in EN/FR/DE emails
-  WEDDING_DATE_AR: "٠٧.٠٥.٢٠٢٧",       // Arabic-numeral form for the Arabic email
+  WEDDING_DATE: "07/05/2027",         // used in EN/FR/DE emails
+  WEDDING_DATE_AR: "٠٧/٠٥/٢٠٢٧",       // Arabic-numeral form for the Arabic email
   VENUE: "Rocca di Lonato, Lombardy, Italy",
   CONTACT_EMAIL: "bohren.noah@gmail.com",   // used as Reply-To; guests can reach you here
   NOTIFY_EMAIL: "bohren.noah@gmail.com",    // you'll get a copy of every response
