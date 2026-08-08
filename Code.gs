@@ -16,7 +16,8 @@
 
 const CONFIG = {
   COUPLE_NAMES: "Mona & Noah",
-  WEDDING_DATE: "7 May 2027",
+  WEDDING_DATE: "07.05.2027",         // used in EN/FR/DE emails
+  WEDDING_DATE_AR: "٠٧.٠٥.٢٠٢٧",       // Arabic-numeral form for the Arabic email
   VENUE: "Rocca di Lonato, Lombardy, Italy",
   CONTACT_EMAIL: "bohren.noah@gmail.com",   // used as Reply-To; guests can reach you here
   NOTIFY_EMAIL: "bohren.noah@gmail.com",    // you'll get a copy of every response
@@ -111,7 +112,7 @@ return "Thank you for letting us know — we'll miss you, but we completely unde
 "With love,\n" + CONFIG.COUPLE_NAMES;
     },
     line: function (g, lang) {
-      var s = "• " + g.name + " — " + dietLabel(lang, g.diet);
+      var s = "• " + g.name;
       if (g.allergies) s += " (allergies: " + g.allergies + ")";
       if (g.song) s += "\n    ♫ song: " + g.song;
       return s;
@@ -133,7 +134,7 @@ return "Merci de nous avoir prévenus — vous nous manquerez, mais nous compren
 "Avec toute notre affection,\n" + CONFIG.COUPLE_NAMES;
     },
     line: function (g, lang) {
-      var s = "• " + g.name + " — " + dietLabel(lang, g.diet);
+      var s = "• " + g.name;
       if (g.allergies) s += " (allergies : " + g.allergies + ")";
       if (g.song) s += "\n    ♫ chanson : " + g.song;
       return s;
@@ -155,7 +156,7 @@ return "Danke fürs Bescheidgeben — wir werden euch vermissen, haben aber voll
 "Mit Liebe,\n" + CONFIG.COUPLE_NAMES;
     },
     line: function (g, lang) {
-      var s = "• " + g.name + " — " + dietLabel(lang, g.diet);
+      var s = "• " + g.name;
       if (g.allergies) s += " (Allergien: " + g.allergies + ")";
       if (g.song) s += "\n    ♫ Song: " + g.song;
       return s;
@@ -165,19 +166,19 @@ return "Danke fürs Bescheidgeben — wir werden euch vermissen, haben aber voll
     subjYes: "في انتظاركم في زفافنا 🤍",
     subjNo:  "شكرًا لإعلامنا",
     yes: function (d, list) {
-return "شكرًا لكم — تسعدنا مشاركتكم لنا!\n\n" +
+return "شكرًا لكم — يسعدنا كثيرًا أن نشارك معكم هذه اللحظة المميّزة!\n\n" +
 "هذا ما سجّلناه:\n" + list + "\n\n" +
-"الاحتفال: " + CONFIG.WEDDING_DATE + " في " + CONFIG.VENUE + ".\n" +
-"ستظهر تفاصيل إضافية عن السفر والإقامة على الموقع كلما اقترب الموعد.\n\n" +
+"الاحتفال: " + CONFIG.WEDDING_DATE_AR + " في " + CONFIG.VENUE + ".\n" +
+"ستظهر تفاصيل إضافية عن السفر والإقامة على الموقع كلّما اقترب الموعد.\n\n" +
 "مع خالص المحبة،\n" + CONFIG.COUPLE_NAMES;
     },
     no: function (d) {
 return "شكرًا لإعلامنا — سنفتقدكم، ونتفهّم ذلك تمامًا.\n" +
-"وإن تغيّرت الظروف، يكفي الرد على هذه الرسالة.\n\n" +
+"وإن تغيّرت الظروف، يكفي الردّ على هذه الرسالة.\n\n" +
 "مع خالص المحبة،\n" + CONFIG.COUPLE_NAMES;
     },
     line: function (g, lang) {
-      var s = "• " + g.name + " — " + dietLabel(lang, g.diet);
+      var s = "• " + g.name;
       if (g.allergies) s += " (حساسية: " + g.allergies + ")";
       if (g.song) s += "\n    ♫ أغنية: " + g.song;
       return s;
@@ -198,13 +199,27 @@ function sendConfirmation(d) {
   } else {
     body = t.no(d);
   }
-  MailApp.sendEmail({
+  var opts = {
     to: d.email,
     replyTo: CONFIG.CONTACT_EMAIL,
     name: CONFIG.COUPLE_NAMES,
     subject: attending ? t.subjYes : t.subjNo,
     body: body
-  });
+  };
+  // Arabic: also send a right-to-left HTML version so punctuation, bullets and
+  // the embedded Latin names/titles render on the correct side.
+  if (lang === "ar") opts.htmlBody = rtlHtml(body);
+  MailApp.sendEmail(opts);
+}
+
+/* Wrap plain text in a right-to-left HTML block for correct Arabic rendering. */
+function rtlHtml(text) {
+  var esc = String(text)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/\n/g, "<br>");
+  return '<div dir="rtl" style="text-align:right; ' +
+    'font-family:\'Segoe UI\',Tahoma,Arial,sans-serif; font-size:15px; line-height:1.9;">' +
+    esc + '</div>';
 }
 
 function notifyCouple(d) {
