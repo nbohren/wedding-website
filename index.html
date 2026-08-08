@@ -117,7 +117,8 @@ html[dir="rtl"] .invite .names{font-family:var(--ar);font-size:clamp(36px,6vw,72
 section{padding:clamp(76px,11vw,140px) 0}
 .kicker{font-family:var(--serif);font-weight:500;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--olive);margin-bottom:20px}
 h2{font-family:var(--hero);font-weight:400;font-size:clamp(32px,5vw,54px);line-height:1.12;margin-bottom:24px;color:var(--ink)}
-html[dir="rtl"] h2{font-family:var(--ar)}
+html[dir="rtl"] h2{font-family:var(--ar);font-size:clamp(42px,6.6vw,72px);line-height:1.3}
+html[dir="rtl"] .kicker{font-family:var(--ar);font-size:19px;line-height:1.6}
 p.lead{font-family:var(--serif);font-weight:400;font-size:clamp(18px,2.2vw,21px);color:var(--soft);max-width:62ch;line-height:1.75}
 .center{text-align:center}
 .center p.lead{margin-inline:auto}
@@ -305,7 +306,7 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
   <div class="sbranch r"><img alt="" src="branches/olive1.webp"></div>
   <div class="wrap reveal">
     <div class="kicker" data-i18n="story_kicker">Our story</div>
-    <h2 data-i18n="story_title">Poles apart, never apart</h2>
+    <h2 data-i18n="story_title">Different notes, perfect harmony</h2>
     <p class="lead" data-i18n="story_body">Noah is a serene golfer, master of his emotions. Mona is an engineer who loves absolutely everything, except engineering (or so she says). She sings and dances; he prefers to observe, and quiet music (elevator music, according to Mona). He plays classical guitar; she loves the qanun. So many contradictions, personal and cultural, and yet they're inseparable.</p>
   </div>
   <div class="wrap reveal">
@@ -553,8 +554,8 @@ const I18N = {
     sch_welcome:"Welcome & seating", sch_ceremony:"Ceremony", sch_aperitivo:"Aperitivo & photos", sch_dinner:"Dinner", sch_dancing:"Dancing",
     sch_note:"Timings are provisional — we'll confirm the final schedule closer to the day.",
     cd_days:"days to go", cd_tomorrow:"Tomorrow!", cd_today:"Today!",
-    story_kicker:"Our story", story_title:"Poles apart, never apart",
-    story_body:"Noah is a serene golfer, master of his emotions. Mona is an engineer who loves absolutely everything, except engineering (or so she says). She sings and dances; he prefers to observe, and quiet music (elevator music, according to Mona). He plays classical guitar; she loves the qanun. So many contradictions, personal and cultural, and yet they're inseparable.",
+    story_kicker:"Our story", story_title:"Different notes, perfect harmony",
+    story_body:"Noah is an economist and a calm golfer who keeps his emotions in check. Mona is a funky engineer who loves just about everything except engineering (or so she says). She loves to sing and dance; while he prefers to watch and listen to soft lounge music (which Mona calls “elevator music”). He plays classical guitar; she loves the qanûn but definitely doesn’t know how to play it! So many contradictions, personal and cultural, and yet they are inseparable.",
     home_kicker:"Where we come from", home_title:"Between the cedars and the Alps",
     home_body:"Our wedding is a meeting of the Mediterranean and the mountains, of mezze and raclette, of toum and chocolate, and of everyone we love gathered in one place.",
     home_lb_flag:"🇱🇧 Lebanon", home_lb_h:"Mona's side", home_lb_b:"Endless mezze, open doors and a generosity that never runs out.",
@@ -608,7 +609,7 @@ const I18N = {
     sch_note:"Les horaires sont provisoires — nous confirmerons le programme définitif à l'approche du jour.",
     cd_days:"jours restants", cd_tomorrow:"Demain !", cd_today:"C'est aujourd'hui !",
     story_kicker:"Notre histoire", story_title:"Tout les oppose, rien ne les sépare",
-    story_body:"Noah est un golfeur serein, maître de ses émotions. Mona est ingénieure et adore à peu près tout, sauf l'ingénierie (enfin, c'est ce qu'elle dit). Elle chante et danse ; lui préfère observer, et la musique douce (pour Mona, de la musique d'ascenseur). Il joue de la guitare classique, elle aime le qanûn. Autant de contradictions, personnelles et culturelles, et pourtant ils sont inséparables.",
+    story_body:"Noah est un économiste et golfeur serein, maître de ses émotions. Mona est une ingénieure avec un petit grain de folie. Elle adore à peu près tout, sauf l'ingénierie (enfin, c'est ce qu'elle dit). Elle aime chanter et danser ; alors que lui préfère observer et écouter de la musique douce (pour Mona, de la musique « <em>d'ascenseur</em> »). Il joue de la guitare classique, elle aime écouter le qanûn (bien évidemment elle sait pas jouer !). Autant de contradictions, personnelles et culturelles, et pourtant ils sont inséparables.",
     home_kicker:"D'où nous venons", home_title:"Entre les cèdres et les Alpes",
     home_body:"Notre mariage est une rencontre entre la Méditerranée et la montagne, entre le mezzé et la raclette, entre le toum et le chocolat, et entre tous ceux que nous aimons réunis en un même lieu.",
     home_lb_flag:"🇱🇧 Liban", home_lb_h:"Le côté de Mona", home_lb_b:"Un mezzé sans fin, des portes toujours ouvertes et une générosité inépuisable.",
@@ -661,8 +662,8 @@ const I18N = {
     sch_welcome:"الاستقبال والجلوس", sch_ceremony:"مراسم الزواج", sch_aperitivo:"الأبريتيفو والصور", sch_dinner:"العشاء", sch_dancing:"الرقص والسهر",
     sch_note:"المواعيد مبدئية — سنؤكّد البرنامج النهائي مع اقتراب الموعد.",
     cd_days:"يومًا حتى الموعد", cd_tomorrow:"غدًا!", cd_today:"اليوم!",
-    story_kicker:"قصتنا", story_title:"على طرفَي نقيض، ولا يفترقان",
-    story_body:"نوح لاعب غولف هادئ يتحكّم في مشاعره. منى مهندسة تحبّ كل شيء تقريبًا، إلا الهندسة (هكذا تقول على الأقل). هي تغنّي وترقص، وهو يفضّل المراقبة والموسيقى الهادئة (موسيقى مصاعد، بحسب منى). يعزف الغيتار الكلاسيكي، وهي تحبّ القانون. تناقضات كثيرة، شخصية وثقافية، ومع ذلك لا ينفصلان.",
+    story_kicker:"قصتنا", story_title:"كلّ وردة من بستان، جمعهم ربيع واحد",
+    story_body:"نوح لاعب غولف كتير رايق، بيتحكم بمشاعره بسهولة. منى مهندسة ام عجقة. بتحبّ كل شيء تقريبًا، ما عدا الهندسة (أو بالقليلة هيك بتقول). بتحب تغنّي وترقص، بينما هو بفضّل يتفرّج ويسمع أغاني «lounge» رايقة (موني بتسمّيهن «موسيقى ascenseur»). بحبّ العزف على الجيتار الكلاسيكي، وهي بتحب تسمع القانون، بس بيناتنا، اكيد ما بتعرف تعزف. بالرغم من كلّ هالتناقضات، الشخصيّة والثقافيّة، ما في شي بفرّقهن!",
     home_kicker:"من أين نأتي", home_title:"بين الأرز وجبال الألب",
     home_body:"زفافنا لقاءٌ بين المتوسط والجبال، بين المازة والراكليت، بين التوم والشوكولاتة، وبين كل من نحب في مكان واحد.",
     home_lb_flag:"🇱🇧 لبنان", home_lb_h:"جانب منى", home_lb_b:"مازةٌ لا تنتهي، وأبوابٌ مفتوحة، وكرمٌ لا ينضب.",
@@ -853,18 +854,10 @@ function addGuest(){
   el.innerHTML =
     '<div class="num"></div>'+
     '<div><label data-i18n="r_guest_name"></label><input class="g-name" data-i18n-ph="r_name_ph" /></div>'+
-    '<div><label data-i18n="r_diet_label"></label><div class="pills">'+
-      DIETS.map(d=>'<button type="button" class="pill" data-diet="'+d+'" data-i18n="diet_'+d+'"></button>').join('')+
-    '</div></div>'+
     '<div><label data-i18n="r_allergy"></label><input class="g-allergy" data-i18n-ph="r_allergy_ph" /></div>'+
     '<div><label data-i18n="r_song"></label><input class="g-song" data-i18n-ph="r_song_ph" /></div>'+
     '<button type="button" class="removeGuest" data-i18n="r_remove"></button>';
   guestsWrap.appendChild(el);
-  el.querySelectorAll(".pill").forEach(p=> p.addEventListener("click", ()=>{
-    el.querySelectorAll(".pill").forEach(x=> x.classList.remove("on"));
-    p.classList.add("on");
-  }));
-  el.querySelector('.pill[data-diet="omnivore"]').classList.add("on");
   el.querySelector(".removeGuest").addEventListener("click", ()=>{
     el.remove();
     if(!document.querySelector(".guestcard")) addGuest();
@@ -914,7 +907,6 @@ function send(payload, okKey){
 document.getElementById("submitYes").addEventListener("click", ()=>{
   const guests = [...document.querySelectorAll(".guestcard")].map(c=>({
     name:c.querySelector(".g-name").value.trim(),
-    diet:(c.querySelector(".pill.on")||{dataset:{}}).dataset.diet||"",
     allergies:c.querySelector(".g-allergy").value.trim(),
     song:c.querySelector(".g-song").value.trim()
   })).filter(g=> g.name);
