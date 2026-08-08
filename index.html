@@ -4,6 +4,13 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="format-detection" content="telephone=no" />
+<script>
+/* Always open at the top of the page: don't let the browser restore the last
+   scroll position, and drop any lingering #section hash from a prior visit. */
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+window.addEventListener("load", function(){ window.scrollTo(0, 0); });
+</script>
 <title>Mona Seyfeddine &amp; Noah Bohren · 7 May 2027</title>
 <meta name="description" content="Mona Seyfeddine &amp; Noah Bohren are getting married on 7 May 2027 at Rocca di Lonato, Italy. Travel details and RSVP inside." />
 <meta property="og:type" content="website" />
@@ -735,7 +742,8 @@ function updateCountdown(){
   const target = new Date(2027, 4, 7);      // 7 May 2027 (month is 0-based)
   const now = new Date();
   const days = Math.ceil((target - new Date(now.getFullYear(),now.getMonth(),now.getDate())) / 86400000);
-  if(days > 1) el.textContent = days + " " + t("cd_days");
+  const num = currentLang === "ar" ? String(days).replace(/[0-9]/g, d=>"٠١٢٣٤٥٦٧٨٩"[d]) : days;
+  if(days > 1) el.textContent = num + " " + t("cd_days");
   else if(days === 1) el.textContent = t("cd_tomorrow");
   else if(days === 0) el.textContent = t("cd_today");
   else el.textContent = "";
