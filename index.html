@@ -826,25 +826,20 @@ const POOLS = {
   }
   slots.forEach(slot=> slot.addEventListener("click", ()=> swap(slot)));
 
-  // auto-advance: ALL four photos fade to their next image at the same time,
-  // every 7s. Within each side the two boxes always show different images.
-  const AUTO = 7000;
-  function swapAll(){
+  // auto-advance: one photo fades to its next image every few seconds,
+  // cycling through the four boxes one at a time (not all at once). Within a
+  // side the two boxes never show the same image (handled by swap()).
+  const AUTO = 4000;
+  let idx = 0;
+  function tick(){
     if(document.hidden) return;
-    ["lb","ch"].forEach(side=>{
-      const sideSlots = slots.filter(s=> s.dataset.side===side);
-      const current = new Set(sideSlots.map(s=> s.dataset.cur));
-      let pool = POOLS[side].filter(f=> !current.has(f));
-      // shuffle
-      for(let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
-      const picks = pool.slice(0, sideSlots.length);          // distinct images, one per box
-      sideSlots.forEach((s,i)=> fadeTo(s, picks[i]));
-    });
+    swap(slots[idx % slots.length]);
+    idx++;
   }
-  let timer = setInterval(swapAll, AUTO);
+  let timer = setInterval(tick, AUTO);
   document.addEventListener("visibilitychange", ()=>{
     clearInterval(timer);
-    if(!document.hidden) timer = setInterval(swapAll, AUTO);
+    if(!document.hidden) timer = setInterval(tick, AUTO);
   });
 })();
 
