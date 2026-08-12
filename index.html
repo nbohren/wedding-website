@@ -5,11 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="format-detection" content="telephone=no" />
 <script>
-/* Always open at the top of the page: don't let the browser restore the last
-   scroll position, and drop any lingering #section hash from a prior visit. */
+/* Landing behaviour:
+   - A freshly opened shared link with a #section (e.g. #rsvp) scrolls there.
+   - A reload or back/forward always starts at the top (no scroll restore,
+     drop the lingering hash) so refreshing never jumps to a section. */
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-if (location.hash) history.replaceState(null, "", location.pathname + location.search);
-window.addEventListener("load", function(){ window.scrollTo(0, 0); });
+(function(){
+  var t = (performance.getEntriesByType && performance.getEntriesByType("navigation")[0] || {}).type;
+  var fresh = (t === "navigate" || t === undefined);
+  var hash = location.hash;
+  if (fresh && hash && /^#[\w-]+$/.test(hash)) {
+    window.addEventListener("load", function(){
+      var el = document.getElementById(hash.slice(1));
+      if (el) requestAnimationFrame(function(){ el.scrollIntoView(); });
+    });
+  } else {
+    if (hash) history.replaceState(null, "", location.pathname + location.search);
+    window.addEventListener("load", function(){ window.scrollTo(0, 0); });
+  }
+})();
 </script>
 <title>Mona Seyfeddine &amp; Noah Bohren · 7 May 2027</title>
 <meta name="description" content="Mona Seyfeddine &amp; Noah Bohren are getting married on 7 May 2027 at Rocca di Lonato, Italy. Travel details and RSVP inside." />
@@ -749,9 +763,12 @@ function updateCountdown(){
 }
 document.querySelectorAll(".langs button").forEach(b=> b.addEventListener("click", ()=> applyLang(b.dataset.lang)));
 (function initLang(){
+  // ?lang=ar|fr|en in the URL forces the language (for links you share);
+  // otherwise fall back to the last choice, then the browser language.
+  let q = ""; try{ q = (new URLSearchParams(location.search).get("lang")||"").toLowerCase(); }catch(e){}
   let saved; try{ saved = localStorage.getItem("wed_lang"); }catch(e){}
   const nav = (navigator.language||"en").slice(0,2);
-  applyLang((saved && I18N[saved]) ? saved : (I18N[nav] ? nav : "en"));
+  applyLang(I18N[q] ? q : (saved && I18N[saved]) ? saved : (I18N[nav] ? nav : "en"));
 })();
 
 /* ---------- Gift link ---------- */
