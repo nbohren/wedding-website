@@ -49,7 +49,7 @@ if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 *{box-sizing:border-box;margin:0;padding:0}
 html[dir="rtl"] body *{letter-spacing:normal !important}
 html[dir="rtl"] .monogram{font-family:var(--ar)}
-html{scroll-behavior:smooth;overflow-x:hidden}
+html{overflow-x:hidden}
 :root{
   --paper:#f0e9db; --ink:#37332a; --soft:#6f6a5a; --muted:#9a9483; --line:#d9d2c2;
   --olive:#6d774a; --olive-deep:#515a34; --olive-dark:#3a4229; --gold:#b3924f;
@@ -972,5 +972,34 @@ document.getElementById("submitNo").addEventListener("click", ()=>{
 });
 </script>
 <script>(function(){var n=document.getElementById('nav');function s(){if(window.scrollY>40)n.classList.add('solid');else n.classList.remove('solid');}window.addEventListener('scroll',s,{passive:true});s();})();</script>
+<script>
+/* Gentle, slowed-down smooth scroll for in-page anchor links (RSVP buttons etc.) */
+(function(){
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var DURATION = 1600; // ms — larger = slower
+  function easeInOutQuad(t){ return t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t + 2, 2)/2; }
+  function scrollToY(targetY, done){
+    var startY = window.pageYOffset, dist = targetY - startY, start = performance.now();
+    function step(now){
+      var p = Math.min(1, (now - start) / DURATION);
+      window.scrollTo(0, startY + dist * easeInOutQuad(p));
+      if(p < 1) requestAnimationFrame(step); else if(done) done();
+    }
+    requestAnimationFrame(step);
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener("click", function(e){
+      var id = a.getAttribute("href").slice(1);
+      if(!id) return;
+      var el = document.getElementById(id);
+      if(!el) return;
+      e.preventDefault();
+      var y = el.getBoundingClientRect().top + window.pageYOffset;
+      if(reduce){ window.scrollTo(0, y); return; }
+      scrollToY(y);
+    });
+  });
+})();
+</script>
 </body>
 </html>
