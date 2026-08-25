@@ -842,15 +842,18 @@ const POOLS = {
   }
   slots.forEach(slot=> slot.addEventListener("click", ()=> swap(slot)));
 
-  // auto-advance: one photo fades to its next image every few seconds,
-  // cycling through the four boxes one at a time (not all at once). Within a
+  // auto-advance: one photo fades to its next image every few seconds — a
+  // randomly chosen box each time (never the same box twice in a row). Within a
   // side the two boxes never show the same image (handled by swap()).
   const AUTO = 1333;
-  let idx = 0;
+  let last = -1;
   function tick(){
     if(document.hidden) return;
-    swap(slots[idx % slots.length]);
-    idx++;
+    let i;
+    do { i = Math.floor(Math.random() * slots.length); }
+    while (slots.length > 1 && i === last);
+    last = i;
+    swap(slots[i]);
   }
   let timer = setInterval(tick, AUTO);
   document.addEventListener("visibilitychange", ()=>{
