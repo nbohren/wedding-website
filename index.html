@@ -87,6 +87,14 @@ header.bar.solid{background:rgba(243,238,228,.94);box-shadow:0 1px 0 rgba(120,11
   text-decoration:none;border:1px solid var(--olive);border-radius:3px;padding:8px 18px;transition:background .3s,color .3s}
 .nav-rsvp:hover{background:var(--olive);color:#f4efe4}
 .nav-rsvp.active{background:var(--olive);color:#f4efe4}
+/* hero scroll-down hint */
+.scrolldown{position:absolute;left:50%;bottom:clamp(20px,4vh,40px);transform:translateX(-50%);z-index:3;
+  color:var(--olive);opacity:.7;display:flex;align-items:center;justify-content:center;
+  width:46px;height:46px;border:1px solid rgba(124,131,95,.35);border-radius:50%;
+  animation:scrollBob 2.2s ease-in-out infinite;transition:opacity .3s,color .3s,border-color .3s}
+.scrolldown:hover{opacity:1;color:var(--olive-deep);border-color:var(--gold)}
+@keyframes scrollBob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
+@media(prefers-reduced-motion:reduce){.scrolldown{animation:none}}
 /* centre section nav with scroll-spy highlight */
 .sectionnav{display:flex;align-items:center;gap:clamp(16px,2.4vw,32px)}
 .sectionnav a{font-family:var(--serif);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);
@@ -332,6 +340,9 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
       <div class="cd" id="countdown" aria-live="polite"></div>
     </div>
   </div>
+  <a class="scrolldown" href="#story" aria-label="Scroll down">
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+  </a>
 </div>
 
 <hr class="rule" />
