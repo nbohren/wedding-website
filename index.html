@@ -86,6 +86,15 @@ header.bar.solid{background:rgba(243,238,228,.94);box-shadow:0 1px 0 rgba(120,11
 .nav-rsvp{font-family:var(--serif);font-weight:500;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--olive-deep);
   text-decoration:none;border:1px solid var(--olive);border-radius:3px;padding:8px 18px;transition:background .3s,color .3s}
 .nav-rsvp:hover{background:var(--olive);color:#f4efe4}
+.nav-rsvp.active{background:var(--olive);color:#f4efe4}
+/* centre section nav with scroll-spy highlight */
+.sectionnav{display:flex;align-items:center;gap:clamp(16px,2.4vw,32px)}
+.sectionnav a{font-family:var(--serif);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);
+  text-decoration:none;white-space:nowrap;opacity:.5;transform:scale(.9);transform-origin:center bottom;
+  padding-bottom:3px;border-bottom:1px solid transparent;transition:opacity .35s,color .35s,transform .35s,border-color .35s}
+.sectionnav a:hover{opacity:.85}
+.sectionnav a.active{opacity:1;color:var(--olive-deep);transform:scale(1.06);border-bottom-color:var(--gold)}
+@media(max-width:980px){.sectionnav{display:none}}
 
 /* ---------- invitation hero ---------- */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 26px;overflow:visible}
@@ -287,6 +296,12 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
 <div class="tex m"></div><div class="tex s"></div><div class="tex g"></div>
 <header class="bar" id="nav">
   <div class="monogram" data-i18n="monogram">M &middot; N</div>
+  <nav class="sectionnav" aria-label="Sections">
+    <a href="#story" data-i18n="nav_story">Our story</a>
+    <a href="#homelands" data-i18n="nav_home">Where we come from</a>
+    <a href="#travel" data-i18n="nav_travel">Travel &amp; stay</a>
+    <a href="#gift" data-i18n="nav_gift">Gifts</a>
+  </nav>
   <div class="bar-right">
     <nav class="langs" aria-label="Language">
       <button data-lang="en" class="active">EN</button>
@@ -316,7 +331,6 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
       <div class="where" data-i18n="inv_where">Rocca di Lonato &middot; Lake Garda, Italy</div>
       <div class="cd" id="countdown" aria-live="polite"></div>
     </div>
-    <a class="cta" href="#rsvp" data-i18n="hero_rsvp">RSVP</a>
   </div>
 </div>
 
@@ -566,6 +580,7 @@ const I18N = {
     name1:"Mona Seyfeddine", name2:"Noah Bohren",
     hero_date:"7 May 2027 · Rocca di Lonato, Italy",
     scrollcue:"Scroll", nav_rsvp:"RSVP", hero_rsvp:"RSVP",
+    nav_story:"Our story", nav_home:"Where we come from", nav_travel:"Travel & stay", nav_gift:"Gifts",
     inv_together:"Together with their families",
     inv_line:"joyfully invite you to celebrate their marriage",
     inv_when:"Friday 7 May 2027", inv_where:"Rocca di Lonato · Lake Garda, Italy",
@@ -620,6 +635,7 @@ const I18N = {
     name1:"Mona Seyfeddine", name2:"Noah Bohren",
     hero_date:"7 mai 2027 · Rocca di Lonato, Italie",
     scrollcue:"Défiler", nav_rsvp:"RSVP", hero_rsvp:"Répondre",
+    nav_story:"Notre histoire", nav_home:"D'où nous venons", nav_travel:"Voyage & séjour", nav_gift:"Cadeaux",
     inv_together:"Avec leurs familles",
     inv_line:"ont la joie de vous convier à célébrer leur mariage",
     inv_when:"Le vendredi 7 mai 2027", inv_where:"Rocca di Lonato · Lac de Garde, Italie",
@@ -674,6 +690,7 @@ const I18N = {
     name1:"منى سيف الدين", name2:"نوح بورِن",
     hero_date:"٧ أيّار ٢٠٢٧ · روكا دي لوناتو، إيطاليا",
     scrollcue:"مرّر", nav_rsvp:"RSVP", hero_rsvp:"تأكيد الحضور",
+    nav_story:"قصّتنا", nav_home:"جذورنا", nav_travel:"السفر والإقامة", nav_gift:"الهدايا",
     inv_together:"مع عائلتيهما",
     inv_line:"يسعدهما دعوتكم لمشاركة  فرحة زفافهما",
     inv_when:"الجمعة ٧ أيّار ٢٠٢٧", inv_where:"روكا دي لوناتو · بحيرة غاردا، إيطاليا",
@@ -975,6 +992,31 @@ document.getElementById("submitNo").addEventListener("click", ()=>{
 });
 </script>
 <script>(function(){var n=document.getElementById('nav');function s(){if(window.scrollY>40)n.classList.add('solid');else n.classList.remove('solid');}window.addEventListener('scroll',s,{passive:true});s();})();</script>
+<script>
+/* scroll-spy: highlight the section currently at the middle of the viewport in
+   the top bar; RSVP lights up the top-right button. */
+(function(){
+  var items = [
+    ["story",     document.querySelector('.sectionnav a[href="#story"]')],
+    ["homelands", document.querySelector('.sectionnav a[href="#homelands"]')],
+    ["travel",    document.querySelector('.sectionnav a[href="#travel"]')],
+    ["gift",      document.querySelector('.sectionnav a[href="#gift"]')],
+    ["rsvp",      document.querySelector('.nav-rsvp')]
+  ].filter(function(x){ return x[1] && document.getElementById(x[0]); });
+  if(!items.length) return;
+  function setActive(id){
+    items.forEach(function(x){ x[1].classList.toggle("active", x[0] === id); });
+  }
+  var ratios = {};
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ ratios[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0; });
+    var best = null, bestR = 0;
+    items.forEach(function(x){ var r = ratios[x[0]] || 0; if(r > bestR){ bestR = r; best = x[0]; } });
+    setActive(bestR > 0 ? best : null);   // nothing highlighted at the very top (hero)
+  }, { rootMargin: "-45% 0px -45% 0px", threshold: [0, 0.01, 1] });
+  items.forEach(function(x){ spy.observe(document.getElementById(x[0])); });
+})();
+</script>
 <script>
 /* Gentle, slowed-down smooth scroll for in-page anchor links (RSVP buttons etc.) */
 (function(){
