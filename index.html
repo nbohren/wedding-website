@@ -83,10 +83,9 @@ header.bar.solid{background:rgba(243,238,228,.94);box-shadow:0 1px 0 rgba(120,11
 .langs button{background:none;border:none;color:var(--soft);cursor:pointer;padding:6px 9px;font:inherit;letter-spacing:.18em;opacity:.75;transition:opacity .3s,color .3s;border-bottom:1px solid transparent}
 .langs button:hover{opacity:1}
 .langs button.active{opacity:1;color:var(--olive-deep);border-bottom-color:var(--gold)}
-.nav-rsvp{font-family:var(--serif);font-weight:500;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--olive-deep);
-  text-decoration:none;border:1px solid var(--olive);border-radius:3px;padding:8px 18px;background:transparent;cursor:pointer;transition:background .3s,color .3s}
-.nav-rsvp:hover{background:var(--olive);color:#f4efe4}
-.nav-rsvp.active{background:var(--olive);color:#f4efe4}
+.nav-rsvp{font-family:var(--serif);font-weight:500;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#f4efe4;
+  text-decoration:none;border:1px solid var(--olive-deep);border-radius:3px;padding:8px 18px;background:var(--olive-deep);cursor:pointer;transition:background .3s,color .3s}
+.nav-rsvp:hover{background:#5c6640;border-color:#5c6640}
 /* expanding menu overlay */
 .menu{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:22px}
 .menu.open{display:flex}
@@ -324,6 +323,7 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
     <a href="#story" data-i18n="nav_story">Our story</a>
     <a href="#homelands" data-i18n="nav_home">Where we come from</a>
     <a href="#travel" data-i18n="nav_travel">Travel &amp; stay</a>
+    <a href="#dress" data-i18n="dress_kicker">Dress code</a>
     <a href="#gift" data-i18n="nav_gift">Gifts</a>
   </nav>
   <div class="bar-right">
@@ -345,6 +345,7 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
       <a href="#story" data-i18n="nav_story">Our story</a>
       <a href="#homelands" data-i18n="nav_home">Where we come from</a>
       <a href="#travel" data-i18n="nav_travel">Travel &amp; stay</a>
+      <a href="#dress" data-i18n="dress_kicker">Dress code</a>
       <a href="#gift" data-i18n="nav_gift">Gifts</a>
       <a href="#rsvp" data-i18n="menu_rsvp">RSVP</a>
     </nav>
@@ -473,6 +474,19 @@ footer small{font-family:var(--serif);color:#b7ae97;letter-spacing:.18em;font-si
         <p data-i18n="travel_sleep_b">Lonato del Garda, Desenzano and Sirmione all have lovely hotels by the lake. We'll share a shortlist here soon.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- DRESS CODE -->
+<section class="center" id="dress">
+  <div class="sbranch l"><img alt="" src="branches/olive2.webp"></div>
+  <div class="sbranch r"><img alt="" src="branches/olive1.webp"></div>
+  <div class="wrap reveal">
+    <div class="kicker" data-i18n="dress_kicker">Dress code</div>
+    <h2 data-i18n="dress_title">Formal or Black-Tie Optional</h2>
+    <p class="lead" data-i18n="dress_body">We invite you to dress up and celebrate with us in style!</p>
   </div>
 </section>
 
@@ -646,6 +660,8 @@ const I18N = {
     travel_sleep_t:"Where to sleep", travel_sleep_h:"Staying nearby",
     travel_sleep_b:"Lonato del Garda, Desenzano and Sirmione all have lovely hotels by the lake. We'll share a shortlist here soon.",
     travel_directions:"Get directions →",
+    dress_kicker:"Dress code", dress_title:"Formal or Black-Tie Optional",
+    dress_body:"We invite you to dress up and celebrate with us in style!<br><br>A tuxedo is not required, but you are more than welcome to wear one if you wish. For gentlemen choosing a suit, we recommend a formal, elegant suit. Both a bow tie and a classic necktie are perfectly appropriate – whichever you feel most comfortable wearing!<br><br>For ladies, suitable options include a floor-length gown, an elegant cocktail dress, or a chic dressy pantsuit.<br><br><strong>A little note for all our guests:</strong> As the bride and groom have chosen white for their wedding attire, we kindly ask that gentlemen avoid white tuxedos, suits, or blazers, and that ladies refrain from wearing dresses in white, ivory, or beige.<br><br>Thank you for helping us keep these colours special for the bride and groom!",
     gift_kicker:"Gifts", gift_title:"Your presence is the present",
     gift_body:"Many of you are travelling from near and far to celebrate with us in Italy. Having you there means more to us than anything, and your presence is truly all we could ask for. If you would nevertheless like to contribute to our wedding fund, you can do so below, with all our love and gratitude.",
     gift_btn:"Wedding registry", pay_bank:"Bank transfer", pay_iban:"Account (IBAN)", pay_holder:"Account holder", pay_address:"Address", pay_link:"Link", pay_number:"Number", pay_ref:"Message", pay_revbtn:"Open Revolut", pay_title:"Ways to give", pay_cash:"If you prefer to give your gift in person, there will also be a card box available on the day. Your thoughtfulness and generosity mean so much to us.",
@@ -701,6 +717,8 @@ const I18N = {
     travel_sleep_t:"Où dormir", travel_sleep_h:"Se loger à proximité",
     travel_sleep_b:"Lonato del Garda, Desenzano et Sirmione offrent de beaux hôtels au bord du lac. Nous partagerons bientôt une sélection ici.",
     travel_directions:"Obtenir l'itinéraire →",
+    dress_kicker:"Code vestimentaire", dress_title:"Tenue formelle ou Black Tie facultatif",
+    dress_body:"Nous vous invitons à vous mettre sur votre trente-et-un pour célébrer cette belle journée à nos côtés !<br><br>Le smoking n'est pas obligatoire, mais sera bien sûr le bienvenu si vous souhaitez en porter un. Pour ceux qui préfèrent le costume, une tenue élégante et habillée conviendra parfaitement. Le nœud papillon comme la cravate classique sont tout à fait appropriés : à chacun son style !<br><br>Pour les femmes, plusieurs tenues sont les bienvenues : une robe longue et élégante, une robe de cocktail habillée ou encore un élégant tailleur-pantalon.<br><br><strong>Une petite précision pour tous nos invités :</strong> Les mariés ayant choisi le blanc pour leurs tenues, nous vous remercions d'éviter les smokings, costumes et vestes blancs pour les hommes, ainsi que les robes blanches, ivoire ou beiges pour les femmes.<br><br>Merci de nous aider à réserver ces couleurs aux mariés !",
     gift_kicker:"Cadeaux", gift_title:"Votre présence est notre plus beau cadeau",
     gift_body:"Beaucoup d'entre vous traversent le monde pour célébrer avec nous en Italie; votre présence compte plus que tout, et c'est tout ce que nous demandons. Si vous souhaitez malgré tout contribuer à notre liste de mariage, vous pouvez le faire ci-dessous, avec toute notre gratitude.",
     gift_btn:"Liste de mariage", pay_bank:"Virement bancaire", pay_iban:"Compte (IBAN)", pay_holder:"Titulaire du compte", pay_address:"Adresse", pay_link:"Lien", pay_number:"Numéro", pay_ref:"Message", pay_revbtn:"Ouvrir Revolut", pay_title:"Comment contribuer", pay_cash:"Si vous préférez nous offrir votre cadeau en personne, une urne sera aussi à disposition le jour J. Votre attention et votre générosité nous touchent beaucoup.",
@@ -756,6 +774,8 @@ const I18N = {
     travel_sleep_t:"أين تقيمون", travel_sleep_h:"الإقامة القريبة",
     travel_sleep_b:"تضمّ لوناتو ديل غاردا وديزينزانو وسيرميوني فنادق جميلة على ضفاف البحيرة. سنشارك قائمة مقترحة هنا قريبًا.",
     travel_directions:"← عرض الاتّجاهات",
+    dress_kicker:"قواعد اللباس", dress_title:"رسمي أو سهرة أنيقة (Black Tie اختياري)",
+    dress_body:"ندعوكم للتألّق بإطلالات أنيقة ومميزة لمشاركتنا فرحتنا في هذا اليوم الخاص!<br><br>ارتداء التوكسيدو ليس إلزامياً، ولكنه مرحّب به بكل تأكيد لمن يرغب بذلك. أما بالنسبة للرجال الذين يفضّلون البدلة الكلاسيكية، فبدلة رسمية وأنيقة ستكون مناسبة تماماً. ويمكن اعتماد ربطة عنق عادية أو ربطة فراشة، فكلاهما مناسب تماماً!<br><br>أما للسيدات، فيمكن اختيار فستان طويل وأنيق، أو فستان سهرة Cocktail، أو Jumpsuit أنيق.<br><br><strong>ملاحظة صغيرة لجميع ضيوفنا:</strong> بما أن العروس والعريس اختارا اللون الأبيض لإطلالتيهما، نرجو من الرجال تجنّب ارتداء التوكسيدو أو البدلات أو السترات البيضاء، كما نرجو من السيدات تجنّب الفساتين باللون الأبيض أو العاجي أو البيج.<br><br>شكراً لتفهّمكم ومساعدتنا في الحفاظ على هذه الألوان المميزة للعروس والعريس!",
     gift_kicker:"الهدايا", gift_title:"حضوركم هو أجمل هدية",
     gift_body:"يأتي كثيرٌ منكم من أماكن بعيدة ليشاركنا فرحتنا ويحتفل معنا في إيطاليا. وجودكم إلى جانبنا يعني لنا الكثير.وإذا رغبتم في المساهمة في قائمة زفافنا، يمكنكم الضغط على قائمة الهدايا، مع خالص محبّتنا وامتناننا.",
     gift_btn:"قائمة الهدايا", pay_bank:"تحويل بنكي", pay_iban:"الحساب (IBAN)", pay_holder:"صاحب الحساب", pay_address:"العنوان", pay_link:"الرابط", pay_number:"الرقم", pay_ref:"الرسالة", pay_revbtn:"فتح Revolut", pay_title:"طرق المساهمة", pay_cash:"وإذا فضّلتم تقديم هديّتكم لنا شخصيًا، ستكون هناك أيضًا علبة مخصّصة للهدايا يوم الزفاف. لطفكم وكرمكم يعنيان لنا الكثير.",
@@ -1056,6 +1076,7 @@ document.getElementById("submitNo").addEventListener("click", ()=>{
     ["story",     document.querySelector('.sectionnav a[href="#story"]')],
     ["homelands", document.querySelector('.sectionnav a[href="#homelands"]')],
     ["travel",    document.querySelector('.sectionnav a[href="#travel"]')],
+    ["dress",     document.querySelector('.sectionnav a[href="#dress"]')],
     ["gift",      document.querySelector('.sectionnav a[href="#gift"]')]
   ].filter(function(x){ return x[1] && document.getElementById(x[0]); });
   if(!items.length) return;
